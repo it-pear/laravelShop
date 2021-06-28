@@ -20,14 +20,14 @@
 	<!--
             CSS
             ============================================= -->
-	<link rel="stylesheet" href="css/linearicons.css">
-	<link rel="stylesheet" href="css/owl.carousel.css">
-	<link rel="stylesheet" href="css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/themify-icons.css">
-	<link rel="stylesheet" href="css/nice-select.css">
-	<link rel="stylesheet" href="css/nouislider.min.css">
-	<link rel="stylesheet" href="css/bootstrap.css">
-	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="/css/linearicons.css">
+	<link rel="stylesheet" href="/css/owl.carousel.css">
+	<link rel="stylesheet" href="/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/css/themify-icons.css">
+	<link rel="stylesheet" href="/css/nice-select.css">
+	<link rel="stylesheet" href="/css/nouislider.min.css">
+	<link rel="stylesheet" href="/css/bootstrap.css">
+	<link rel="stylesheet" href="/css/main.css">
 </head>
 
 <body id="category">
@@ -38,9 +38,8 @@
 			<nav class="navbar navbar-expand-lg navbar-light main_box">
 				<div class="container">
 					<!-- Brand and toggle get grouped for better mobile display -->
-					<a class="navbar-brand logo_h" href="index.html"><img src="img/logo.png" alt=""></a>
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-					 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<a class="navbar-brand logo_h" href="index.html"><img src="/img/logo.png" alt=""></a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
@@ -50,8 +49,7 @@
 						<ul class="nav navbar-nav menu_nav ml-auto">
 							<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
 							<li class="nav-item submenu dropdown active">
-								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-								 aria-expanded="false">Shop</a>
+								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Shop</a>
 								<ul class="dropdown-menu">
 									<li class="nav-item active"><a class="nav-link" href="category.html">Shop Category</a></li>
 									<li class="nav-item"><a class="nav-link" href="single-product.html">Product Details</a></li>
@@ -61,16 +59,14 @@
 								</ul>
 							</li>
 							<li class="nav-item submenu dropdown">
-								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-								 aria-expanded="false">Blog</a>
+								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
 								<ul class="dropdown-menu">
 									<li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
 									<li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Details</a></li>
 								</ul>
 							</li>
 							<li class="nav-item submenu dropdown">
-								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-								 aria-expanded="false">Pages</a>
+								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages</a>
 								<ul class="dropdown-menu">
 									<li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
 									<li class="nav-item"><a class="nav-link" href="tracking.html">Tracking</a></li>
@@ -123,108 +119,30 @@
 				<div class="sidebar-categories">
 					<div class="head">Browse Categories</div>
 					<ul class="main-categories">
-						<li class="main-nav-list"><a data-toggle="collapse" href="#fruitsVegetable" aria-expanded="false" aria-controls="fruitsVegetable"><span
-								 class="lnr lnr-arrow-right"></span>Fruits and Vegetables<span class="number">(53)</span></a>
-							<ul class="collapse" id="fruitsVegetable" data-toggle="collapse" aria-expanded="false" aria-controls="fruitsVegetable">
-								<li class="main-nav-list child"><a href="#">Frozen Fish<span class="number">(13)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Dried Fish<span class="number">(09)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Fresh Fish<span class="number">(17)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Meat Alternatives<span class="number">(01)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Meat<span class="number">(11)</span></a></li>
-							</ul>
+						<li class="main-nav-list">
+							<a href="/Fruits_and_Vegetables" aria-expanded="false" aria-controls="fruitsVegetable">
+								<span class="lnr lnr-arrow-right"></span>Fruits and Vegetables<span class="number">(53)</span>
+							</a>
 						</li>
-
-						<li class="main-nav-list"><a data-toggle="collapse" href="#meatFish" aria-expanded="false" aria-controls="meatFish"><span
-								 class="lnr lnr-arrow-right"></span>Meat and Fish<span class="number">(53)</span></a>
-							<ul class="collapse" id="meatFish" data-toggle="collapse" aria-expanded="false" aria-controls="meatFish">
-								<li class="main-nav-list child"><a href="#">Frozen Fish<span class="number">(13)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Dried Fish<span class="number">(09)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Fresh Fish<span class="number">(17)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Meat Alternatives<span class="number">(01)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Meat<span class="number">(11)</span></a></li>
-							</ul>
+						<li class="main-nav-list">
+							<a href="/meatFish" aria-expanded="false" aria-controls="meatFish">
+								<span class="lnr lnr-arrow-right"></span>Meat and Fish<span class="number">(53)</span>
+							</a>
 						</li>
-						<li class="main-nav-list"><a data-toggle="collapse" href="#cooking" aria-expanded="false" aria-controls="cooking"><span
-								 class="lnr lnr-arrow-right"></span>Cooking<span class="number">(53)</span></a>
-							<ul class="collapse" id="cooking" data-toggle="collapse" aria-expanded="false" aria-controls="cooking">
-								<li class="main-nav-list child"><a href="#">Frozen Fish<span class="number">(13)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Dried Fish<span class="number">(09)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Fresh Fish<span class="number">(17)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Meat Alternatives<span class="number">(01)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Meat<span class="number">(11)</span></a></li>
-							</ul>
+						<li class="main-nav-list">
+							<a href="/cooking" aria-expanded="false" aria-controls="cooking">
+								<span class="lnr lnr-arrow-right"></span>Cooking<span class="number">(53)</span>
+							</a>
 						</li>
-						<li class="main-nav-list"><a data-toggle="collapse" href="#beverages" aria-expanded="false" aria-controls="beverages"><span
-								 class="lnr lnr-arrow-right"></span>Beverages<span class="number">(24)</span></a>
-							<ul class="collapse" id="beverages" data-toggle="collapse" aria-expanded="false" aria-controls="beverages">
-								<li class="main-nav-list child"><a href="#">Frozen Fish<span class="number">(13)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Dried Fish<span class="number">(09)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Fresh Fish<span class="number">(17)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Meat Alternatives<span class="number">(01)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Meat<span class="number">(11)</span></a></li>
-							</ul>
+						<li class="main-nav-list">
+							<a href="/beverages" aria-expanded="false" aria-controls="beverages">
+								<span class="lnr lnr-arrow-right"></span>Beverages<span class="number">(24)</span>
+							</a>
 						</li>
-						<li class="main-nav-list"><a data-toggle="collapse" href="#homeClean" aria-expanded="false" aria-controls="homeClean"><span
-								 class="lnr lnr-arrow-right"></span>Home and Cleaning<span class="number">(53)</span></a>
-							<ul class="collapse" id="homeClean" data-toggle="collapse" aria-expanded="false" aria-controls="homeClean">
-								<li class="main-nav-list child"><a href="#">Frozen Fish<span class="number">(13)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Dried Fish<span class="number">(09)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Fresh Fish<span class="number">(17)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Meat Alternatives<span class="number">(01)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Meat<span class="number">(11)</span></a></li>
-							</ul>
-						</li>
-						<li class="main-nav-list"><a href="#">Pest Control<span class="number">(24)</span></a></li>
-						<li class="main-nav-list"><a data-toggle="collapse" href="#officeProduct" aria-expanded="false" aria-controls="officeProduct"><span
-								 class="lnr lnr-arrow-right"></span>Office Products<span class="number">(77)</span></a>
-							<ul class="collapse" id="officeProduct" data-toggle="collapse" aria-expanded="false" aria-controls="officeProduct">
-								<li class="main-nav-list child"><a href="#">Frozen Fish<span class="number">(13)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Dried Fish<span class="number">(09)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Fresh Fish<span class="number">(17)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Meat Alternatives<span class="number">(01)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Meat<span class="number">(11)</span></a></li>
-							</ul>
-						</li>
-						<li class="main-nav-list"><a data-toggle="collapse" href="#beauttyProduct" aria-expanded="false" aria-controls="beauttyProduct"><span
-								 class="lnr lnr-arrow-right"></span>Beauty Products<span class="number">(65)</span></a>
-							<ul class="collapse" id="beauttyProduct" data-toggle="collapse" aria-expanded="false" aria-controls="beauttyProduct">
-								<li class="main-nav-list child"><a href="#">Frozen Fish<span class="number">(13)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Dried Fish<span class="number">(09)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Fresh Fish<span class="number">(17)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Meat Alternatives<span class="number">(01)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Meat<span class="number">(11)</span></a></li>
-							</ul>
-						</li>
-						<li class="main-nav-list"><a data-toggle="collapse" href="#healthProduct" aria-expanded="false" aria-controls="healthProduct"><span
-								 class="lnr lnr-arrow-right"></span>Health Products<span class="number">(29)</span></a>
-							<ul class="collapse" id="healthProduct" data-toggle="collapse" aria-expanded="false" aria-controls="healthProduct">
-								<li class="main-nav-list child"><a href="#">Frozen Fish<span class="number">(13)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Dried Fish<span class="number">(09)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Fresh Fish<span class="number">(17)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Meat Alternatives<span class="number">(01)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Meat<span class="number">(11)</span></a></li>
-							</ul>
-						</li>
-						<li class="main-nav-list"><a href="#">Pet Care<span class="number">(29)</span></a></li>
-						<li class="main-nav-list"><a data-toggle="collapse" href="#homeAppliance" aria-expanded="false" aria-controls="homeAppliance"><span
-								 class="lnr lnr-arrow-right"></span>Home Appliances<span class="number">(15)</span></a>
-							<ul class="collapse" id="homeAppliance" data-toggle="collapse" aria-expanded="false" aria-controls="homeAppliance">
-								<li class="main-nav-list child"><a href="#">Frozen Fish<span class="number">(13)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Dried Fish<span class="number">(09)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Fresh Fish<span class="number">(17)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Meat Alternatives<span class="number">(01)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Meat<span class="number">(11)</span></a></li>
-							</ul>
-						</li>
-						<li class="main-nav-list"><a class="border-bottom-0" data-toggle="collapse" href="#babyCare" aria-expanded="false"
-							 aria-controls="babyCare"><span class="lnr lnr-arrow-right"></span>Baby Care<span class="number">(48)</span></a>
-							<ul class="collapse" id="babyCare" data-toggle="collapse" aria-expanded="false" aria-controls="babyCare">
-								<li class="main-nav-list child"><a href="#">Frozen Fish<span class="number">(13)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Dried Fish<span class="number">(09)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Fresh Fish<span class="number">(17)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Meat Alternatives<span class="number">(01)</span></a></li>
-								<li class="main-nav-list child"><a href="#" class="border-bottom-0">Meat<span class="number">(11)</span></a></li>
-							</ul>
+						<li class="main-nav-list">
+							<a href="/homeClean" aria-expanded="false" aria-controls="homeClean">
+								<span class="lnr lnr-arrow-right"></span>Home and Cleaning<span class="number">(53)</span>
+							</a>
 						</li>
 					</ul>
 				</div>
@@ -306,7 +224,7 @@
 						<!-- single product -->
 						<div class="col-lg-4 col-md-6">
 							<div class="single-product">
-								<img class="img-fluid" src="img/product/p1.jpg" alt="">
+								<img class="img-fluid" src="/img/product/p1.jpg" alt="">
 								<div class="product-details">
 									<h6>addidas New Hammer sole
 										for Sports person</h6>
@@ -339,7 +257,7 @@
 						<!-- single product -->
 						<div class="col-lg-4 col-md-6">
 							<div class="single-product">
-								<img class="img-fluid" src="img/product/p2.jpg" alt="">
+								<img class="img-fluid" src="/img/product/p2.jpg" alt="">
 								<div class="product-details">
 									<h6>addidas New Hammer sole
 										for Sports person</h6>
@@ -372,7 +290,7 @@
 						<!-- single product -->
 						<div class="col-lg-4 col-md-6">
 							<div class="single-product">
-								<img class="img-fluid" src="img/product/p3.jpg" alt="">
+								<img class="img-fluid" src="/img/product/p3.jpg" alt="">
 								<div class="product-details">
 									<h6>addidas New Hammer sole
 										for Sports person</h6>
@@ -405,7 +323,7 @@
 						<!-- single product -->
 						<div class="col-lg-4 col-md-6">
 							<div class="single-product">
-								<img class="img-fluid" src="img/product/p4.jpg" alt="">
+								<img class="img-fluid" src="/img/product/p4.jpg" alt="">
 								<div class="product-details">
 									<h6>addidas New Hammer sole
 										for Sports person</h6>
@@ -438,7 +356,7 @@
 						<!-- single product -->
 						<div class="col-lg-4 col-md-6">
 							<div class="single-product">
-								<img class="img-fluid" src="img/product/p5.jpg" alt="">
+								<img class="img-fluid" src="/img/product/p5.jpg" alt="">
 								<div class="product-details">
 									<h6>addidas New Hammer sole
 										for Sports person</h6>
@@ -471,7 +389,7 @@
 						<!-- single product -->
 						<div class="col-lg-4 col-md-6">
 							<div class="single-product">
-								<img class="img-fluid" src="img/product/p6.jpg" alt="">
+								<img class="img-fluid" src="/img/product/p6.jpg" alt="">
 								<div class="product-details">
 									<h6>addidas New Hammer sole
 										for Sports person</h6>
@@ -545,7 +463,7 @@
 					<div class="row">
 						<div class="col-lg-4 col-md-4 col-sm-6 mb-20">
 							<div class="single-related-product d-flex">
-								<a href="#"><img src="img/r1.jpg" alt=""></a>
+								<a href="#"><img src="/img/r1.jpg" alt=""></a>
 								<div class="desc">
 									<a href="#" class="title">Black lace Heels</a>
 									<div class="price">
@@ -557,7 +475,7 @@
 						</div>
 						<div class="col-lg-4 col-md-4 col-sm-6 mb-20">
 							<div class="single-related-product d-flex">
-								<a href="#"><img src="img/r2.jpg" alt=""></a>
+								<a href="#"><img src="/img/r2.jpg" alt=""></a>
 								<div class="desc">
 									<a href="#" class="title">Black lace Heels</a>
 									<div class="price">
@@ -569,7 +487,7 @@
 						</div>
 						<div class="col-lg-4 col-md-4 col-sm-6 mb-20">
 							<div class="single-related-product d-flex">
-								<a href="#"><img src="img/r3.jpg" alt=""></a>
+								<a href="#"><img src="/img/r3.jpg" alt=""></a>
 								<div class="desc">
 									<a href="#" class="title">Black lace Heels</a>
 									<div class="price">
@@ -581,7 +499,7 @@
 						</div>
 						<div class="col-lg-4 col-md-4 col-sm-6 mb-20">
 							<div class="single-related-product d-flex">
-								<a href="#"><img src="img/r5.jpg" alt=""></a>
+								<a href="#"><img src="/img/r5.jpg" alt=""></a>
 								<div class="desc">
 									<a href="#" class="title">Black lace Heels</a>
 									<div class="price">
@@ -593,7 +511,7 @@
 						</div>
 						<div class="col-lg-4 col-md-4 col-sm-6 mb-20">
 							<div class="single-related-product d-flex">
-								<a href="#"><img src="img/r6.jpg" alt=""></a>
+								<a href="#"><img src="/img/r6.jpg" alt=""></a>
 								<div class="desc">
 									<a href="#" class="title">Black lace Heels</a>
 									<div class="price">
@@ -605,7 +523,7 @@
 						</div>
 						<div class="col-lg-4 col-md-4 col-sm-6 mb-20">
 							<div class="single-related-product d-flex">
-								<a href="#"><img src="img/r7.jpg" alt=""></a>
+								<a href="#"><img src="/img/r7.jpg" alt=""></a>
 								<div class="desc">
 									<a href="#" class="title">Black lace Heels</a>
 									<div class="price">
@@ -617,7 +535,7 @@
 						</div>
 						<div class="col-lg-4 col-md-4 col-sm-6">
 							<div class="single-related-product d-flex">
-								<a href="#"><img src="img/r9.jpg" alt=""></a>
+								<a href="#"><img src="/img/r9.jpg" alt=""></a>
 								<div class="desc">
 									<a href="#" class="title">Black lace Heels</a>
 									<div class="price">
@@ -629,7 +547,7 @@
 						</div>
 						<div class="col-lg-4 col-md-4 col-sm-6">
 							<div class="single-related-product d-flex">
-								<a href="#"><img src="img/r10.jpg" alt=""></a>
+								<a href="#"><img src="/img/r10.jpg" alt=""></a>
 								<div class="desc">
 									<a href="#" class="title">Black lace Heels</a>
 									<div class="price">
@@ -641,7 +559,7 @@
 						</div>
 						<div class="col-lg-4 col-md-4 col-sm-6">
 							<div class="single-related-product d-flex">
-								<a href="#"><img src="img/r11.jpg" alt=""></a>
+								<a href="#"><img src="/img/r11.jpg" alt=""></a>
 								<div class="desc">
 									<a href="#" class="title">Black lace Heels</a>
 									<div class="price">
@@ -656,7 +574,7 @@
 				<div class="col-lg-3">
 					<div class="ctg-right">
 						<a href="#" target="_blank">
-							<img class="img-fluid d-block mx-auto" src="img/category/c5.jpg" alt="">
+							<img class="img-fluid d-block mx-auto" src="/img/category/c5.jpg" alt="">
 						</a>
 					</div>
 				</div>
@@ -684,13 +602,11 @@
 						<p>Stay update with our latest</p>
 						<div class="" id="mc_embed_signup">
 
-							<form target="_blank" novalidate="true" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
-							 method="get" class="form-inline">
+							<form target="_blank" novalidate="true" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="form-inline">
 
 								<div class="d-flex flex-row">
 
-									<input class="form-control" name="EMAIL" placeholder="Enter Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '"
-									 required="" type="email">
+									<input class="form-control" name="EMAIL" placeholder="Enter Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '" required="" type="email">
 
 
 									<button class="click-btn btn btn-default"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
@@ -711,14 +627,14 @@
 					<div class="single-footer-widget mail-chimp">
 						<h6 class="mb-20">Instragram Feed</h6>
 						<ul class="instafeed d-flex flex-wrap">
-							<li><img src="img/i1.jpg" alt=""></li>
-							<li><img src="img/i2.jpg" alt=""></li>
-							<li><img src="img/i3.jpg" alt=""></li>
-							<li><img src="img/i4.jpg" alt=""></li>
-							<li><img src="img/i5.jpg" alt=""></li>
-							<li><img src="img/i6.jpg" alt=""></li>
-							<li><img src="img/i7.jpg" alt=""></li>
-							<li><img src="img/i8.jpg" alt=""></li>
+							<li><img src="/img/i1.jpg" alt=""></li>
+							<li><img src="/img/i2.jpg" alt=""></li>
+							<li><img src="/img/i3.jpg" alt=""></li>
+							<li><img src="/img/i4.jpg" alt=""></li>
+							<li><img src="/img/i5.jpg" alt=""></li>
+							<li><img src="/img/i6.jpg" alt=""></li>
+							<li><img src="/img/i7.jpg" alt=""></li>
+							<li><img src="/img/i8.jpg" alt=""></li>
 						</ul>
 					</div>
 				</div>
@@ -736,10 +652,13 @@
 				</div>
 			</div>
 			<div class="footer-bottom d-flex justify-content-center align-items-center flex-wrap">
-				<p class="footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-</p>
+				<p class="footer-text m-0">
+					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+					Copyright &copy;<script>
+						document.write(new Date().getFullYear());
+					</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+				</p>
 			</div>
 		</div>
 	</footer>
@@ -814,20 +733,19 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
 
 
-	<script src="js/vendor/jquery-2.2.4.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
-	 crossorigin="anonymous"></script>
-	<script src="js/vendor/bootstrap.min.js"></script>
-	<script src="js/jquery.ajaxchimp.min.js"></script>
-	<script src="js/jquery.nice-select.min.js"></script>
-	<script src="js/jquery.sticky.js"></script>
-	<script src="js/nouislider.min.js"></script>
-	<script src="js/jquery.magnific-popup.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
+	<script src="/js/vendor/jquery-2.2.4.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+	<script src="/js/vendor/bootstrap.min.js"></script>
+	<script src="/js/jquery.ajaxchimp.min.js"></script>
+	<script src="/js/jquery.nice-select.min.js"></script>
+	<script src="/js/jquery.sticky.js"></script>
+	<script src="/js/nouislider.min.js"></script>
+	<script src="/js/jquery.magnific-popup.min.js"></script>
+	<script src="/js/owl.carousel.min.js"></script>
 	<!--gmaps Js-->
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
-	<script src="js/gmaps.min.js"></script>
-	<script src="js/main.js"></script>
+	<script src="/js/gmaps.min.js"></script>
+	<script src="/js/main.js"></script>
 </body>
 
 </html>

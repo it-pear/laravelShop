@@ -3,17 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/categories', 'mainController@categories');
-Route::get('/product', 'mainController@product');
-
-Route::get('/', function () {
-  return view('index');
-});
-Route::get('/categories', function () {
-  return view('categories');
-});
-Route::get('/product', function () {
-  return view('product');
-});
-
-Route::get('/', 'mainController@index');
+Route::get('/', 'App\Http\Controllers\MainController@index');
+Route::get('/categories', 'App\Http\Controllers\MainController@categories');
+Route::get('/{category}', 'App\Http\Controllers\MainController@category');
+Route::get('/product/{product?}', 'App\Http\Controllers\MainController@product');
