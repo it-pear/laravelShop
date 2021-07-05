@@ -161,7 +161,7 @@
                                   </div>
                                 </div>
                               </div>
-                              <div class="product-card__rating-legend">9 Reviews</div>
+                              <div class="product-card__rating-legend">({{ $category->products->count() }}) товаров</div>
                             </div>
                             <ul class="product-card__features-list">
                               <li>Speed: 750 RPM</li>

@@ -20,7 +20,7 @@
 				</div>
 				<div class="page-header__title">
 					<h1>
-						{{$category->name}}
+						{{$category->name}} ({{ $category->products->count() }})
 					</h1>
 				</div>
 			</div>
@@ -64,7 +64,9 @@
 							</div>
 							<div class="products-view__list products-list" data-layout="grid-5-full" data-with-features="false" data-mobile-grid-columns="2">
 								<div class="products-list__body">
-									@include('card')
+									@foreach($category->products as $product)
+										@include('card', compact('product'))
+									@endforeach
 								</div>
 							</div>
 							<div class="products-view__pagination">
