@@ -117,8 +117,13 @@
           Stock</span></div>
       <div class="product-card__prices">{{$product->price}}₽</div>
       <div class="product-card__buttons">
-        <a href="{{ route('basket') }}" class="btn btn-primary product-card__addtocart" type="button">Add To Cart</a>
-        <a href="{{ route('basket') }}" class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">Add To Cart</a>
+        <form action="{{ route('basket-add', $product) }}" method="POST">
+          <button type="submit" class="btn btn-primary product-card__addtocart" type="button">Add To Cart</button>
+          <button type="submit" class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">Add To Cart</button>
+          @csrf
+        </form>
+        
+
         <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist" type="button">
           <svg width="16px" height="16px">
             <use xlink:href="/images/sprite.svg#wishlist-16"></use>
