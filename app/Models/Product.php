@@ -11,4 +11,7 @@ class Product extends Model
     {
         return $this->belongsTo(Category::class);
     }
+    public function getPriceFoCount($count) {
+        return $this->price * $count;
+    }
 }

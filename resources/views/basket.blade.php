@@ -51,7 +51,7 @@
               <td class="cart-table__column cart-table__column--price" data-title="Price">{{ $product->price }}₽</td>
               <td class="cart-table__column cart-table__column--quantity" data-title="Quantity">
                 <div class="input-number">
-                  <input class="form-control input-number__input" type="number" min="1" value="2">
+                  <input class="form-control input-number__input" type="number" min="1" value="{{ $product->pivot->count }}">
                   <form action="{{ route('basket-add', $product) }}" method="POST">
                     <button type="submit" class="input-number__add"></button>
                     @csrf
@@ -62,7 +62,7 @@
                   </form>
                 </div>
               </td>
-              <td class="cart-table__column cart-table__column--total" data-title="Total">$1,398.00</td>
+              <td class="cart-table__column cart-table__column--total" data-title="Total">{{ $product->getPriceFoCount($product->pivot->count) }}₽</td>
               <td class="cart-table__column cart-table__column--remove">
                 <button type="button" class="btn btn-light btn-sm btn-svg-icon">
                   <svg width="12px" height="12px">
