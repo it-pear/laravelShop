@@ -13,7 +13,10 @@ class BasketController extends Controller
         if (!is_null($orderId))
         {   
             $order = Order::findOrFail($orderId);
-        } 
+        } else {
+            $order = Order::create();
+        }
+        
         return view('basket', compact('order'));
     }
     public function checkout() 
