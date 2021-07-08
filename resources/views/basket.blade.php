@@ -1,4 +1,4 @@
-@extends('master')
+@extends('/layout/master')
 @section('title', 'Корзина')
 @section('content')
 <div class="site__body">
@@ -130,8 +130,10 @@
                     <td>{{ $order->getFullPrice() }}₽</td>
                   </tr>
                 </tfoot>
-              </table><a class="btn btn-primary btn-xl btn-block cart__checkout-button" href="checkout.html">Proceed
-                to checkout</a>
+              </table>
+              <a class="btn btn-primary btn-xl btn-block cart__checkout-button" href="{{ route('checkout') }}">
+                Оформить заказ
+              </a>
             </div>
           </div>
         </div>
@@ -141,3 +143,4 @@
   </div>
 </div>
 @endsection
+

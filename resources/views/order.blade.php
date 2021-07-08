@@ -1,4 +1,4 @@
-@extends('master')
+@extends('/layout/master')
 @section('title', 'Оформить заказ')
 @section('content')
   <div class="site__body">

@@ -19,10 +19,34 @@ class BasketController extends Controller
     
     return view('basket', compact('order'));
   }
+
+  public function checkoutConfirm(Request $request)
+  {
+    $orderId = session('orderId');
+    if (is_null($orderId)) {
+        return redirect()->route('index');
+    }
+    $order = Order::find($orderId);
+    $success = $order->saveOrder($request->name, $request->phone);
+    if ($success) {
+      session()->flash('success', 'Ваш заказ принят в обработку');
+    } else {
+      session()->flash('warning', 'Случилась ошибка');
+    }
+
+    return redirect()->route('index');
+  }
+  
   public function checkout() 
   {
-    return view('checkout');
+    $orderId = session('orderId');
+    if (is_null($orderId)) {
+        return redirect()->route('index');
+    }
+    $order = Order::find($orderId);
+    return view('checkout', compact('order'));
   }
+
   public function basketAdd($productId)
   {
     $orderId = session('orderId');
@@ -46,6 +70,7 @@ class BasketController extends Controller
     
     return redirect()->route('basket');
   }
+
   public function basketRemove($productId)
   {
     $orderId = session('orderId');
@@ -69,6 +94,7 @@ class BasketController extends Controller
 
     return redirect()->route('basket');
   }
+
   public function basketDelte($productId) 
   {
     $orderId = session('orderId');

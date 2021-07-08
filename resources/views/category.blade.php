@@ -1,7 +1,8 @@
-@extends('master')
+@extends('/layout/master')
 
 @section('title', 'Категория ' . $category->name)
 @section('content')
+
 	<div class="site__body">
 		<div class="page-header">
 			<div class="page-header__container container">
@@ -28,6 +29,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
+				
 					<div class="block">
 						<div class="products-view">
 							<div class="products-view__options">

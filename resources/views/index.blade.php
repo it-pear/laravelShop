@@ -1,11 +1,18 @@
-@extends('master')
+@extends('/layout/master')
 @section('title', 'Все категории')
 @section('content')
+
 <div class="site__body">
   <!-- .block-slideshow -->
   <div class="block-slideshow block-slideshow--layout--with-departments block">
     <div class="container">
       <div class="row">
+        <div class="col-12">
+          @if (session()->has('success'))
+            <br>
+            <div class="alert alert-success mb-3">{{ session()->get('success') }}</div>
+          @endif
+        </div>
         <div class="col-lg-3 d-none d-lg-block"></div>
         <div class="col-12 col-lg-9">
           <div class="block-slideshow__body">
@@ -4247,3 +4254,4 @@
   </div><!-- .block-product-columns / end -->
 </div>
 @endsection
+
