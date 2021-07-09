@@ -1,73 +1,79 @@
-@extends('layouts.app')
-
+@extends('/layout/master')
+@section('title', 'Вход')
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
+<div class="site__body">
+    <div class="page-header">
+        <div class="page-header__container container">
+            <div class="page-header__breadcrumb">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a> 
+                            <svg class="breadcrumb-arrow" width="6px" height="9px">
+                                <use xlink:href="images/sprite.svg#arrow-rounded-right-6x9"></use>
+                            </svg></li>
+                        <li class="breadcrumb-item"><a href="">Breadcrumb</a> <svg class="breadcrumb-arrow" width="6px" height="9px">
+                                <use xlink:href="images/sprite.svg#arrow-rounded-right-6x9"></use>
+                            </svg></li>
+                        <li class="breadcrumb-item active" aria-current="page">Мой аккаунт</li>
+                    </ol>
+                </nav>
+            </div>
+            <div class="page-header__title">
+                <h1>Мой аккаунт</h1>
+            </div>
+        </div>
+    </div>
+    <div class="block">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 d-flex flex-column">
+                    <div class="card flex-grow-1 mb-md-0">
+                        <div class="card-body">
+                            <h3 class="card-title">Вход</h3>
+                            <form action="">
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input type="email" class="form-control" placeholder="example@mail.ru">
                                 </div>
-                            </div>
+                                <div class="form-group">
+                                    <label>Пароль</label>
+                                    <input type="password" class="form-control" placeholder="Password">
+                                    <small class="form-text text-muted">
+                                        <a href="">Сбросить пароль</a>
+                                    </small>
+                                    
+                                </div>
+                                <div class="form-group">
+                                    <div class="form-check">
+                                        <span class="form-check-input input-check">
+                                            <span class="input-check__body">
+                                                <input class="input-check__input" type="checkbox" id="login-remember">
+                                                <span class="input-check__box"></span>
+                                                <svg class="input-check__icon" width="9px" height="7px">
+                                                    <use xlink:href="images/sprite.svg#check-9x7"></use>
+                                                </svg>
+                                            </span>
+                                        </span>
+                                        <label class="form-check-label" for="login-remember">Запомнить меня</label>
+                                    </div>
+                                </div>
+                                
+                                <button type="submit" class="btn btn-primary mt-4">Войти</button>                                    
+                            </form>
                         </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div>
-                        </div>
-                    </form>
+                    </div>
+                    <div>
+                        <br>
+                        <b>
+                            <small>Нет аккаунта ?</small><br>
+                            <a href="{{ route('register') }}">Создать аккаунт</a>
+                        </b>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 @endsection

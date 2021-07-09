@@ -20,6 +20,11 @@ class BasketController extends Controller
     return view('basket', compact('order'));
   }
 
+  public function template() 
+  {
+    return view('basket', compact('order'));
+  }  
+
   public function checkoutConfirm(Request $request)
   {
     $orderId = session('orderId');
@@ -98,8 +103,15 @@ class BasketController extends Controller
   public function basketDelte($productId) 
   {
     $orderId = session('orderId');
-    $order = Order::find($orderId);    
+    $order = Order::find($orderId);   
     $order->products()->detach($productId);
     return redirect()->route('basket');
+  }
+
+  public function template() 
+  {
+    $orderId = session('orderId');
+    $order = Order::find($orderId);   
+    return view('layout.master', $order);
   }
 }

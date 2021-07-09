@@ -64,15 +64,37 @@
                 </div>
               </div>
               <div class="mobile-header__indicators">
-                <div class="indicator indicator--mobile-search indicator--mobile d-md-none"><button class="indicator__button"><span class="indicator__area"><svg width="20px" height="20px">
+                <div class="indicator indicator--mobile-search indicator--mobile d-md-none">
+                  <button class="indicator__button">
+                    <span class="indicator__area">
+                      <svg width="20px" height="20px">
                         <use xlink:href="images/sprite.svg#search-20"></use>
-                      </svg></span></button></div>
-                <div class="indicator indicator--mobile d-sm-flex d-none"><a href="wishlist.html" class="indicator__button"><span class="indicator__area"><svg width="20px" height="20px">
+                      </svg>
+                    </span>
+                  </button>
+                </div>
+                <div class="indicator indicator--mobile d-sm-flex d-none">
+                  <a href="wishlist.html" class="indicator__button">
+                    <span class="indicator__area">
+                      <svg width="20px" height="20px">
                         <use xlink:href="images/sprite.svg#heart-20"></use>
-                      </svg> <span class="indicator__value">0</span></span></a></div>
-                <div class="indicator indicator--mobile"><a href="cart.html" class="indicator__button"><span class="indicator__area"><svg width="20px" height="20px">
-                        <use xlink:href="images/sprite.svg#cart-20"></use>
-                      </svg> <span class="indicator__value">3</span></span></a></div>
+                      </svg>
+                      <span class="indicator__value">0</span>
+                    </span>
+                  </a>
+                </div>
+                <div class="indicator indicator--mobile">
+                  <a href="{{ route('basket') }}" class="indicator__button">
+                    <span class="indicator__area">
+                      <svg xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 -31 512.00026 512" width="28">
+                        <path d="m164.960938 300.003906h.023437c.019531 0 .039063-.003906.058594-.003906h271.957031c6.695312 0 12.582031-4.441406 14.421875-10.878906l60-210c1.292969-4.527344.386719-9.394532-2.445313-13.152344-2.835937-3.757812-7.269531-5.96875-11.976562-5.96875h-366.632812l-10.722657-48.253906c-1.527343-6.863282-7.613281-11.746094-14.644531-11.746094h-90c-8.285156 0-15 6.714844-15 15s6.714844 15 15 15h77.96875c1.898438 8.550781 51.3125 230.917969 54.15625 243.710938-15.941406 6.929687-27.125 22.824218-27.125 41.289062 0 24.8125 20.1875 45 45 45h272c8.285156 0 15-6.714844 15-15s-6.714844-15-15-15h-272c-8.269531 0-15-6.730469-15-15 0-8.257812 6.707031-14.976562 14.960938-14.996094zm312.152343-210.003906-51.429687 180h-248.652344l-40-180zm0 0" />
+                        <path d="m150 405c0 24.8125 20.1875 45 45 45s45-20.1875 45-45-20.1875-45-45-45-45 20.1875-45 45zm45-15c8.269531 0 15 6.730469 15 15s-6.730469 15-15 15-15-6.730469-15-15 6.730469-15 15-15zm0 0" />
+                        <path d="m362 405c0 24.8125 20.1875 45 45 45s45-20.1875 45-45-20.1875-45-45-45-45 20.1875-45 45zm45-15c8.269531 0 15 6.730469 15 15s-6.730469 15-15 15-15-6.730469-15-15 6.730469-15 15-15zm0 0" />
+                      </svg>
+                      <span class="indicator__value">3</span>
+                    </span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -106,27 +128,27 @@
                       <div class="menu__submenus-container"></div>
                       <ul class="menu__list">
                         <li class="menu__item">
-                          
+
                           <div class="menu__item-submenu-offset"></div><a class="menu__item-link" href="account-dashboard.html">Dashboard</a>
                         </li>
                         <li class="menu__item">
-                          
+
                           <div class="menu__item-submenu-offset"></div><a class="menu__item-link" href="account-profile.html">Edit Profile</a>
                         </li>
                         <li class="menu__item">
-                          
+
                           <div class="menu__item-submenu-offset"></div><a class="menu__item-link" href="account-orders.html">Order History</a>
                         </li>
                         <li class="menu__item">
-                          
+
                           <div class="menu__item-submenu-offset"></div><a class="menu__item-link" href="account-addresses.html">Addresses</a>
                         </li>
                         <li class="menu__item">
-                          
+
                           <div class="menu__item-submenu-offset"></div><a class="menu__item-link" href="account-password.html">Password</a>
                         </li>
                         <li class="menu__item">
-                          
+
                           <div class="menu__item-submenu-offset"></div><a class="menu__item-link" href="account-login.html">Logout</a>
                         </li>
                       </ul>
@@ -144,21 +166,21 @@
                       <div class="menu__submenus-container"></div>
                       <ul class="menu__list">
                         <li class="menu__item">
-                          
+
                           <div class="menu__item-submenu-offset"></div><a class="menu__item-link" href="">€ Euro</a>
                         </li>
                         <li class="menu__item">
-                          
+
                           <div class="menu__item-submenu-offset"></div><a class="menu__item-link" href="">£ Pound
                             Sterling</a>
                         </li>
                         <li class="menu__item">
-                          
+
                           <div class="menu__item-submenu-offset"></div><a class="menu__item-link" href="">$ US
                             Dollar</a>
                         </li>
                         <li class="menu__item">
-                          
+
                           <div class="menu__item-submenu-offset"></div><a class="menu__item-link" href="">₽ Russian
                             Ruble</a>
                         </li>
@@ -177,31 +199,31 @@
                       <div class="menu__submenus-container"></div>
                       <ul class="menu__list">
                         <li class="menu__item">
-                          
+
                           <div class="menu__item-submenu-offset"></div><a class="menu__item-link" href="">
                             <div class="menu__item-icon"><img srcset="images/languages/language-1.png, images/languages/language-1@2x.png 2x" src="images/languages/language-1.png" alt=""></div>English
                           </a>
                         </li>
                         <li class="menu__item">
-                          
+
                           <div class="menu__item-submenu-offset"></div><a class="menu__item-link" href="">
                             <div class="menu__item-icon"><img srcset="images/languages/language-2.png, images/languages/language-2@2x.png 2x" src="images/languages/language-2.png" alt=""></div>French
                           </a>
                         </li>
                         <li class="menu__item">
-                          
+
                           <div class="menu__item-submenu-offset"></div><a class="menu__item-link" href="">
                             <div class="menu__item-icon"><img srcset="images/languages/language-3.png, images/languages/language-3@2x.png 2x" src="images/languages/language-3.png" alt=""></div>German
                           </a>
                         </li>
                         <li class="menu__item">
-                          
+
                           <div class="menu__item-submenu-offset"></div><a class="menu__item-link" href="">
                             <div class="menu__item-icon"><img srcset="images/languages/language-4.png, images/languages/language-4@2x.png 2x" src="images/languages/language-4.png" alt=""></div>Russian
                           </a>
                         </li>
                         <li class="menu__item">
-                          
+
                           <div class="menu__item-submenu-offset"></div><a class="menu__item-link" href="">
                             <div class="menu__item-icon"><img srcset="images/languages/language-5.png, images/languages/language-5@2x.png 2x" src="images/languages/language-5.png" alt=""></div>Italian
                           </a>
@@ -508,7 +530,7 @@
                                 <div class="menu__submenus-container"></div>
                                 <ul class="menu__list">
                                   <li class="menu__item">
-                                    
+
                                     <div class="menu__item-submenu-offset"></div><a class="menu__item-link" href="">Soldering Equipment <svg class="menu__item-arrow" width="6px" height="9px">
                                         <use xlink:href="images/sprite.svg#arrow-rounded-right-6x9"></use>
                                       </svg></a>
@@ -518,19 +540,19 @@
                                         <div class="menu__submenus-container"></div>
                                         <ul class="menu__list">
                                           <li class="menu__item">
-                                            
+
                                             <div class="menu__item-submenu-offset"></div><a class="menu__item-link" href="">Soldering Station</a>
                                           </li>
                                           <li class="menu__item">
-                                            
+
                                             <div class="menu__item-submenu-offset"></div><a class="menu__item-link" href="">Soldering Dryers</a>
                                           </li>
                                           <li class="menu__item">
-                                            
+
                                             <div class="menu__item-submenu-offset"></div><a class="menu__item-link" href="">Gas Soldering Iron</a>
                                           </li>
                                           <li class="menu__item">
-                                            
+
                                             <div class="menu__item-submenu-offset"></div><a class="menu__item-link" href="">Electric Soldering Iron</a>
                                           </li>
                                         </ul>
@@ -538,28 +560,28 @@
                                     </div>
                                   </li>
                                   <li class="menu__item">
-                                    
+
                                     <div class="menu__item-submenu-offset"></div><a class="menu__item-link" href="">Light Bulbs</a>
                                   </li>
                                   <li class="menu__item">
-                                    
+
                                     <div class="menu__item-submenu-offset"></div><a class="menu__item-link" href="">Batteries</a>
                                   </li>
                                   <li class="menu__item">
-                                    
+
                                     <div class="menu__item-submenu-offset"></div><a class="menu__item-link" href="">Light Fixtures</a>
                                   </li>
                                   <li class="menu__item">
-                                    
+
                                     <div class="menu__item-submenu-offset"></div><a class="menu__item-link" href="">Warm
                                       Floor</a>
                                   </li>
                                   <li class="menu__item">
-                                    
+
                                     <div class="menu__item-submenu-offset"></div><a class="menu__item-link" href="">Generators</a>
                                   </li>
                                   <li class="menu__item">
-                                    
+
                                     <div class="menu__item-submenu-offset"></div><a class="menu__item-link" href="">UPS</a>
                                   </li>
                                 </ul>
@@ -632,123 +654,142 @@
                       </a>
                     </li>
 
-                    
+
                   </ul>
                 </div><!-- .nav-links / end -->
                 <div class="nav-panel__indicators">
-                  <div class="indicator"><a href="wishlist.html" class="indicator__button"><span class="indicator__area"><svg width="20px" height="20px">
+                  <div class="indicator">
+                    <a href="wishlist.html" class="indicator__button"><span class="indicator__area"><svg width="20px" height="20px">
                           <use xlink:href="images/sprite.svg#heart-20"></use>
                         </svg> <span class="indicator__value">0</span></span></a></div>
-                  <div class="indicator indicator--trigger--click"><a href="cart.html" class="indicator__button"><span class="indicator__area"><svg width="20px" height="20px">
-                          <use xlink:href="images/sprite.svg#cart-20"></use>
-                        </svg> <span class="indicator__value">3</span></span></a>
+                  <div class="indicator indicator--trigger--click">
+                    <a href="#" class="indicator__button">
+                      <span class="indicator__area">
+                      <svg xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 -31 512.00026 512" width="28">
+                        <path d="m164.960938 300.003906h.023437c.019531 0 .039063-.003906.058594-.003906h271.957031c6.695312 0 12.582031-4.441406 14.421875-10.878906l60-210c1.292969-4.527344.386719-9.394532-2.445313-13.152344-2.835937-3.757812-7.269531-5.96875-11.976562-5.96875h-366.632812l-10.722657-48.253906c-1.527343-6.863282-7.613281-11.746094-14.644531-11.746094h-90c-8.285156 0-15 6.714844-15 15s6.714844 15 15 15h77.96875c1.898438 8.550781 51.3125 230.917969 54.15625 243.710938-15.941406 6.929687-27.125 22.824218-27.125 41.289062 0 24.8125 20.1875 45 45 45h272c8.285156 0 15-6.714844 15-15s-6.714844-15-15-15h-272c-8.269531 0-15-6.730469-15-15 0-8.257812 6.707031-14.976562 14.960938-14.996094zm312.152343-210.003906-51.429687 180h-248.652344l-40-180zm0 0" />
+                        <path d="m150 405c0 24.8125 20.1875 45 45 45s45-20.1875 45-45-20.1875-45-45-45-45 20.1875-45 45zm45-15c8.269531 0 15 6.730469 15 15s-6.730469 15-15 15-15-6.730469-15-15 6.730469-15 15-15zm0 0" />
+                        <path d="m362 405c0 24.8125 20.1875 45 45 45s45-20.1875 45-45-20.1875-45-45-45-45 20.1875-45 45zm45-15c8.269531 0 15 6.730469 15 15s-6.730469 15-15 15-15-6.730469-15-15 6.730469-15 15-15zm0 0" />
+                      </svg>
+                        <span class="indicator__value">3</span>
+                      </span>
+                    </a>
                     <div class="indicator__dropdown">
                       <!-- .dropcart -->
                       <div class="dropcart dropcart--style--dropdown">
                         <div class="dropcart__body">
                           <div class="dropcart__products-list">
                             <div class="dropcart__product">
-                              <div class="product-image dropcart__product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="images/products/product-1.jpg" alt=""></a></div>
+                         
+                            
+                              <div class="product-image dropcart__product-image">
+                                <a href="product.html" class="product-image__body">
+                                  <img class="product-image__img" src="images/products/product-1.jpg" alt="">
+                                </a>
+                              </div>
                               <div class="dropcart__product-info">
-                                <div class="dropcart__product-name"><a href="product.html">Electric Planer Brandix
-                                    KL370090G 300 Watts</a></div>
+                                <div class="dropcart__product-name">
+                                  <a href="product.html">Electric Planer Brandix KL370090G 300 Watts</a>
+                                </div>
                                 <ul class="dropcart__product-options">
                                   <li>Color: Yellow</li>
                                   <li>Material: Aluminium</li>
                                 </ul>
-                                <div class="dropcart__product-meta"><span class="dropcart__product-quantity">2</span> ×
+                                <div class="dropcart__product-meta">
+                                  <span class="dropcart__product-quantity">2</span> ×
                                   <span class="dropcart__product-price">$699.00</span>
                                 </div>
-                              </div><button type="button" class="dropcart__product-remove btn btn-light btn-sm btn-svg-icon"><svg width="10px" height="10px">
+                              </div>
+                              <button type="button" class="dropcart__product-remove btn btn-light btn-sm btn-svg-icon">
+                                <svg width="10px" height="10px">
                                   <use xlink:href="images/sprite.svg#cross-10"></use>
-                                </svg></button>
+                                </svg>
+                              </button>
                             </div>
-                            <div class="dropcart__product">
-                              <div class="product-image dropcart__product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="images/products/product-2.jpg" alt=""></a></div>
-                              <div class="dropcart__product-info">
-                                <div class="dropcart__product-name"><a href="product.html">Undefined Tool IRadix
-                                    DPS3000SY 2700 watts</a></div>
-                                <div class="dropcart__product-meta"><span class="dropcart__product-quantity">1</span> ×
-                                  <span class="dropcart__product-price">$849.00</span>
-                                </div>
-                              </div><button type="button" class="dropcart__product-remove btn btn-light btn-sm btn-svg-icon"><svg width="10px" height="10px">
-                                  <use xlink:href="images/sprite.svg#cross-10"></use>
-                                </svg></button>
-                            </div>
-                            <div class="dropcart__product">
-                              <div class="product-image dropcart__product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="images/products/product-5.jpg" alt=""></a></div>
-                              <div class="dropcart__product-info">
-                                <div class="dropcart__product-name"><a href="product.html">Brandix Router Power Tool
-                                    2017ERXPK</a></div>
-                                <ul class="dropcart__product-options">
-                                  <li>Color: True Red</li>
-                                </ul>
-                                <div class="dropcart__product-meta"><span class="dropcart__product-quantity">3</span> ×
-                                  <span class="dropcart__product-price">$1,210.00</span>
-                                </div>
-                              </div><button type="button" class="dropcart__product-remove btn btn-light btn-sm btn-svg-icon"><svg width="10px" height="10px">
-                                  <use xlink:href="images/sprite.svg#cross-10"></use>
-                                </svg></button>
-                            </div>
+                            
                           </div>
                           <div class="dropcart__totals">
                             <table>
                               <tr>
-                                <th>Subtotal</th>
-                                <td>$5,877.00</td>
-                              </tr>
-                              <tr>
-                                <th>Shipping</th>
-                                <td>$25.00</td>
-                              </tr>
-                              <tr>
-                                <th>Tax</th>
-                                <td>$0.00</td>
-                              </tr>
-                              <tr>
-                                <th>Total</th>
+                                <th>Итог</th>
                                 <td>$5,902.00</td>
                               </tr>
                             </table>
                           </div>
-                          <div class="dropcart__buttons"><a class="btn btn-secondary" href="cart.html">View Cart</a> <a class="btn btn-primary" href="checkout.html">Checkout</a></div>
+                          <div class="dropcart__buttons">
+                            <a class="btn btn-secondary" href="cart.html">В корзину</a>
+                            <a class="btn btn-primary" href="checkout.html">Оформить</a>
+                          </div>
                         </div>
                       </div><!-- .dropcart / end -->
                     </div>
                   </div>
-                  <div class="indicator indicator--trigger--click"><a href="account-login.html" class="indicator__button"><span class="indicator__area"><svg width="20px" height="20px">
-                          <use xlink:href="images/sprite.svg#person-20"></use>
-                        </svg></span></a>
+                  <div class="indicator indicator--trigger--click">
+                    <a href="account-login.html" class="indicator__button">
+                      <span class="indicator__area">
+                        <!-- <svg version="1.1" id="Capa_1" width="28" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                        viewBox="0 0 111.36 111.36" style="enable-background:new 0 0 111.36 111.36;" xml:space="preserve">
+                        <g>
+                          <g>
+                            <path style="fill:#fff;" d="M79.748,13.344c2.147-0.662,4.012-1.453,5.071-2.405c0,0,0.107,2.97,1.696,6.234
+                              c8.697,3.335,9.785,11.034,9.538,19.011v7.333c0.458-0.233,0.927-0.326,1.374-0.208c1.503,0.404,0.698,4.831,0.007,7.473
+                              c-0.673,2.57-2.613,4.098-4.098,3.826c-1.106,6.868-3.507,11.81-6.861,15.088c14.53,5.222,24.884,18.578,24.884,34.285h-9.91
+                              c-1.113-15.432-10.765-29.293-25.113-36.257c2.222-3.346,3.847-7.423,4.853-12.2c2.258-1.045,4.116-3.357,4.892-6.313
+                              c0.673-2.541,2.595-9.878-1.403-12.143v-4.753C84.815,28.06,85.051,19.567,79.748,13.344z M34.901,67.778
+                              c-2.072-3.293-3.579-7.347-4.559-12.25c-2.426-1.102-4.524-3.561-5.29-6.488c-0.787-3.003-2.065-9.792,1.786-11.961v-4.864
+                              c0-1.46-0.039-2.849-0.079-4.169c-0.132-4.531-0.043-8.425,1.177-11.621c-14.806,2.434-12.483,9.037-12.483,19.759v7.333
+                              c-0.458-0.233-0.923-0.326-1.367-0.208c-1.503,0.404-1.049,4.663-0.358,7.308c0.68,2.591,2.992,4.287,4.474,3.987
+                              c1.124,7.219,3.375,12.018,6.478,15.16C10.257,75.043,0,88.349,0,103.985h9.91C11.019,88.621,20.628,74.768,34.901,67.778z
+                              M70.543,69.17c3.701-3.622,6.352-9.058,7.569-16.634c1.628,0.297,3.769-1.385,4.513-4.219c0.762-2.91,1.65-7.795-0.011-8.239
+                              c-0.49-0.132-1.002-0.032-1.51,0.225v-8.088c0.272-8.793-0.934-17.282-10.515-20.958c-1.754-3.6-1.865-6.875-1.865-6.875
+                              c-4.316,3.887-20.704,5.461-20.704,5.461l0.186,0.05c-20.779,2.137-17.78,9.606-17.78,22.321v8.088
+                              c-0.508-0.258-1.016-0.361-1.51-0.225c-1.657,0.444-1.156,5.143-0.39,8.056c0.748,2.856,3.296,4.728,4.928,4.398
+                              c1.242,7.959,3.726,13.256,7.14,16.713c-15.901,5.816-27.214,20.5-27.214,37.732h84.608C97.978,89.656,86.562,74.921,70.543,69.17
+                              z"/>
+                          </g>
+                        </g>
+                      </svg> -->
+                        Войти
+                      </span>
+                    </a>
                     <div class="indicator__dropdown">
                       <div class="account-menu">
                         <form class="account-menu__form">
-                          <div class="account-menu__form-title">Log In to Your Account</div>
-                          <div class="form-group"><label for="header-signin-email" class="sr-only">Email address</label>
-                            <input id="header-signin-email" type="email" class="form-control form-control-sm" placeholder="Email address">
+                          <div class="account-menu__form-title">Вход в аккаунт</div>
+                          <!-- <div class="form-group">
+                              <label for="header-signin-email" class="sr-only">Email</label>
+                              <input id="header-signin-email" type="email" class="form-control form-control-sm" placeholder="example@mail.ru">
+                            </div> -->
+                          <!-- <div class="form-group"> -->
+                          <!-- <label for="header-signin-password" class="sr-only">Пароль</label> -->
+                          <!-- <div class="account-menu__form-forgot">
+                                <input id="header-signin-password" type="password" class="form-control form-control-sm" placeholder="Пароль">
+                                <a href="" class="account-menu__form-forgot-link">Забыли?</a>
+                             </div> -->
+                          <!-- </div> -->
+                          <div class="form-group account-menu__form-button">
+                            <a href="{{ route('login') }}" class="btn btn-primary btn-sm">Войти</a>
                           </div>
-                          <div class="form-group"><label for="header-signin-password" class="sr-only">Password</label>
-                            <div class="account-menu__form-forgot"><input id="header-signin-password" type="password" class="form-control form-control-sm" placeholder="Password"> <a href="" class="account-menu__form-forgot-link">Forgot?</a></div>
+                          <div class="account-menu__form-link">
+                            <a href="{{ route('register') }}">Создать аккаунт</a>
                           </div>
-                          <div class="form-group account-menu__form-button"><button type="submit" class="btn btn-primary btn-sm">Login</button></div>
-                          <div class="account-menu__form-link"><a href="account-login.html">Create An Account</a></div>
                         </form>
                         <div class="account-menu__divider"></div><a href="account-dashboard.html" class="account-menu__user">
                           <div class="account-menu__user-avatar"><img src="images/avatars/avatar-3.jpg" alt=""></div>
                           <div class="account-menu__user-info">
-                            <div class="account-menu__user-name">Helena Garcia</div>
+                            <div class="account-menu__user-name">Галина Ивановна</div>
                             <div class="account-menu__user-email">stroyka@example.com</div>
                           </div>
                         </a>
                         <div class="account-menu__divider"></div>
                         <ul class="account-menu__links">
-                          <li><a href="account-profile.html">Edit Profile</a></li>
-                          <li><a href="account-orders.html">Order History</a></li>
-                          <li><a href="account-addresses.html">Addresses</a></li>
-                          <li><a href="account-password.html">Password</a></li>
+                          <li><a href="account-profile.html">Редактировать профиль</a></li>
+                          <li><a href="account-orders.html">История заказов</a></li>
+                          <li><a href="account-addresses.html">Адрес</a></li>
+                          <li><a href="account-password.html">Пароль</a></li>
                         </ul>
                         <div class="account-menu__divider"></div>
                         <ul class="account-menu__links">
-                          <li><a href="account-login.html">Logout</a></li>
+                          <li><a href="account-login.html">Выйти</a></li>
                         </ul>
                       </div>
                     </div>

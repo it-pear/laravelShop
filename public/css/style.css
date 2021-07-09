@@ -159,6 +159,12 @@ h6 {
 .page-header__title {
   padding-top: 6px;
 }
+.page-header__title__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
 .page-header__title h1 {
   margin-bottom: 0;
 }
@@ -3464,7 +3470,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-origin {
   font-weight: 700;
 }
 .account-menu__form-button {
-  margin-top: 32px;
+  /* margin-top: 32px; */
   text-align: center;
 }
 .account-menu__form-button .btn {
@@ -6230,7 +6236,6 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-origin {
   margin-left: 0.5rem;
 }
 .cart__buttons {
-  width: calc(50% - 15px);
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: end;

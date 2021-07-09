@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Product;
 
+
+
 class MainController extends Controller
 {
   public function index() {
@@ -23,5 +25,5 @@ class MainController extends Controller
   public function product($category, $product = null) {
     return view('product', ['product' => $product]);
   }
-  
+
 }

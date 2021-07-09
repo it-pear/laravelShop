@@ -17,7 +17,8 @@
           </ol>
         </nav>
       </div>
-      <div class="page-header__title">
+      
+      <div class="page-header__title page-header__title__row">
         <h1>
           @if(count($order->products) == 0)
             Корзина товаров пуста
@@ -25,6 +26,9 @@
           Корзина товаров
           @endif
         </h1>
+        <div class="cart__buttons">
+          <a href="" class="btn btn-primary cart__update-button">Обновить корзину</a>
+        </div>
       </div>
     </div>
   </div>
@@ -97,37 +101,16 @@
 
         </tbody>
       </table>
-      <div class="cart__actions">
-        <form class="cart__coupon-form"><label for="input-coupon-code" class="sr-only">Password</label> <input type="text" class="form-control" id="input-coupon-code" placeholder="Coupon Code"> <button type="submit" class="btn btn-primary">Apply Coupon</button></form>
-        <div class="cart__buttons"><a href="index.html" class="btn btn-light">Continue Shopping</a> <a href="" class="btn btn-primary cart__update-button">Update Cart</a></div>
-      </div>
+      
       <div class="row justify-content-end pt-5">
         <div class="col-12 col-md-7 col-lg-6 col-xl-5">
           <div class="card">
             <div class="card-body">
-              <h3 class="card-title">Cart Totals</h3>
+              <h3 class="card-title" style="font-weight: 300;">Итоговая цена заказа</h3>
               <table class="cart__totals">
-                <thead class="cart__totals-header">
-                  <tr>
-                    <th>Subtotal</th>
-                    <td>$5,877.00</td>
-                  </tr>
-                </thead>
-                <tbody class="cart__totals-body">
-                  <tr>
-                    <th>Shipping</th>
-                    <td>$25.00<div class="cart__calc-shipping"><a href="#">Calculate Shipping</a></div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th>Tax</th>
-                    <td>$0.00</td>
-                  </tr>
-                </tbody>
                 <tfoot class="cart__totals-footer">
                   <tr>
-                    <th>Итог</th>
-                    <td>{{ $order->getFullPrice() }}₽</td>
+                    <td style="text-align: left;font-weight: 600;">{{ $order->getFullPrice() }}₽</td>
                   </tr>
                 </tfoot>
               </table>
