@@ -108,10 +108,4 @@ class BasketController extends Controller
     return redirect()->route('basket');
   }
 
-  public function template() 
-  {
-    $orderId = session('orderId');
-    $order = Order::find($orderId);   
-    return view('layout.master', $order);
-  }
 }

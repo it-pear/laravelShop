@@ -91,7 +91,7 @@
                         <path d="m150 405c0 24.8125 20.1875 45 45 45s45-20.1875 45-45-20.1875-45-45-45-45 20.1875-45 45zm45-15c8.269531 0 15 6.730469 15 15s-6.730469 15-15 15-15-6.730469-15-15 6.730469-15 15-15zm0 0" />
                         <path d="m362 405c0 24.8125 20.1875 45 45 45s45-20.1875 45-45-20.1875-45-45-45-45 20.1875-45 45zm45-15c8.269531 0 15 6.730469 15 15s-6.730469 15-15 15-15-6.730469-15-15 6.730469-15 15-15zm0 0" />
                       </svg>
-                      <span class="indicator__value">3</span>
+                      <span class="indicator__value">{{ $order->getPriceAllCount() }}</span>
                     </span>
                   </a>
                 </div>
@@ -614,34 +614,6 @@
                             <use xlink:href="images/sprite.svg#arrow-rounded-down-9x6"></use>
                           </svg></div>
                       </a>
-                      <!-- <div class="nav-links__submenu nav-links__submenu--type--menu">
-
-                        <div class="menu menu--layout--classic">
-                          <div class="menu__submenus-container"></div>
-                          <ul class="menu__list">
-                            <li class="menu__item">
-                              
-                              <div class="menu__item-submenu-offset"></div><a class="menu__item-link" href="/">Home 1 Slideshow</a>
-                            </li>
-                            <li class="menu__item">
-                              
-                              <div class="menu__item-submenu-offset"></div><a class="menu__item-link" href="index-2.html">Home 2 Slideshow</a>
-                            </li>
-                            <li class="menu__item">
-                              
-                              <div class="menu__item-submenu-offset"></div><a class="menu__item-link" href="index-3.html">Home 1 Finder</a>
-                            </li>
-                            <li class="menu__item">
-                              
-                              <div class="menu__item-submenu-offset"></div><a class="menu__item-link" href="index-4.html">Home 2 Finder</a>
-                            </li>
-                            <li class="menu__item">
-                              
-                              <div class="menu__item-submenu-offset"></div><a class="menu__item-link" href="offcanvas-cart.html">Offcanvas Cart</a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div> -->
                     </li>
                     <li class="nav-links__item">
                       <a class="nav-links__item-link" href="{{ route('categories') }}">
@@ -670,7 +642,7 @@
                         <path d="m150 405c0 24.8125 20.1875 45 45 45s45-20.1875 45-45-20.1875-45-45-45-45 20.1875-45 45zm45-15c8.269531 0 15 6.730469 15 15s-6.730469 15-15 15-15-6.730469-15-15 6.730469-15 15-15zm0 0" />
                         <path d="m362 405c0 24.8125 20.1875 45 45 45s45-20.1875 45-45-20.1875-45-45-45-45 20.1875-45 45zm45-15c8.269531 0 15 6.730469 15 15s-6.730469 15-15 15-15-6.730469-15-15 6.730469-15 15-15zm0 0" />
                       </svg>
-                        <span class="indicator__value">3</span>
+                        <span class="indicator__value">{{ $order->getPriceAllCount() }}</span>
                       </span>
                     </a>
                     <div class="indicator__dropdown">
@@ -678,119 +650,101 @@
                       <div class="dropcart dropcart--style--dropdown">
                         <div class="dropcart__body">
                           <div class="dropcart__products-list">
-                            <div class="dropcart__product">
-                         
+                            @if(count($order->products) == 0)
+                              Корзина товаров пуста
+                            @else
                             
-                              <div class="product-image dropcart__product-image">
-                                <a href="product.html" class="product-image__body">
-                                  <img class="product-image__img" src="images/products/product-1.jpg" alt="">
-                                </a>
-                              </div>
-                              <div class="dropcart__product-info">
-                                <div class="dropcart__product-name">
-                                  <a href="product.html">Electric Planer Brandix KL370090G 300 Watts</a>
-                                </div>
-                                <ul class="dropcart__product-options">
-                                  <li>Color: Yellow</li>
-                                  <li>Material: Aluminium</li>
-                                </ul>
-                                <div class="dropcart__product-meta">
-                                  <span class="dropcart__product-quantity">2</span> ×
-                                  <span class="dropcart__product-price">$699.00</span>
-                                </div>
-                              </div>
-                              <button type="button" class="dropcart__product-remove btn btn-light btn-sm btn-svg-icon">
-                                <svg width="10px" height="10px">
-                                  <use xlink:href="images/sprite.svg#cross-10"></use>
-                                </svg>
-                              </button>
+                              
+                                @foreach ($order->products as $product)
+                                <div class="dropcart__product">
+                                  <div class="product-image dropcart__product-image">
+                                    <a href="product.html" class="product-image__body">
+                                      <img class="product-image__img" src="images/products/product-1.jpg" alt="">
+                                    </a>
+                                  </div>
+                                  <div class="dropcart__product-info">
+                                    <div class="dropcart__product-name">
+                                      <a href="product.html">{{ $product->name }}</a>
+                                    </div>
+                                    <ul class="dropcart__product-options">
+                                      <li>{{ $product->category->name }}</li>
+                                      <!-- <li>Material: Aluminium</li> -->
+                                    </ul>
+                                    <div class="dropcart__product-meta">
+                                      <span class="dropcart__product-quantity">{{ $product->pivot->count }}</span> ×
+                                      <span class="dropcart__product-price">{{ $product->price }}₽</span>
+                                    </div>
+                                  </div>
+                                  </div>
+                                @endforeach
+
+                              @endif
+
+                          </div>
+                          @if(count($order->products) == 0)
+                          @else
+                            <div class="dropcart__totals">
+                              <table>
+                                <tr>
+                                  <th>Итог</th>
+                                  <td>{{ $order->getFullPrice() }}₽</td>
+                                </tr>
+                              </table>
                             </div>
-                            
-                          </div>
-                          <div class="dropcart__totals">
-                            <table>
-                              <tr>
-                                <th>Итог</th>
-                                <td>$5,902.00</td>
-                              </tr>
-                            </table>
-                          </div>
-                          <div class="dropcart__buttons">
-                            <a class="btn btn-secondary" href="cart.html">В корзину</a>
-                            <a class="btn btn-primary" href="checkout.html">Оформить</a>
-                          </div>
+                            <div class="dropcart__buttons">
+                              <a class="btn btn-secondary" href="{{ route('basket') }}">В корзину</a>
+                              <a class="btn btn-primary" href="{{ route('checkout') }}">Оформить</a>
+                            </div>
+                          @endif
                         </div>
                       </div><!-- .dropcart / end -->
                     </div>
                   </div>
                   <div class="indicator indicator--trigger--click">
-                    <a href="account-login.html" class="indicator__button">
+                    <a href="{{ route('login') }}" class="indicator__button">
                       <span class="indicator__area">
-                        <!-- <svg version="1.1" id="Capa_1" width="28" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                        viewBox="0 0 111.36 111.36" style="enable-background:new 0 0 111.36 111.36;" xml:space="preserve">
-                        <g>
-                          <g>
-                            <path style="fill:#fff;" d="M79.748,13.344c2.147-0.662,4.012-1.453,5.071-2.405c0,0,0.107,2.97,1.696,6.234
-                              c8.697,3.335,9.785,11.034,9.538,19.011v7.333c0.458-0.233,0.927-0.326,1.374-0.208c1.503,0.404,0.698,4.831,0.007,7.473
-                              c-0.673,2.57-2.613,4.098-4.098,3.826c-1.106,6.868-3.507,11.81-6.861,15.088c14.53,5.222,24.884,18.578,24.884,34.285h-9.91
-                              c-1.113-15.432-10.765-29.293-25.113-36.257c2.222-3.346,3.847-7.423,4.853-12.2c2.258-1.045,4.116-3.357,4.892-6.313
-                              c0.673-2.541,2.595-9.878-1.403-12.143v-4.753C84.815,28.06,85.051,19.567,79.748,13.344z M34.901,67.778
-                              c-2.072-3.293-3.579-7.347-4.559-12.25c-2.426-1.102-4.524-3.561-5.29-6.488c-0.787-3.003-2.065-9.792,1.786-11.961v-4.864
-                              c0-1.46-0.039-2.849-0.079-4.169c-0.132-4.531-0.043-8.425,1.177-11.621c-14.806,2.434-12.483,9.037-12.483,19.759v7.333
-                              c-0.458-0.233-0.923-0.326-1.367-0.208c-1.503,0.404-1.049,4.663-0.358,7.308c0.68,2.591,2.992,4.287,4.474,3.987
-                              c1.124,7.219,3.375,12.018,6.478,15.16C10.257,75.043,0,88.349,0,103.985h9.91C11.019,88.621,20.628,74.768,34.901,67.778z
-                              M70.543,69.17c3.701-3.622,6.352-9.058,7.569-16.634c1.628,0.297,3.769-1.385,4.513-4.219c0.762-2.91,1.65-7.795-0.011-8.239
-                              c-0.49-0.132-1.002-0.032-1.51,0.225v-8.088c0.272-8.793-0.934-17.282-10.515-20.958c-1.754-3.6-1.865-6.875-1.865-6.875
-                              c-4.316,3.887-20.704,5.461-20.704,5.461l0.186,0.05c-20.779,2.137-17.78,9.606-17.78,22.321v8.088
-                              c-0.508-0.258-1.016-0.361-1.51-0.225c-1.657,0.444-1.156,5.143-0.39,8.056c0.748,2.856,3.296,4.728,4.928,4.398
-                              c1.242,7.959,3.726,13.256,7.14,16.713c-15.901,5.816-27.214,20.5-27.214,37.732h84.608C97.978,89.656,86.562,74.921,70.543,69.17
-                              z"/>
-                          </g>
-                        </g>
-                      </svg> -->
-                        Войти
+                        @guest
+                          Войти
+                        @endguest
+                        @auth
+                          Профиль
+                        @endauth
                       </span>
                     </a>
                     <div class="indicator__dropdown">
                       <div class="account-menu">
-                        <form class="account-menu__form">
-                          <div class="account-menu__form-title">Вход в аккаунт</div>
-                          <!-- <div class="form-group">
-                              <label for="header-signin-email" class="sr-only">Email</label>
-                              <input id="header-signin-email" type="email" class="form-control form-control-sm" placeholder="example@mail.ru">
-                            </div> -->
-                          <!-- <div class="form-group"> -->
-                          <!-- <label for="header-signin-password" class="sr-only">Пароль</label> -->
-                          <!-- <div class="account-menu__form-forgot">
-                                <input id="header-signin-password" type="password" class="form-control form-control-sm" placeholder="Пароль">
-                                <a href="" class="account-menu__form-forgot-link">Забыли?</a>
-                             </div> -->
-                          <!-- </div> -->
-                          <div class="form-group account-menu__form-button">
-                            <a href="{{ route('login') }}" class="btn btn-primary btn-sm">Войти</a>
-                          </div>
-                          <div class="account-menu__form-link">
-                            <a href="{{ route('register') }}">Создать аккаунт</a>
-                          </div>
-                        </form>
-                        <div class="account-menu__divider"></div><a href="account-dashboard.html" class="account-menu__user">
-                          <div class="account-menu__user-avatar"><img src="images/avatars/avatar-3.jpg" alt=""></div>
-                          <div class="account-menu__user-info">
-                            <div class="account-menu__user-name">Галина Ивановна</div>
-                            <div class="account-menu__user-email">stroyka@example.com</div>
-                          </div>
-                        </a>
-                        <div class="account-menu__divider"></div>
-                        <ul class="account-menu__links">
-                          <li><a href="account-profile.html">Редактировать профиль</a></li>
-                          <li><a href="account-orders.html">История заказов</a></li>
-                          <li><a href="account-addresses.html">Адрес</a></li>
-                          <li><a href="account-password.html">Пароль</a></li>
-                        </ul>
-                        <div class="account-menu__divider"></div>
-                        <ul class="account-menu__links">
-                          <li><a href="account-login.html">Выйти</a></li>
-                        </ul>
+                        @guest
+                          <form class="account-menu__form">
+                            <div class="account-menu__form-title">Вход в аккаунт</div>
+                            <div class="form-group account-menu__form-button">
+                            
+                              <a href="{{ route('login') }}" class="btn btn-primary btn-sm">Войти</a>
+                            </div>
+                            <div class="account-menu__form-link">
+                              <a href="{{ route('register') }}">Создать аккаунт</a>
+                            </div>
+                          </form>
+                        @endguest
+                        @auth
+                          <div class="account-menu__divider"></div><a href="account-dashboard.html" class="account-menu__user">
+                            <div class="account-menu__user-avatar"><img src="images/avatars/avatar-3.jpg" alt=""></div>
+                            <div class="account-menu__user-info">
+                              <div class="account-menu__user-name">Галина Ивановна</div>
+                              <div class="account-menu__user-email">stroyka@example.com</div>
+                            </div>
+                          </a>
+                          <div class="account-menu__divider"></div>
+                          <ul class="account-menu__links">
+                            <li><a href="account-profile.html">Редактировать профиль</a></li>
+                            <li><a href="account-orders.html">История заказов</a></li>
+                            <li><a href="account-addresses.html">Адрес</a></li>
+                            <li><a href="account-password.html">Пароль</a></li>
+                          </ul>
+                          <div class="account-menu__divider"></div>
+                          <ul class="account-menu__links">
+                            <li><a href="{{ route('get-logout') }}">Выйти</a></li>
+                          </ul>
+                        @endauth
                       </div>
                     </div>
                   </div>
