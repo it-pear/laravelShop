@@ -692,6 +692,8 @@
                                 @endforeach
 
                               @endif
+                            @else 
+                              Корзина товаров пуста
                             @endif
                           </div>
                           @if (isset($order->products))

@@ -13,6 +13,10 @@ Auth::routes([
 
 Route::get('/logout', 'App\Http\Controllers\Auth\LoginController@logout')->name('get-logout');
 
+Route::group(['middleware' => 'auth'], function(){
+  Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
+});
+
 Route::get('/', 'App\Http\Controllers\MainController@index')->name('index');
 Route::get('/categories', 'App\Http\Controllers\MainController@categories')->name('categories');
 Route::get('/basket', 'App\Http\Controllers\BasketController@basket')->name('basket');
@@ -27,13 +31,9 @@ Route::get('/{category}/{product?}', 'App\Http\Controllers\MainController@produc
 
 View::composer(['/layout/master'], function() {
   $orderId = session('orderId');
-  if (is_null($orderId)) 
+  if (!is_null($orderId)) 
   {
-    $order = Order::create();
-    session(['orderId' => $order->id]);
-  } else {
     $order = Order::find($orderId);
+    View::share('order', $order);
   }
-
-  View::share('order', $order);
 });

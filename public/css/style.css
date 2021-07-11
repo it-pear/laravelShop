@@ -12299,3 +12299,25 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-origin {
   border-radius: 2px;
   padding: 28px;
 }
+
+
+
+/* admin */
+.sidebar-sticky {
+  padding-top: 10px;
+}
+.sidebar-sticky .nav-link {
+  display: flex;
+}
+.sidebar-sticky .nav-link {
+  padding: 15px;
+}
+.sidebar-sticky .nav-link:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+.sidebar-sticky .nav-link svg {
+  margin-right: 10px;
+}
+.sidebar-sticky .nav-link {
+  color: #3d464d;
+}
