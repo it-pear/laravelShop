@@ -20,6 +20,16 @@ class Order extends Model
         return $sum;
     }
 
+    public function getPriceAllCount()
+    {
+        $sum = 0;
+        foreach ($this->products as $product) {
+            $sum += $product->pivot->count;
+        }
+        return $sum;
+    }
+
+
     public function saveOrder($name, $phone) 
     {
         if ($this->status == 0) {

@@ -27,12 +27,9 @@ Route::get('/{category}/{product?}', 'App\Http\Controllers\MainController@produc
 
 View::composer(['/layout/master'], function() {
   $orderId = session('orderId');
-  // if (is_null($orderId))
-  // {   
-  //   $order = Order::create();
-  // } 
+  // dd($orderId);
+  // $order = Order::create();
   $order = Order::find($orderId);
-  // session(['orderId' => $order->id]);
 
   View::share('order', $order);
 });
