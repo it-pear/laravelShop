@@ -31,18 +31,19 @@
                     <div class="card flex-grow-1 mb-0">
                     <div class="card-body">
                         <h3 class="card-title">Регистрация</h3>
-                        <form action=""> 
+                        <form action="{{ route('register') }}" method="POST"> 
+                            @csrf
                             <div class="form-group"><label>ФИО</label>
-                                <input type="text" class="form-control" placeholder="Иванов Иван Иванович">
+                                <input type="text" name="name" class="form-control" placeholder="Иванов Иван Иванович">
                             </div>
                             <div class="form-group"><label>Email</label>
-                                <input type="email" class="form-control" placeholder="example.mail.ru">
+                                <input type="email" name="email" class="form-control" placeholder="example.mail.ru">
                             </div>
                             <div class="form-group"><label>Пароль</label> 
-                                <input type="password" class="form-control" placeholder="Password">
+                                <input type="password" name="password" class="form-control" placeholder="Password">
                             </div>
                             <div class="form-group"><label>Повторите пароль</label>
-                                <input type="password" class="form-control" placeholder="Password">
+                                <input type="password" name="password_confirmation" class="form-control" placeholder="Password">
                             </div>
                             <button type="submit" class="btn btn-primary mt-4">Зарегистрироваться</button>
                         </form>

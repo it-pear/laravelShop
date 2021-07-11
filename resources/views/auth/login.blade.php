@@ -31,14 +31,15 @@
                     <div class="card flex-grow-1 mb-md-0">
                         <div class="card-body">
                             <h3 class="card-title">Вход</h3>
-                            <form action="">
+                            <form action="{{ route('login') }}" method="POST">
+                                @csrf
                                 <div class="form-group">
                                     <label>Email</label>
-                                    <input type="email" class="form-control" placeholder="example@mail.ru">
+                                    <input type="email" name="email" class="form-control" placeholder="example@mail.ru">
                                 </div>
                                 <div class="form-group">
                                     <label>Пароль</label>
-                                    <input type="password" class="form-control" placeholder="Password">
+                                    <input type="password" name="password" class="form-control" placeholder="Password">
                                     <small class="form-text text-muted">
                                         <a href="">Сбросить пароль</a>
                                     </small>
