@@ -91,7 +91,13 @@
                         <path d="m150 405c0 24.8125 20.1875 45 45 45s45-20.1875 45-45-20.1875-45-45-45-45 20.1875-45 45zm45-15c8.269531 0 15 6.730469 15 15s-6.730469 15-15 15-15-6.730469-15-15 6.730469-15 15-15zm0 0" />
                         <path d="m362 405c0 24.8125 20.1875 45 45 45s45-20.1875 45-45-20.1875-45-45-45-45 20.1875-45 45zm45-15c8.269531 0 15 6.730469 15 15s-6.730469 15-15 15-15-6.730469-15-15 6.730469-15 15-15zm0 0" />
                       </svg>
-                      <span class="indicator__value"></span>
+                      <span class="indicator__value">
+                        @if(isset($order->products))
+                          {{ $order->getPriceAllCount() }}
+                        @else
+                          0
+                        @endif
+                      </span>
                     </span>
                   </a>
                 </div>
@@ -642,7 +648,13 @@
                         <path d="m150 405c0 24.8125 20.1875 45 45 45s45-20.1875 45-45-20.1875-45-45-45-45 20.1875-45 45zm45-15c8.269531 0 15 6.730469 15 15s-6.730469 15-15 15-15-6.730469-15-15 6.730469-15 15-15zm0 0" />
                         <path d="m362 405c0 24.8125 20.1875 45 45 45s45-20.1875 45-45-20.1875-45-45-45-45 20.1875-45 45zm45-15c8.269531 0 15 6.730469 15 15s-6.730469 15-15 15-15-6.730469-15-15 6.730469-15 15-15zm0 0" />
                       </svg>
-                        <span class="indicator__value"></span>
+                        <span class="indicator__value">
+                          @if(isset($order->products))
+                            {{ $order->getPriceAllCount() }}
+                          @else
+                            0
+                          @endif
+                        </span>
                       </span>
                     </a>
                     <div class="indicator__dropdown">
@@ -650,6 +662,7 @@
                       <div class="dropcart dropcart--style--dropdown">
                         <div class="dropcart__body">
                           <div class="dropcart__products-list">
+                          @if (isset($order->products))
                             @if(count($order->products) == 0)
                               Корзина товаров пуста
                             @else
@@ -679,22 +692,24 @@
                                 @endforeach
 
                               @endif
-
+                            @endif
                           </div>
-                          @if(count($order->products) == 0)
-                          @else
-                            <div class="dropcart__totals">
-                              <table>
-                                <tr>
-                                  <th>Итог</th>
-                                  <td>{{ $order->getFullPrice() }}₽</td>
-                                </tr>
-                              </table>
-                            </div>
-                            <div class="dropcart__buttons">
-                              <a class="btn btn-secondary" href="{{ route('basket') }}">В корзину</a>
-                              <a class="btn btn-primary" href="{{ route('checkout') }}">Оформить</a>
-                            </div>
+                          @if (isset($order->products))
+                            @if(count($order->products) == 0)
+                            @else
+                              <div class="dropcart__totals">
+                                <table>
+                                  <tr>
+                                    <th>Итог</th>
+                                    <td>{{ $order->getFullPrice() }}₽</td>
+                                  </tr>
+                                </table>
+                              </div>
+                              <div class="dropcart__buttons">
+                                <a class="btn btn-secondary" href="{{ route('basket') }}">В корзину</a>
+                                <a class="btn btn-primary" href="{{ route('checkout') }}">Оформить</a>
+                              </div>
+                            @endif
                           @endif
                         </div>
                       </div><!-- .dropcart / end -->
