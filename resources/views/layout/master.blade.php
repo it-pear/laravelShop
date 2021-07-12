@@ -155,7 +155,7 @@
                         </li>
                         <li class="menu__item">
 
-                          <div class="menu__item-submenu-offset"></div><a class="menu__item-link" href="account-login.html">Logout</a>
+                          <div class="menu__item-submenu-offset"></div><a class="menu__item-link" href="">Logout</a>
                         </li>
                       </ul>
                     </div><!-- .menu / end -->

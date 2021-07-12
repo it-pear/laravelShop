@@ -12,6 +12,10 @@
             <br>
             <div class="alert alert-success mb-3">{{ session()->get('success') }}</div>
           @endif
+          @if (session()->has('warning'))
+            <br>
+            <div class="alert alert-warning mb-3">{{ session()->get('warning') }}</div>
+          @endif
         </div>
         <div class="col-lg-3 d-none d-lg-block"></div>
         <div class="col-12 col-lg-9">
