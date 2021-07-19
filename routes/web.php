@@ -15,12 +15,15 @@ Route::get('/logout', 'App\Http\Controllers\Auth\LoginController@logout')->name(
 
 Route::group([
   'middleware' => 'auth',
-  'namespce' => 'Admin'
+  'namespce' => 'Admin',
+  'prefix' => 'admin',
 ], function(){
   Route::group(['middleware' => 'is_admin' ], function() {
     Route::get('/home', 'App\Http\Controllers\Admin\HomeController@index')->name('home');
     Route::get('/orders', 'App\Http\Controllers\Admin\OrderController@index')->name('orders');
   });
+  
+  Route::resource('categories', 'App\Http\Controllers\Admin\CategoryController');
 });
 
 Route::get('/', 'App\Http\Controllers\MainController@index')->name('index');
