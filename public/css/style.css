@@ -12305,6 +12305,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-origin {
 /* admin */
 .sidebar-sticky {
   padding-top: 10px;
+  min-height: 95.5vh;
 }
 .sidebar-sticky .nav-link {
   display: flex;
@@ -12320,4 +12321,169 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-origin {
 }
 .sidebar-sticky .nav-link {
   color: #3d464d;
+}
+
+.table-admin-categories a{
+  margin-right: 5px;
+}
+
+
+
+/* admin panel */
+.admin-dashboard {
+  width: 100%;
+  min-height: 100vh;
+  background: #c850c0;
+  background: -webkit-linear-gradient(
+45deg
+,#4158d0,#c850c0);
+    background: -o-linear-gradient(45deg,#4158d0,#c850c0);
+    background: -moz-linear-gradient(45deg,#4158d0,#c850c0);
+    background: linear-gradient(
+45deg
+,#4158d0,#c850c0);
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.admin-row {
+  width: 100%;
+  max-width: 1200px;
+}
+.admin-dashboard h2 {
+  color: white;
+}
+.admin-dashboard table svg {
+  fill: rgba(0, 0, 0, 0.35);
+}
+.admin-dashboard table .btn {
+  padding: 5px 8px;  
+}
+.admin-dashboard table tr th:last-child {
+  text-align: right;
+}
+.admin-dashboard table tr td:last-child {
+  text-align: right;
+  padding: 5px;
+  opacity: 0;
+  transition: all 0.25s;
+}
+.admin-dashboard table tr:hover > td {
+  opacity: 1;
+}
+.admin-dashboard table tr td:last-child .btn {
+  background: rgba(0, 0, 0, 0);
+  border: 1px solid rgba(0, 0, 0, 0);
+}
+
+.admin-dashboard .form-admin{
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 35px;
+  border-radius: 10px;
+}
+.admin-dashboard .form-admin label {
+  color: white;
+}
+
+
+.admin-dashboard table {
+  border-spacing: 1;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+.admin-dashboard table thead tr {
+  height: 60px;
+  background: #36304a;
+}
+.admin-dashboard table tbody tr {
+  transition: all 0.25s;
+}
+.admin-dashboard table tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.admin-dashboard table thead th {
+  font-size: 18px;
+  color: #fff;
+  padding-bottom: 17.5px;
+  line-height: normal;
+  font-weight: unset;
+}
+.admin-dashboard .table thead th {
+  border-bottom: 0;
+}
+.admin-dashboard .table td {
+  color: gray;
+}
+.admin-dashboard .table td, .table th {
+  padding: .75rem;
+  border-top: 0;
+}
+
+
+.navbar-admin .nav-item {
+  margin: 0 5px;
+}
+.navbar-admin .nav {
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+.navbar-admin .nav-link {
+  color: white;
+  transition: all 0.25s;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.navbar-admin .nav-link .title {
+  position: absolute;
+  top: 45px;
+  padding: 0 5px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 4px;
+  opacity: 0;
+  display: none;
+}
+.navbar-admin .nav-link:hover {
+  background-color: rgb(177, 177, 177);
+}
+.navbar-admin .nav-link:hover > .title {
+  opacity: 1;
+  display: block;
+}
+.form-admin-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.admin-section h6{
+  color: white;
+  margin-bottom: 30px;
+  font-size: 20px;
+}
+.admin-section h6:last-child {
+  margin-bottom: 0;
+}
+.admin-section image{
+  width: 100%;
+  max-width: 100px;
+  max-height: 100px;
 }
