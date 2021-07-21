@@ -24,6 +24,7 @@ Route::group([
   });
   
   Route::resource('categories', 'App\Http\Controllers\Admin\CategoryController');
+  // Route::post();
 });
 
 Route::get('/', 'App\Http\Controllers\MainController@index')->name('index');
