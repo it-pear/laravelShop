@@ -1,27 +1,29 @@
 @extends('/layout/admin')
-@section('title', 'Категории')
+@section('title', 'Товар')
 
 @section('content')
 
-<h2>Категории</h2>
-<div class="table-responsive table-admin-categories">
+<h2>Товар</h2>
+<div class="table-responsive table-admin-products">
   <table class="table table-striped table-sm">
     <thead>
       <tr>
         <th style="width: 15%">#</th>
         <th style="width: 25%">Code</th>
-        <th style="width: 45%">Название</th>
+        <th style="width: 40%">Название</th>
+        <th style="width: 10%">Цена</th>
         <th style="width: 20%"></th>
       </tr>
     </thead>
     <tbody>
-      @foreach ($categories as $category)
+      @foreach ($products as $product)
       <tr>
-        <td>{{ $category->id }}</td>
-        <td>{{ $category->code }}</td>
-        <td>{{ $category->name }}</td>
+        <td>{{ $product->id }}</td>
+        <td>{{ $product->code }}</td>
+        <td>{{ $product->name }}</td>
+        <td>{{ $product->price }}</td>
         <td style="display: flex;justify-content: flex-end;">
-          <a href="{{ route('categories.show', $category) }}">
+          <a href="{{ route('products.show', $product) }}">
             <button type="button" class="btn btn-success">
               <svg version="1.1" id="Layer_1" width="20" height="20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
                 <g>
@@ -41,7 +43,7 @@
               </svg>
             </button>
           </a>
-          <a href="{{ route('categories.edit', $category) }}">
+          <a href="{{ route('products.edit', $product) }}">
             <button type="button" class="btn btn-warning">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 477.873 477.873" style="enable-background:new 0 0 477.873 477.873;" xml:space="preserve">
                 <g>
@@ -58,7 +60,7 @@
             </button>
           </a>
 
-            <form action="{{ route('categories.destroy', $category) }}" method="POST">
+            <form action="{{ route('products.destroy', $product) }}" method="POST">
               @csrf
               @method('DELETE')
               <button type="submit" class="btn btn-danger">
@@ -79,7 +81,7 @@
     </tbody>
   </table>
   <br>
-  <a href="{{ route('categories.create') }}" class="btn btn-info">Создать категорию</a>
+  <a href="{{ route('products.create') }}" class="btn btn-info">Создать товар</a>
 </div>
 
 

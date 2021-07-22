@@ -19,13 +19,12 @@
   @endisset
   </h2>
   <br>
-  <form method="POST"
+  <form method="POST" enctype="multipart/form-data"
     @isset($category)
       action="{{ route('categories.update', $category) }}"
       @else 
       action="{{ route('categories.store') }}"
     @endisset
-   
   >
     @isset($category)
       @method('PUT')
@@ -45,8 +44,8 @@
       <textarea name="description" class="form-control" rows="3" value="@isset($category){{ $category->description }}@endisset"></textarea>
     </div>
     <div class="form-group">
-      <label for="exampleFormControlFile1">Картинка</label>
-      <input type="file" class="form-control-file" id="exampleFormControlFile1" style="color: white;">
+      <label>Картинка</label>
+      <input name="image" id="image" type="file" class="form-control-file" style="color: white;">
     </div>
     @isset($category)
       <button type="submit" class="btn btn-primary">Сохранить</button>
