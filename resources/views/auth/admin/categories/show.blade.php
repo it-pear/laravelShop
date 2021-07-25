@@ -15,8 +15,7 @@
       <h6>Количество товаров - <small>{{ $category->products->count() }}</small></h6>
     </div>
     <div class="admin-section-image">
-      {{ $category->image }}
-      <img src="https://pngicon.ru/file/uploads/battery.png" alt="">
+      <img src="{{ Storage::url($category->image) }}" alt="">
     </div>
   </div>
   
