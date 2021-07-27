@@ -3584,7 +3584,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-origin {
 }
 .departments__button {
   border: none;
-  background: transparent;
+  background: #3d464d;
   color: inherit;
   font-size: 15px;
   position: relative;
@@ -3594,9 +3594,21 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-origin {
   cursor: default;
   font-weight: 500;
   padding: 0;
-  padding-right: 32px;
-  padding-left: 47px;
+  padding-right: 16px;
+  padding-left: 10px;
   text-align: left;
+  display: flex;
+  align-items: center;
+  color: white;
+  height: 42px;
+  cursor: pointer;
+}
+.departments__button:hover {
+  color: white;
+}
+.departments__button svg {
+  margin-right: 5px;
+  fill: white;
 }
 .departments__button:focus {
   outline: none;
@@ -4336,12 +4348,16 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-origin {
   fill: currentColor;
   margin-right: 16px;
   margin-left: 12px;
+  height: 40px;
 }
 .mobile-header__logo:hover {
   color: inherit;
 }
-.mobile-header__logo svg {
+.mobile-header__logo img {
   display: block;
+  height: 100%;
+  width: auto;
+
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .mobile-header__search {
@@ -5218,11 +5234,14 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-origin {
 .site-header__logo {
   -ms-flex-negative: 0;
   flex-shrink: 0;
-  width: 255px;
   -ms-flex-pack: center;
   justify-content: center;
   color: inherit;
   margin-right: 30px;
+}
+.site-header__logo img{
+  max-width: 186px;
+  width: 100%;
 }
 .site-header__logo a {
   color: inherit;
@@ -9843,7 +9862,6 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-origin {
   .block-finder--layout--with-departments .block-finder__body {
     margin-top: 15px;
     height: 395px;
-    margin-left: -15px;
   }
   .block-finder--layout--with-departments .block-finder__select,
   .block-finder--layout--with-departments
@@ -11787,9 +11805,9 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-origin {
   height: 395px;
 }
 @media (min-width: 992px) {
-  .block-slideshow--layout--with-departments .block-slideshow__body {
+  /* .block-slideshow--layout--with-departments .block-slideshow__body {
     margin-left: -15px;
-  }
+  } */
 }
 @media (max-width: 991px) {
   .block-slideshow--layout--with-departments .block-slideshow__slide-button .btn {
@@ -12355,8 +12373,12 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-origin {
   width: 100%;
   max-width: 1200px;
 }
-.admin-dashboard h2 {
+.admin-dashboard h2,
+.admin-dashboard h3 {
   color: white;
+}
+.admin-dashboard hr {
+  border-color: white;
 }
 .admin-dashboard table svg {
   fill: rgba(0, 0, 0, 0.35);
