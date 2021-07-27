@@ -13,10 +13,17 @@ class MainController extends Controller
 {
   public function index() {
     $products = Product::get();
-    return view('index', compact('products'));
+    $categories = Category::get();
+    return view('index', compact('products', 'categories'));
   }
   public function contacts() {
     return view('contacts');
+  }
+  public function buy() {
+    return view('buy');
+  }
+  public function policy() {
+    return view('policy');
   }
   public function categories() {
     $categories = Category::get();

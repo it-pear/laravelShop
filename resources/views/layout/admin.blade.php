@@ -21,7 +21,7 @@
 <body>
 
   <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 navbar-admin">
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="{{ route('index') }}">Company name</a>
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="{{ route('index') }}">Замковед</a>
       <ul class="nav flex-row">
         <li class="nav-item">
           <a class="nav-link active" href="{{ route('home') }}">

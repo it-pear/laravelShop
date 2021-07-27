@@ -130,16 +130,22 @@
       <div class="block-products-carousel__slider">
         <div class="block-products-carousel__preloader"></div>
         <div class="owl-carousel">
+          
           @foreach($products as $product)
           <div class="block-products-carousel__column">
             <div class="block-products-carousel__cell">
-              <div class="product-card product-card--hidden-actions"><button class="product-card__quickview" type="button"><svg width="16px" height="16px">
+              <div class="product-card product-card--hidden-actions">
+                <button class="product-card__quickview" type="button"><svg width="16px" height="16px">
                     <use xlink:href="images/sprite.svg#quickview-16"></use>
                   </svg> <span class="fake-svg-icon"></span></button>
 
                 <div class="product-card__image product-image">
                   <a href="{{ route('product', [$product->category->code, $product->code]) }}" class="product-image__body">
-                    <img class="product-image__img" src="images/products/product-1.jpg" alt="">
+                    @if( Storage::url($product->image) == Storage::url($product->null) )
+                    <img class="product-image__img" src="/images/photo.png" alt="">
+                    @else
+                    <img class="product-image__img" src="{{ Storage::url($product->image) }}" alt="">
+                    @endif
                   </a>
                 </div>
                 <div class="product-card__info">
@@ -292,7 +298,7 @@
               <div class="product-card__badges-list">
                 <div class="product-card__badge product-card__badge--new">New</div>
               </div>
-              <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="images/products/product-1.jpg" alt=""></a></div>
+              <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="/images/products/product-1.jpg" alt=""></a></div>
               <div class="product-card__info">
                 <div class="product-card__name"><a href="product.html">Electric Planer Brandix KL370090G 300
                     Watts</a></div>
@@ -410,7 +416,7 @@
               <div class="product-card__badges-list">
                 <div class="product-card__badge product-card__badge--hot">Hot</div>
               </div>
-              <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="images/products/product-2.jpg" alt=""></a></div>
+              <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="/images/products/product-2.jpg" alt=""></a></div>
               <div class="product-card__info">
                 <div class="product-card__name"><a href="product.html">Undefined Tool IRadix DPS3000SY 2700
                     Watts</a></div>
@@ -523,7 +529,7 @@
             <div class="product-card product-card--hidden-actions"><button class="product-card__quickview" type="button"><svg width="16px" height="16px">
                   <use xlink:href="images/sprite.svg#quickview-16"></use>
                 </svg> <span class="fake-svg-icon"></span></button>
-              <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="images/products/product-3.jpg" alt=""></a></div>
+              <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="/images/products/product-3.jpg" alt=""></a></div>
               <div class="product-card__info">
                 <div class="product-card__name"><a href="product.html">Drill Screwdriver Brandix ALX7054 200
                     Watts</a></div>
@@ -639,7 +645,7 @@
               <div class="product-card__badges-list">
                 <div class="product-card__badge product-card__badge--sale">Sale</div>
               </div>
-              <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="images/products/product-4.jpg" alt=""></a></div>
+              <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="/images/products/product-4.jpg" alt=""></a></div>
               <div class="product-card__info">
                 <div class="product-card__name"><a href="product.html">Drill Series 3 Brandix KSR4590PQS 1500
                     Watts</a></div>
@@ -752,7 +758,7 @@
             <div class="product-card product-card--hidden-actions"><button class="product-card__quickview" type="button"><svg width="16px" height="16px">
                   <use xlink:href="images/sprite.svg#quickview-16"></use>
                 </svg> <span class="fake-svg-icon"></span></button>
-              <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="images/products/product-5.jpg" alt=""></a></div>
+              <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="/images/products/product-5.jpg" alt=""></a></div>
               <div class="product-card__info">
                 <div class="product-card__name"><a href="product.html">Brandix Router Power Tool 2017ERXPK</a></div>
                 <div class="product-card__rating">
@@ -864,7 +870,7 @@
             <div class="product-card product-card--hidden-actions"><button class="product-card__quickview" type="button"><svg width="16px" height="16px">
                   <use xlink:href="images/sprite.svg#quickview-16"></use>
                 </svg> <span class="fake-svg-icon"></span></button>
-              <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="images/products/product-6.jpg" alt=""></a></div>
+              <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="/images/products/product-6.jpg" alt=""></a></div>
               <div class="product-card__info">
                 <div class="product-card__name"><a href="product.html">Brandix Drilling Machine DM2019KW4 4kW</a>
                 </div>
@@ -977,7 +983,7 @@
             <div class="product-card product-card--hidden-actions"><button class="product-card__quickview" type="button"><svg width="16px" height="16px">
                   <use xlink:href="images/sprite.svg#quickview-16"></use>
                 </svg> <span class="fake-svg-icon"></span></button>
-              <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="images/products/product-7.jpg" alt=""></a></div>
+              <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="/images/products/product-7.jpg" alt=""></a></div>
               <div class="product-card__info">
                 <div class="product-card__name"><a href="product.html">Brandix Pliers</a></div>
                 <div class="product-card__rating">
@@ -1099,7 +1105,7 @@
       <div class="block-categories__list">
         <div class="block-categories__item category-card category-card--layout--classic">
           <div class="category-card__body">
-            <div class="category-card__image"><a href=""><img src="images/categories/category-1.jpg" alt=""></a>
+            <div class="category-card__image"><a href=""><img src="/images/categories/category-1.jpg" alt=""></a>
             </div>
             <div class="category-card__content">
               <div class="category-card__name"><a href="">Power Tools</a></div>
@@ -1117,7 +1123,7 @@
         </div>
         <div class="block-categories__item category-card category-card--layout--classic">
           <div class="category-card__body">
-            <div class="category-card__image"><a href=""><img src="images/categories/category-2.jpg" alt=""></a>
+            <div class="category-card__image"><a href=""><img src="/images/categories/category-2.jpg" alt=""></a>
             </div>
             <div class="category-card__content">
               <div class="category-card__name"><a href="">Hand Tools</a></div>
@@ -1135,7 +1141,7 @@
         </div>
         <div class="block-categories__item category-card category-card--layout--classic">
           <div class="category-card__body">
-            <div class="category-card__image"><a href=""><img src="images/categories/category-4.jpg" alt=""></a>
+            <div class="category-card__image"><a href=""><img src="/images/categories/category-4.jpg" alt=""></a>
             </div>
             <div class="category-card__content">
               <div class="category-card__name"><a href="">Machine Tools</a></div>
@@ -1153,7 +1159,7 @@
         </div>
         <div class="block-categories__item category-card category-card--layout--classic">
           <div class="category-card__body">
-            <div class="category-card__image"><a href=""><img src="images/categories/category-3.jpg" alt=""></a>
+            <div class="category-card__image"><a href=""><img src="/images/categories/category-3.jpg" alt=""></a>
             </div>
             <div class="category-card__content">
               <div class="category-card__name"><a href="">Power Machinery</a></div>
@@ -1171,7 +1177,7 @@
         </div>
         <div class="block-categories__item category-card category-card--layout--classic">
           <div class="category-card__body">
-            <div class="category-card__image"><a href=""><img src="images/categories/category-5.jpg" alt=""></a>
+            <div class="category-card__image"><a href=""><img src="/images/categories/category-5.jpg" alt=""></a>
             </div>
             <div class="category-card__content">
               <div class="category-card__name"><a href="">Measurement</a></div>
@@ -1189,7 +1195,7 @@
         </div>
         <div class="block-categories__item category-card category-card--layout--classic">
           <div class="category-card__body">
-            <div class="category-card__image"><a href=""><img src="images/categories/category-6.jpg" alt=""></a>
+            <div class="category-card__image"><a href=""><img src="/images/categories/category-6.jpg" alt=""></a>
             </div>
             <div class="category-card__content">
               <div class="category-card__name"><a href="">Clothes and PPE</a></div>
@@ -1237,7 +1243,7 @@
                 <div class="product-card__badges-list">
                   <div class="product-card__badge product-card__badge--new">New</div>
                 </div>
-                <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="images/products/product-1.jpg" alt=""></a></div>
+                <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="/images/products/product-1.jpg" alt=""></a></div>
                 <div class="product-card__info">
                   <div class="product-card__name"><a href="product.html">Electric Planer Brandix KL370090G 300
                       Watts</a></div>
@@ -1353,7 +1359,7 @@
                 <div class="product-card__badges-list">
                   <div class="product-card__badge product-card__badge--hot">Hot</div>
                 </div>
-                <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="images/products/product-2.jpg" alt=""></a></div>
+                <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="/images/products/product-2.jpg" alt=""></a></div>
                 <div class="product-card__info">
                   <div class="product-card__name"><a href="product.html">Undefined Tool IRadix DPS3000SY 2700
                       Watts</a></div>
@@ -1468,7 +1474,7 @@
               <div class="product-card product-card--hidden-actions"><button class="product-card__quickview" type="button"><svg width="16px" height="16px">
                     <use xlink:href="images/sprite.svg#quickview-16"></use>
                   </svg> <span class="fake-svg-icon"></span></button>
-                <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="images/products/product-3.jpg" alt=""></a></div>
+                <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="/images/products/product-3.jpg" alt=""></a></div>
                 <div class="product-card__info">
                   <div class="product-card__name"><a href="product.html">Drill Screwdriver Brandix ALX7054 200
                       Watts</a></div>
@@ -1584,7 +1590,7 @@
                 <div class="product-card__badges-list">
                   <div class="product-card__badge product-card__badge--sale">Sale</div>
                 </div>
-                <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="images/products/product-4.jpg" alt=""></a></div>
+                <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="/images/products/product-4.jpg" alt=""></a></div>
                 <div class="product-card__info">
                   <div class="product-card__name"><a href="product.html">Drill Series 3 Brandix KSR4590PQS 1500
                       Watts</a></div>
@@ -1699,7 +1705,7 @@
               <div class="product-card product-card--hidden-actions"><button class="product-card__quickview" type="button"><svg width="16px" height="16px">
                     <use xlink:href="images/sprite.svg#quickview-16"></use>
                   </svg> <span class="fake-svg-icon"></span></button>
-                <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="images/products/product-5.jpg" alt=""></a></div>
+                <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="/images/products/product-5.jpg" alt=""></a></div>
                 <div class="product-card__info">
                   <div class="product-card__name"><a href="product.html">Brandix Router Power Tool 2017ERXPK</a>
                   </div>
@@ -1812,7 +1818,7 @@
               <div class="product-card product-card--hidden-actions"><button class="product-card__quickview" type="button"><svg width="16px" height="16px">
                     <use xlink:href="images/sprite.svg#quickview-16"></use>
                   </svg> <span class="fake-svg-icon"></span></button>
-                <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="images/products/product-6.jpg" alt=""></a></div>
+                <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="/images/products/product-6.jpg" alt=""></a></div>
                 <div class="product-card__info">
                   <div class="product-card__name"><a href="product.html">Brandix Drilling Machine DM2019KW4 4kW</a>
                   </div>
@@ -1927,7 +1933,7 @@
               <div class="product-card product-card--hidden-actions"><button class="product-card__quickview" type="button"><svg width="16px" height="16px">
                     <use xlink:href="images/sprite.svg#quickview-16"></use>
                   </svg> <span class="fake-svg-icon"></span></button>
-                <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="images/products/product-7.jpg" alt=""></a></div>
+                <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="/images/products/product-7.jpg" alt=""></a></div>
                 <div class="product-card__info">
                   <div class="product-card__name"><a href="product.html">Brandix Pliers</a></div>
                   <div class="product-card__rating">
@@ -2039,7 +2045,7 @@
               <div class="product-card product-card--hidden-actions"><button class="product-card__quickview" type="button"><svg width="16px" height="16px">
                     <use xlink:href="images/sprite.svg#quickview-16"></use>
                   </svg> <span class="fake-svg-icon"></span></button>
-                <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="images/products/product-8.jpg" alt=""></a></div>
+                <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="/images/products/product-8.jpg" alt=""></a></div>
                 <div class="product-card__info">
                   <div class="product-card__name"><a href="product.html">Water Hose 40cm</a></div>
                   <div class="product-card__rating">
@@ -2153,7 +2159,7 @@
               <div class="product-card product-card--hidden-actions"><button class="product-card__quickview" type="button"><svg width="16px" height="16px">
                     <use xlink:href="images/sprite.svg#quickview-16"></use>
                   </svg> <span class="fake-svg-icon"></span></button>
-                <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="images/products/product-9.jpg" alt=""></a></div>
+                <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="/images/products/product-9.jpg" alt=""></a></div>
                 <div class="product-card__info">
                   <div class="product-card__name"><a href="product.html">Spanner Wrench</a></div>
                   <div class="product-card__rating">
@@ -2265,7 +2271,7 @@
               <div class="product-card product-card--hidden-actions"><button class="product-card__quickview" type="button"><svg width="16px" height="16px">
                     <use xlink:href="images/sprite.svg#quickview-16"></use>
                   </svg> <span class="fake-svg-icon"></span></button>
-                <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="images/products/product-10.jpg" alt=""></a></div>
+                <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="/images/products/product-10.jpg" alt=""></a></div>
                 <div class="product-card__info">
                   <div class="product-card__name"><a href="product.html">Water Tap</a></div>
                   <div class="product-card__rating">
@@ -2379,7 +2385,7 @@
               <div class="product-card product-card--hidden-actions"><button class="product-card__quickview" type="button"><svg width="16px" height="16px">
                     <use xlink:href="images/sprite.svg#quickview-16"></use>
                   </svg> <span class="fake-svg-icon"></span></button>
-                <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="images/products/product-11.jpg" alt=""></a></div>
+                <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="/images/products/product-11.jpg" alt=""></a></div>
                 <div class="product-card__info">
                   <div class="product-card__name"><a href="product.html">Hand Tool Kit</a></div>
                   <div class="product-card__rating">
@@ -2491,7 +2497,7 @@
               <div class="product-card product-card--hidden-actions"><button class="product-card__quickview" type="button"><svg width="16px" height="16px">
                     <use xlink:href="images/sprite.svg#quickview-16"></use>
                   </svg> <span class="fake-svg-icon"></span></button>
-                <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="images/products/product-12.jpg" alt=""></a></div>
+                <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="/images/products/product-12.jpg" alt=""></a></div>
                 <div class="product-card__info">
                   <div class="product-card__name"><a href="product.html">Ash's Chainsaw 3.5kW</a></div>
                   <div class="product-card__rating">
@@ -2605,7 +2611,7 @@
               <div class="product-card product-card--hidden-actions"><button class="product-card__quickview" type="button"><svg width="16px" height="16px">
                     <use xlink:href="images/sprite.svg#quickview-16"></use>
                   </svg> <span class="fake-svg-icon"></span></button>
-                <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="images/products/product-13.jpg" alt=""></a></div>
+                <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="/images/products/product-13.jpg" alt=""></a></div>
                 <div class="product-card__info">
                   <div class="product-card__name"><a href="product.html">Brandix Angle Grinder KZX3890PQW</a></div>
                   <div class="product-card__rating">
@@ -2717,7 +2723,7 @@
               <div class="product-card product-card--hidden-actions"><button class="product-card__quickview" type="button"><svg width="16px" height="16px">
                     <use xlink:href="images/sprite.svg#quickview-16"></use>
                   </svg> <span class="fake-svg-icon"></span></button>
-                <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="images/products/product-14.jpg" alt=""></a></div>
+                <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="/images/products/product-14.jpg" alt=""></a></div>
                 <div class="product-card__info">
                   <div class="product-card__name"><a href="product.html">Brandix Air Compressor DELTAKX500</a></div>
                   <div class="product-card__rating">
@@ -2831,7 +2837,7 @@
               <div class="product-card product-card--hidden-actions"><button class="product-card__quickview" type="button"><svg width="16px" height="16px">
                     <use xlink:href="images/sprite.svg#quickview-16"></use>
                   </svg> <span class="fake-svg-icon"></span></button>
-                <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="images/products/product-15.jpg" alt=""></a></div>
+                <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="/images/products/product-15.jpg" alt=""></a></div>
                 <div class="product-card__info">
                   <div class="product-card__name"><a href="product.html">Brandix Electric Jigsaw JIG7000BQ</a></div>
                   <div class="product-card__rating">
@@ -2943,7 +2949,7 @@
               <div class="product-card product-card--hidden-actions"><button class="product-card__quickview" type="button"><svg width="16px" height="16px">
                     <use xlink:href="images/sprite.svg#quickview-16"></use>
                   </svg> <span class="fake-svg-icon"></span></button>
-                <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="images/products/product-16.jpg" alt=""></a></div>
+                <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="/images/products/product-16.jpg" alt=""></a></div>
                 <div class="product-card__info">
                   <div class="product-card__name"><a href="product.html">Brandix Screwdriver SCREW1500ACC</a></div>
                   <div class="product-card__rating">
@@ -3071,7 +3077,7 @@
       <div class="block-posts__slider">
         <div class="owl-carousel">
           <div class="post-card">
-            <div class="post-card__image"><a href=""><img src="images/posts/post-1.jpg" alt=""></a></div>
+            <div class="post-card__image"><a href=""><img src="/images/posts/post-1.jpg" alt=""></a></div>
             <div class="post-card__info">
               <div class="post-card__category"><a href="">Special Offers</a></div>
               <div class="post-card__name"><a href="">Philosophy That Addresses Topics Such As Goodness</a></div>
@@ -3082,7 +3088,7 @@
             </div>
           </div>
           <div class="post-card">
-            <div class="post-card__image"><a href=""><img src="images/posts/post-2.jpg" alt=""></a></div>
+            <div class="post-card__image"><a href=""><img src="/images/posts/post-2.jpg" alt=""></a></div>
             <div class="post-card__info">
               <div class="post-card__category"><a href="">Latest News</a></div>
               <div class="post-card__name"><a href="">Logic Is The Study Of Reasoning And Argument Part 2</a></div>
@@ -3093,7 +3099,7 @@
             </div>
           </div>
           <div class="post-card">
-            <div class="post-card__image"><a href=""><img src="images/posts/post-3.jpg" alt=""></a></div>
+            <div class="post-card__image"><a href=""><img src="/images/posts/post-3.jpg" alt=""></a></div>
             <div class="post-card__info">
               <div class="post-card__category"><a href="">New Arrivals</a></div>
               <div class="post-card__name"><a href="">Some Philosophers Specialize In One Or More Historical
@@ -3105,7 +3111,7 @@
             </div>
           </div>
           <div class="post-card">
-            <div class="post-card__image"><a href=""><img src="images/posts/post-4.jpg" alt=""></a></div>
+            <div class="post-card__image"><a href=""><img src="/images/posts/post-4.jpg" alt=""></a></div>
             <div class="post-card__info">
               <div class="post-card__category"><a href="">Special Offers</a></div>
               <div class="post-card__name"><a href="">A Variety Of Other Academic And Non-Academic Approaches Have
@@ -3117,7 +3123,7 @@
             </div>
           </div>
           <div class="post-card">
-            <div class="post-card__image"><a href=""><img src="images/posts/post-5.jpg" alt=""></a></div>
+            <div class="post-card__image"><a href=""><img src="/images/posts/post-5.jpg" alt=""></a></div>
             <div class="post-card__info">
               <div class="post-card__category"><a href="">New Arrivals</a></div>
               <div class="post-card__name"><a href="">Germany Was The First Country To Professionalize
@@ -3129,7 +3135,7 @@
             </div>
           </div>
           <div class="post-card">
-            <div class="post-card__image"><a href=""><img src="images/posts/post-6.jpg" alt=""></a></div>
+            <div class="post-card__image"><a href=""><img src="/images/posts/post-6.jpg" alt=""></a></div>
             <div class="post-card__info">
               <div class="post-card__category"><a href="">Special Offers</a></div>
               <div class="post-card__name"><a href="">Logic Is The Study Of Reasoning And Argument Part 1</a></div>
@@ -3140,7 +3146,7 @@
             </div>
           </div>
           <div class="post-card">
-            <div class="post-card__image"><a href=""><img src="images/posts/post-7.jpg" alt=""></a></div>
+            <div class="post-card__image"><a href=""><img src="/images/posts/post-7.jpg" alt=""></a></div>
             <div class="post-card__info">
               <div class="post-card__category"><a href="">Special Offers</a></div>
               <div class="post-card__name"><a href="">Many Inquiries Outside Of Academia Are Philosophical In The
@@ -3152,7 +3158,7 @@
             </div>
           </div>
           <div class="post-card">
-            <div class="post-card__image"><a href=""><img src="images/posts/post-8.jpg" alt=""></a></div>
+            <div class="post-card__image"><a href=""><img src="/images/posts/post-8.jpg" alt=""></a></div>
             <div class="post-card__info">
               <div class="post-card__category"><a href="">Latest News</a></div>
               <div class="post-card__name"><a href="">An Advantage Of Digital Circuits When Compared To Analog
@@ -3164,7 +3170,7 @@
             </div>
           </div>
           <div class="post-card">
-            <div class="post-card__image"><a href=""><img src="images/posts/post-9.jpg" alt=""></a></div>
+            <div class="post-card__image"><a href=""><img src="/images/posts/post-9.jpg" alt=""></a></div>
             <div class="post-card__info">
               <div class="post-card__category"><a href="">New Arrivals</a></div>
               <div class="post-card__name"><a href="">A Digital Circuit Is Typically Constructed From Small
@@ -3176,7 +3182,7 @@
             </div>
           </div>
           <div class="post-card">
-            <div class="post-card__image"><a href=""><img src="images/posts/post-10.jpg" alt=""></a></div>
+            <div class="post-card__image"><a href=""><img src="/images/posts/post-10.jpg" alt=""></a></div>
             <div class="post-card__info">
               <div class="post-card__category"><a href="">Special Offers</a></div>
               <div class="post-card__name"><a href="">Engineers Use Many Methods To Minimize Logic Functions</a>
@@ -3196,13 +3202,13 @@
     <div class="container">
       <div class="block-brands__slider">
         <div class="owl-carousel">
-          <div class="block-brands__item"><a href=""><img src="images/logos/logo-1.png" alt=""></a></div>
-          <div class="block-brands__item"><a href=""><img src="images/logos/logo-2.png" alt=""></a></div>
-          <div class="block-brands__item"><a href=""><img src="images/logos/logo-3.png" alt=""></a></div>
-          <div class="block-brands__item"><a href=""><img src="images/logos/logo-4.png" alt=""></a></div>
-          <div class="block-brands__item"><a href=""><img src="images/logos/logo-5.png" alt=""></a></div>
-          <div class="block-brands__item"><a href=""><img src="images/logos/logo-6.png" alt=""></a></div>
-          <div class="block-brands__item"><a href=""><img src="images/logos/logo-7.png" alt=""></a></div>
+          <div class="block-brands__item"><a href=""><img src="/images/logos/logo-1.png" alt=""></a></div>
+          <div class="block-brands__item"><a href=""><img src="/images/logos/logo-2.png" alt=""></a></div>
+          <div class="block-brands__item"><a href=""><img src="/images/logos/logo-3.png" alt=""></a></div>
+          <div class="block-brands__item"><a href=""><img src="/images/logos/logo-4.png" alt=""></a></div>
+          <div class="block-brands__item"><a href=""><img src="/images/logos/logo-5.png" alt=""></a></div>
+          <div class="block-brands__item"><a href=""><img src="/images/logos/logo-6.png" alt=""></a></div>
+          <div class="block-brands__item"><a href=""><img src="/images/logos/logo-7.png" alt=""></a></div>
         </div>
       </div>
     </div>
@@ -3224,7 +3230,7 @@
                 <div class="product-card__badges-list">
                   <div class="product-card__badge product-card__badge--new">New</div>
                 </div>
-                <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="images/products/product-1.jpg" alt=""></a></div>
+                <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="/images/products/product-1.jpg" alt=""></a></div>
                 <div class="product-card__info">
                   <div class="product-card__name"><a href="product.html">Electric Planer Brandix KL370090G 300
                       Watts</a></div>
@@ -3340,7 +3346,7 @@
                 <div class="product-card__badges-list">
                   <div class="product-card__badge product-card__badge--hot">Hot</div>
                 </div>
-                <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="images/products/product-2.jpg" alt=""></a></div>
+                <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="/images/products/product-2.jpg" alt=""></a></div>
                 <div class="product-card__info">
                   <div class="product-card__name"><a href="product.html">Undefined Tool IRadix DPS3000SY 2700
                       Watts</a></div>
@@ -3453,7 +3459,7 @@
               <div class="product-card product-card--hidden-actions product-card--layout--horizontal"><button class="product-card__quickview" type="button"><svg width="16px" height="16px">
                     <use xlink:href="images/sprite.svg#quickview-16"></use>
                   </svg> <span class="fake-svg-icon"></span></button>
-                <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="images/products/product-3.jpg" alt=""></a></div>
+                <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="/images/products/product-3.jpg" alt=""></a></div>
                 <div class="product-card__info">
                   <div class="product-card__name"><a href="product.html">Drill Screwdriver Brandix ALX7054 200
                       Watts</a></div>
@@ -3577,7 +3583,7 @@
                 <div class="product-card__badges-list">
                   <div class="product-card__badge product-card__badge--sale">Sale</div>
                 </div>
-                <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="images/products/product-4.jpg" alt=""></a></div>
+                <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="/images/products/product-4.jpg" alt=""></a></div>
                 <div class="product-card__info">
                   <div class="product-card__name"><a href="product.html">Drill Series 3 Brandix KSR4590PQS 1500
                       Watts</a></div>
@@ -3690,7 +3696,7 @@
               <div class="product-card product-card--hidden-actions product-card--layout--horizontal"><button class="product-card__quickview" type="button"><svg width="16px" height="16px">
                     <use xlink:href="images/sprite.svg#quickview-16"></use>
                   </svg> <span class="fake-svg-icon"></span></button>
-                <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="images/products/product-5.jpg" alt=""></a></div>
+                <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="/images/products/product-5.jpg" alt=""></a></div>
                 <div class="product-card__info">
                   <div class="product-card__name"><a href="product.html">Brandix Router Power Tool 2017ERXPK</a>
                   </div>
@@ -3803,7 +3809,7 @@
               <div class="product-card product-card--hidden-actions product-card--layout--horizontal"><button class="product-card__quickview" type="button"><svg width="16px" height="16px">
                     <use xlink:href="images/sprite.svg#quickview-16"></use>
                   </svg> <span class="fake-svg-icon"></span></button>
-                <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="images/products/product-6.jpg" alt=""></a></div>
+                <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="/images/products/product-6.jpg" alt=""></a></div>
                 <div class="product-card__info">
                   <div class="product-card__name"><a href="product.html">Brandix Drilling Machine DM2019KW4 4kW</a>
                   </div>
@@ -3924,7 +3930,7 @@
               <div class="product-card product-card--hidden-actions product-card--layout--horizontal"><button class="product-card__quickview" type="button"><svg width="16px" height="16px">
                     <use xlink:href="images/sprite.svg#quickview-16"></use>
                   </svg> <span class="fake-svg-icon"></span></button>
-                <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="images/products/product-7.jpg" alt=""></a></div>
+                <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="/images/products/product-7.jpg" alt=""></a></div>
                 <div class="product-card__info">
                   <div class="product-card__name"><a href="product.html">Brandix Pliers</a></div>
                   <div class="product-card__rating">
@@ -4036,7 +4042,7 @@
               <div class="product-card product-card--hidden-actions product-card--layout--horizontal"><button class="product-card__quickview" type="button"><svg width="16px" height="16px">
                     <use xlink:href="images/sprite.svg#quickview-16"></use>
                   </svg> <span class="fake-svg-icon"></span></button>
-                <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="images/products/product-8.jpg" alt=""></a></div>
+                <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="/images/products/product-8.jpg" alt=""></a></div>
                 <div class="product-card__info">
                   <div class="product-card__name"><a href="product.html">Water Hose 40cm</a></div>
                   <div class="product-card__rating">
@@ -4148,7 +4154,7 @@
               <div class="product-card product-card--hidden-actions product-card--layout--horizontal"><button class="product-card__quickview" type="button"><svg width="16px" height="16px">
                     <use xlink:href="images/sprite.svg#quickview-16"></use>
                   </svg> <span class="fake-svg-icon"></span></button>
-                <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="images/products/product-9.jpg" alt=""></a></div>
+                <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="/images/products/product-9.jpg" alt=""></a></div>
                 <div class="product-card__info">
                   <div class="product-card__name"><a href="product.html">Spanner Wrench</a></div>
                   <div class="product-card__rating">

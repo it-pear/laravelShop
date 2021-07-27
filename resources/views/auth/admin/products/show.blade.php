@@ -16,8 +16,7 @@
       <h6>Цена - <small>{{ $product->price }}</small></h6>
     </div>
     <div class="admin-section-image">
-      {{ $product->image }}
-      <img src="https://pngicon.ru/file/uploads/battery.png" alt="">
+      <img src="{{ Storage::url($product->image) }}" alt="">
     </div>
   </div>
   

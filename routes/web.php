@@ -29,6 +29,8 @@ Route::group([
 
 Route::get('/', 'App\Http\Controllers\MainController@index')->name('index');
 Route::get('/contacts', 'App\Http\Controllers\MainController@contacts')->name('contacts');
+Route::get('/buy', 'App\Http\Controllers\MainController@buy')->name('buy');
+Route::get('/policy', 'App\Http\Controllers\MainController@policy')->name('policy');
 Route::get('/categories', 'App\Http\Controllers\MainController@categories')->name('categories');
 Route::get('/services', 'App\Http\Controllers\MainController@services')->name('services');
 Route::get('/basket', 'App\Http\Controllers\BasketController@basket')->name('basket');

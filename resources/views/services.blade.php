@@ -9,10 +9,10 @@
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.html">Home</a> <svg class="breadcrumb-arrow" width="6px" height="9px">
-                <use xlink:href="images/sprite.svg#arrow-rounded-right-6x9"></use>
+                <use xlink:href="images/sprite.svg"></use>
               </svg></li>
             <li class="breadcrumb-item"><a href="">Breadcrumb</a> <svg class="breadcrumb-arrow" width="6px" height="9px">
-                <use xlink:href="images/sprite.svg#arrow-rounded-right-6x9"></use>
+                <use xlink:href="images/sprite.svg"></use>
               </svg></li>
             <li class="breadcrumb-item active" aria-current="page">Наши услуги</li>
           </ol>
@@ -33,7 +33,7 @@
                 @foreach($services as $service)
                   <div class="posts-list__item">
                     <div class="post-card post-card--layout--grid post-card--size--lg">
-                      <div class="post-card__image"><a href=""><img src="images/posts/post-1.jpg" alt=""></a></div>
+                      <div class="post-card__image"><a href=""><img src="/images/posts/post-1.jpg" alt=""></a></div>
                       <div class="post-card__info">
                         <div class="post-card__category"><a href="">{{ $service->price }}</a></div>
                         <div class="post-card__name"><a href="">{{ $service->name }}</a>

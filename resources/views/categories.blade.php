@@ -7,10 +7,10 @@
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index.html">Home</a> <svg class="breadcrumb-arrow" width="6px" height="9px">
-                    <use xlink:href="images/sprite.svg#arrow-rounded-right-6x9"></use>
+                    <use xlink:href="images/sprite.svg"></use>
                   </svg></li>
                 <li class="breadcrumb-item"><a href="">Breadcrumb</a> <svg class="breadcrumb-arrow" width="6px" height="9px">
-                    <use xlink:href="images/sprite.svg#arrow-rounded-right-6x9"></use>
+                    <use xlink:href="images/sprite.svg"></use>
                   </svg></li>
                 <li class="breadcrumb-item active" aria-current="page">Screwdrivers</li>
               </ol>
@@ -74,7 +74,7 @@
                           </div> -->
                           <div class="product-card__image product-image">
                             <a href="{{ route('category', $category->code) }}" class="product-image__body">
-                              <img class="product-image__img" src="images/products/product-1.jpg" alt="">
+                              <img class="product-image__img" src="/images/products/product-1.jpg" alt="">
                             </a>
                           </div>
                           <div class="product-card__info">

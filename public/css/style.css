@@ -510,6 +510,7 @@ h6 {
   position: relative;
   padding-left: 0;
   padding-right: 30px;
+  align-items: center;
 }
 .breadcrumb-item a {
   color: inherit;
@@ -534,6 +535,12 @@ h6 {
   top: 5px;
   right: 11px;
   transform: scaleX(1);
+}
+.breadcrumb__arrowe-svg {
+  width: 9px;
+  height: 12px;
+  margin-bottom: 2px;
+  margin-left: 25%;
 }
 .btn {
   border-radius: 2px;
@@ -5620,7 +5627,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-origin {
   -ms-flex-align: center;
   align-items: center;
   -ms-flex-pack: justify;
-  justify-content: space-between;
+  justify-content: center;
 }
 .site-footer__copyright {
   font-size: 14px;
@@ -12351,6 +12358,8 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-origin {
 .admin-dashboard {
   width: 100%;
   min-height: 100vh;
+  padding-top: 30px;
+  padding-bottom: 60px;
   background: #c850c0;
   background: -webkit-linear-gradient(
 45deg
@@ -12451,7 +12460,9 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-origin {
   border-top: 0;
 }
 
-
+.navbar-admin .navbar-brand {
+  z-index: 10;
+}
 .navbar-admin .nav-item {
   margin: 0 5px;
 }

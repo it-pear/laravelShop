@@ -7,13 +7,10 @@
       <div class="page-header__breadcrumb">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index.html">Home</a> <svg class="breadcrumb-arrow" width="6px" height="9px">
-                <use xlink:href="/images/sprite.svg#arrow-rounded-right-6x9"></use>
-              </svg></li>
-            <li class="breadcrumb-item"><a href="">Breadcrumb</a> <svg class="breadcrumb-arrow" width="6px" height="9px">
-                <use xlink:href="/images/sprite.svg#arrow-rounded-right-6x9"></use>
-              </svg></li>
-            <li class="breadcrumb-item active" aria-current="page">Shopping Cart</li>
+            <li class="breadcrumb-item"><a href="index.html">Главная</a> 
+              <img src="/images/sprite.svg" class="breadcrumb__arrowe-svg" alt="">
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">Корзина товаров</li>
           </ol>
         </nav>
       </div>
@@ -39,11 +36,11 @@
         <table class="cart__table cart-table">
           <thead class="cart-table__head">
             <tr class="cart-table__row">
-              <th class="cart-table__column cart-table__column--image">Image</th>
-              <th class="cart-table__column cart-table__column--product">Product</th>
-              <th class="cart-table__column cart-table__column--price">Price</th>
-              <th class="cart-table__column cart-table__column--quantity">Quantity</th>
-              <th class="cart-table__column cart-table__column--total">Total</th>
+              <th class="cart-table__column cart-table__column--image">Картинка</th>
+              <th class="cart-table__column cart-table__column--product">Товар</th>
+              <th class="cart-table__column cart-table__column--price">Цена</th>
+              <th class="cart-table__column cart-table__column--quantity">Количество</th>
+              <th class="cart-table__column cart-table__column--total">Цена</th>
               <th class="cart-table__column cart-table__column--remove"></th>
             </tr>
           </thead>
@@ -52,13 +49,20 @@
         @foreach ($order->products as $product)
           <tr class="cart-table__row">
             <td class="cart-table__column cart-table__column--image">
-              <div class="product-image"><a href="" class="product-image__body"><img class="product-image__img" src="/images/products/product-1.jpg" alt=""></a></div>
+              <div class="product-image">
+                <a href="" class="product-image__body">
+                  @if( Storage::url($product->image) == Storage::url($product->null) )
+                  <img class="product-image__img" src="/images/photo.png" alt="">
+                  @else
+                  <img class="product-image__img" src="{{ Storage::url($product->image) }}" alt="">
+                  @endif
+                </a>
+              </div>
             </td>
             <td class="cart-table__column cart-table__column--product">
               <a href="{{ route('product', [$product->category->code, $product->code]) }}" class="cart-table__product-name">{{ $product->name }}</a>
               <ul class="cart-table__options">
                 <li>{{ $product->category->name }}</li>
-                <li>Material: Aluminium</li>
               </ul>
             </td>
             <td class="cart-table__column cart-table__column--price" data-title="Price">{{ $product->price }}₽</td>

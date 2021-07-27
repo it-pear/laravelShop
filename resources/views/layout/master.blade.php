@@ -32,7 +32,7 @@
                 <svg height="22px" viewBox="0 -53 384 384" width="38px" xmlns="http://www.w3.org/2000/svg"><path d="m368 154.667969h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0"></path><path d="m368 32h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0"></path><path d="m368 277.332031h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0"></path></svg>
               </button> 
               <a class="mobile-header__logo" href="/">
-                <img src="images/logo-big.jpg" alt="">
+                <img src="/images/logo-big.jpg" alt="">
               </a>
               <div class="search search--location--mobile-header mobile-header__search">
                 <div class="search__body">
@@ -141,7 +141,7 @@
         <div class="site-header__middle container">
           <div class="site-header__logo">
             <a href="/">
-              <img src="images/logo-big.jpg" alt="">
+              <img src="/images/logo-big.jpg" alt="">
             </a>
           </div>
           <div class="site-header__search">
@@ -183,7 +183,7 @@
                       </a>
                     </li>
                     <li class="nav-links__item">
-                      <a class="nav-links__item-link" href="{{ route('contacts') }}">
+                      <a class="nav-links__item-link" href="{{ route('buy') }}">
                         <div class="nav-links__item-body">Как купить</div>
                       </a>
                     </li>
@@ -228,7 +228,7 @@
                                 <div class="dropcart__product">
                                   <div class="product-image dropcart__product-image">
                                     <a href="product.html" class="product-image__body">
-                                      <img class="product-image__img" src="images/products/product-1.jpg" alt="">
+                                      <img class="product-image__img" src="/images/products/product-1.jpg" alt="">
                                     </a>
                                   </div>
                                   <div class="dropcart__product-info">
@@ -300,7 +300,7 @@
                         @endguest
                         @auth
                           <div class="account-menu__divider"></div><a href="account-dashboard.html" class="account-menu__user">
-                            <div class="account-menu__user-avatar"><img src="images/avatars/avatar-3.jpg" alt=""></div>
+                            <div class="account-menu__user-avatar"><img src="/images/avatars/avatar-3.jpg" alt=""></div>
                             <div class="account-menu__user-info">
                               <div class="account-menu__user-name">Галина Ивановна</div>
                               <div class="account-menu__user-email">stroyka@example.com</div>
@@ -358,7 +358,7 @@
                     <li class="footer-links__item"><a href="" class="footer-links__link">Контакты</a></li>
                     <li class="footer-links__item"><a href="" class="footer-links__link">Услуги</a></li>
                     <li class="footer-links__item"><a href="" class="footer-links__link">Как купить</a></li>
-                    <li class="footer-links__item"><a href="" class="footer-links__link">Политика конф-ти</a></li>
+                    <li class="footer-links__item"><a href="{{ route('policy') }}" class="footer-links__link">Политика конф-ти</a></li>
                   </ul>
                 </div>
               </div>
@@ -393,11 +393,10 @@
               </div>
             </div>
           </div>
-          <div class="site-footer__bottom">
-            <div class="site-footer__copyright">
-              <!-- copyright --> Powered by HTML — Design by <a href="https://themeforest.net/user/kos9" target="_blank">Kos</a><!-- copyright / end -->
+          <div class="site-footer__bottom text-center">
+            <div class="site-footer__copyright text-center">
+              &copy <?php echo date("Y"); ?> Все права защищены
             </div>
-            <div class="site-footer__payments"><img src="images/payments.png" alt=""></div>
           </div>
         </div>
         <div class="totop">

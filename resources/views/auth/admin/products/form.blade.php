@@ -19,7 +19,7 @@
   @endisset
   </h2>
   <br>
-  <form method="POST"
+  <form method="POST" enctype="multipart/form-data"
     @isset($product)
       action="{{ route('products.update', $product) }}"
       @else 
