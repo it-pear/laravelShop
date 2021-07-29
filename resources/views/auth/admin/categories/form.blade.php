@@ -30,14 +30,18 @@
       @method('PUT')
     @endisset
     @csrf
-    <div class="form-group">
+    <div class="form-group">      
       <label>Код (наименование на английском)</label>
-      <input type="text" pattern="[A-Za-z]{6,}" name="code" class="form-control" required value="@isset($category){{ $category->code }}@endisset">
-      <!-- <small class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+      <input type="text" pattern="[A-Za-z]{6,}" name="code" class="form-control"  value="@isset($category){{ $category->code }}@endisset">
+      @error('code')
+        <div class="invalid-feedback">
+          {{ $message }}
+        </div>
+      @enderror
     </div>
     <div class="form-group">
       <label>Название</label>
-      <input type="text" name="name" class="form-control" required value="@isset($category){{ $category->name }}@endisset">
+      <input type="text" name="name" class="form-control"  value="@isset($category){{ $category->name }}@endisset">
     </div>
     <div class="form-group">
       <label>Описание</label>
