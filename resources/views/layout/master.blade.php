@@ -32,7 +32,7 @@
                 <svg height="22px" viewBox="0 -53 384 384" width="38px" xmlns="http://www.w3.org/2000/svg"><path d="m368 154.667969h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0"></path><path d="m368 32h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0"></path><path d="m368 277.332031h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0"></path></svg>
               </button> 
               <a class="mobile-header__logo" href="/">
-                <img src="/images/logo-big.jpg" alt="">
+                <img src="/images/logo-big.png" alt="">
               </a>
               <div class="search search--location--mobile-header mobile-header__search">
                 <div class="search__body">
@@ -48,17 +48,8 @@
                 </div>
               </div>
               <div class="mobile-header__indicators">
-                <!-- <div class="indicator indicator--mobile-search indicator--mobile d-md-none">
-                  <button class="indicator__button">
-                    <span class="indicator__area">
-                      <svg width="20px" height="20px">
-                        <use xlink:href="images/sprite.svg#search-20"></use>
-                      </svg>
-                    </span>
-                  </button>
-                </div> -->
                 <div class="indicator indicator--mobile d-sm-flex d-none">
-                  <a href="wishlist.html" class="indicator__button">
+                  <a href="{{ route('basket') }}" class="indicator__button">
                     <span class="indicator__area">
                       <svg width="20px" height="20px">
                         <use xlink:href="images/sprite.svg#heart-20"></use>
@@ -141,7 +132,7 @@
         <div class="site-header__middle container">
           <div class="site-header__logo">
             <a href="/">
-              <img src="/images/logo-big.jpg" alt="">
+              <img src="/images/logo-big.png" alt="">
             </a>
           </div>
           <div class="site-header__search">
@@ -290,7 +281,6 @@
                           <form class="account-menu__form">
                             <div class="account-menu__form-title">Вход в аккаунт</div>
                             <div class="form-group account-menu__form-button">
-                            
                               <a href="{{ route('login') }}" class="btn btn-primary btn-sm">Войти</a>
                             </div>
                             <div class="account-menu__form-link">
@@ -373,10 +363,10 @@
                 <div class="site-footer__widget footer-links">
                   <h5 class="footer-links__title">Разделы</h5>
                   <ul class="footer-links__list">
-                    <li class="footer-links__item"><a href="" class="footer-links__link">Каталог</a></li>
-                    <li class="footer-links__item"><a href="" class="footer-links__link">Контакты</a></li>
-                    <li class="footer-links__item"><a href="" class="footer-links__link">Услуги</a></li>
-                    <li class="footer-links__item"><a href="" class="footer-links__link">Как купить</a></li>
+                    <li class="footer-links__item"><a href="{{ route('categories') }}" class="footer-links__link">Каталог</a></li>
+                    <li class="footer-links__item"><a href="{{ route('contacts') }}" class="footer-links__link">Контакты</a></li>
+                    <li class="footer-links__item"><a href="{{ route('services') }}" class="footer-links__link">Услуги</a></li>
+                    <li class="footer-links__item"><a href="{{ route('buy') }}" class="footer-links__link">Как купить</a></li>
                     <li class="footer-links__item"><a href="{{ route('policy') }}" class="footer-links__link">Политика конф-ти</a></li>
                   </ul>
                 </div>
@@ -385,7 +375,7 @@
                 <div class="site-footer__widget footer-links">
                   <h5 class="footer-links__title">Мой аккаунт</h5>
                   <ul class="footer-links__list">
-                    <li class="footer-links__item"><a href="" class="footer-links__link">История заказов</a></li>
+                    <li class="footer-links__item"><a href="{{ route('orders.index') }}" class="footer-links__link">История заказов</a></li>
                     <li class="footer-links__item"><a href="" class="footer-links__link">Настройки</a></li>
                   </ul>
                 </div>
@@ -441,15 +431,43 @@
     <div class="mobilemenu__backdrop"></div>
     <div class="mobilemenu__body">
       <div class="mobilemenu__header">
-        <div class="mobilemenu__title">Menu</div><button type="button" class="mobilemenu__close"><svg width="20px" height="20px">
-            <use xlink:href="images/sprite.svg#cross-20"></use>
-          </svg></button>
+        <div class="mobilemenu__title">Меню</div>
+          <button type="button" class="mobilemenu__close">
+            <svg version="1.1" id="Capa_1" width="24px" height="24px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+              viewBox="0 0 512.001 512.001" style="enable-background:new 0 0 512.001 512.001;" xml:space="preserve">
+              <g>
+                <g>
+                  <path d="M284.286,256.002L506.143,34.144c7.811-7.811,7.811-20.475,0-28.285c-7.811-7.81-20.475-7.811-28.285,0L256,227.717
+                    L34.143,5.859c-7.811-7.811-20.475-7.811-28.285,0c-7.81,7.811-7.811,20.475,0,28.285l221.857,221.857L5.858,477.859
+                    c-7.811,7.811-7.811,20.475,0,28.285c3.905,3.905,9.024,5.857,14.143,5.857c5.119,0,10.237-1.952,14.143-5.857L256,284.287
+                    l221.857,221.857c3.905,3.905,9.024,5.857,14.143,5.857s10.237-1.952,14.143-5.857c7.811-7.811,7.811-20.475,0-28.285
+                    L284.286,256.002z"/>
+                </g>
+              </g>
+            </svg>
+          </button>
       </div>
       <div class="mobilemenu__content">
         <ul class="mobile-links mobile-links--level--0" data-collapse data-collapse-opened-class="mobile-links__item--open">
-          <li class="mobile-links__item" data-collapse-item>
+          <li class="mobile-links__item">
             <div class="mobile-links__item-title">
-              <a href="" class="mobile-links__item-link">Categories</a>
+              <a href="{{ route('categories') }}" class="mobile-links__item-link">Каталог</a>
+            </div>
+          </li>
+          <li class="mobile-links__item">
+            <div class="mobile-links__item-title">
+              <a href="{{ route('services') }}" class="mobile-links__item-link">Услуги</a>
+            </div>
+          </li>
+          <li class="mobile-links__item">
+            <div class="mobile-links__item-title">
+              <a href="{{ route('buy') }}" class="mobile-links__item-link">Как купить</a>
+            </div>
+          </li>
+          <li class="mobile-links__item">
+            <div class="mobile-links__item-title">
+              <a href="{{ route('contacts') }}>" class="mobile-links__item-link">Контакты</a>
+            </div>
           </li>
         </ul>
       </div>
