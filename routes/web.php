@@ -13,20 +13,29 @@ Auth::routes([
 
 Route::get('/logout', 'App\Http\Controllers\Auth\LoginController@logout')->name('get-logout');
 
-Route::group([
-  'middleware' => 'auth',
-  'namespce' => 'Admin',
-  'prefix' => 'admin',
-], function(){
-  Route::group(['middleware' => 'is_admin' ], function() {
-    Route::get('/home', 'App\Http\Controllers\Admin\HomeController@index')->name('home');
-    Route::get('/orders', 'App\Http\Controllers\Admin\OrderController@index')->name('orders');
-    Route::get('/orders/{order}', 'App\Http\Controllers\Admin\OrderController@show')->name('orders.show');
+Route::middleware(['auth'])->group(function() {
+  Route::group([
+    'prefix' => 'person'
+  ], function () {
+    Route::get('/orders', 'App\Http\Controllers\person\OrderController@index')->name('orders.index');
+    Route::get('/orders/{order}', 'App\Http\Controllers\person\OrderController@show')->name('orders.show');
   });
-  
-  Route::resource('categories', 'App\Http\Controllers\Admin\CategoryController');
-  Route::resource('products', 'App\Http\Controllers\Admin\ProductController');
+
+  Route::group([
+    'prefix' => 'admin'
+  ], function(){
+    Route::group(['middleware' => 'is_admin' ], function() {
+      Route::get('/home', 'App\Http\Controllers\Admin\HomeController@index')->name('home');
+      Route::get('/orders', 'App\Http\Controllers\Admin\OrderController@index')->name('orders');
+      Route::get('/orders/{order}', 'App\Http\Controllers\Admin\OrderController@show')->name('orders.show');
+    });
+    
+    Route::resource('categories', 'App\Http\Controllers\Admin\CategoryController');
+    Route::resource('products', 'App\Http\Controllers\Admin\ProductController');
+  });
 });
+
+
 
 Route::get('/', 'App\Http\Controllers\MainController@index')->name('index');
 Route::get('/contacts', 'App\Http\Controllers\MainController@contacts')->name('contacts');
