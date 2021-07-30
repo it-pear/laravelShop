@@ -33,12 +33,21 @@
     @csrf
     <div class="form-group">
       <label>Код (наименование на английском)</label>
-      <input type="text" pattern="[A-Za-z0-9_]{6,}" name="code" class="form-control" required value="@isset($product){{ $product->code }}@endisset">
-      <!-- <small class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+      <input type="text" pattern="[A-Za-z0-9_]{3,}" name="code" class="form-control" required value="@isset($product){{ $product->code }}@endisset">
+      @error('code')
+        <div class="invalid-feedback">
+          {{ $message }}
+        </div>
+      @enderror
     </div>
     <div class="form-group">
       <label>Название</label>
       <input type="text" name="name" class="form-control" required value="@isset($product){{ $product->name }}@endisset">
+      @error('name')
+        <div class="invalid-feedback">
+          {{ $message }}
+        </div>
+      @enderror
     </div>
     <div class="form-group">
       <label>Категория</label>
@@ -63,11 +72,21 @@
     </div>
     <div class="form-group">
       <label>Описание</label>
-      <textarea name="description" class="form-control" rows="3" value="@isset($product){{ $product->description }}@endisset"></textarea>
+      <textarea name="description" class="form-control" rows="3">@isset($product){{ $product->description }}@endisset</textarea>
+      @error('description')
+        <div class="invalid-feedback">
+          {{ $message }}
+        </div>
+      @enderror
     </div>
     <div class="form-group">
       <label>Цена</label>
       <input type="text" name="price" class="form-control" required value="@isset($product){{ $product->price }}@endisset">
+      @error('price')
+        <div class="invalid-feedback">
+          {{ $message }}
+        </div>
+      @enderror
     </div>
     <div class="form-group">
       <label for="exampleFormControlFile1">Картинка</label>

@@ -12422,7 +12422,121 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-origin {
 }
 
 
-.admin-dashboard table {
+
+
+.form-admin .table-responsive-sm {
+  font-size: 15px;
+}
+.form-admin .table-responsive-sm a:not(.btn):hover {
+  text-decoration: underline;
+}
+.form-admin .table-responsive-sm table {
+  width: 100%;
+  min-width: 500px;
+  text-align: left;
+}
+.form-admin .table-responsive-sm thead th {
+  border-bottom: 2px solid #f0f0f0;
+  text-transform: uppercase;
+  color: #6c757d;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 10px 12px;
+}
+.form-admin .table-responsive-sm tbody td,
+.form-admin .table-responsive-sm tbody th,
+.form-admin .table-responsive-sm tfoot td,
+.form-admin .table-responsive-sm tfoot th {
+  padding: 12px;
+  padding-top: 5px !important;
+  padding-bottom: 5px;
+}
+.form-admin .table-responsive-sm tfoot td,
+.form-admin .table-responsive-sm tfoot th {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+.form-admin .table-responsive-sm tbody + tbody tr td,
+.form-admin .table-responsive-sm tbody + tbody tr th,
+.form-admin .table-responsive-sm tbody + tfoot tr td,
+.form-admin .table-responsive-sm tbody + tfoot tr th,
+.form-admin .table-responsive-sm tbody tr + tr td,
+.form-admin .table-responsive-sm tbody tr + tr th {
+  border-top: 1px solid #f0f0f0;
+}
+.form-admin .table-responsive-sm tbody tr:hover > *,
+.form-admin .table-responsive-sm tfoot tr:hover > * {
+  background-color: #f7f7f7;
+}
+.form-admin .table-responsive-sm td:first-child,
+.form-admin .table-responsive-sm th:first-child {
+  padding-left: 2rem;
+}
+.form-admin .table-responsive-sm td:last-child,
+.form-admin .table-responsive-sm th:last-child {
+  padding-right: 2rem;
+}
+.form-admin .table-responsive-sm tr:hover {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+.form-admin .table-responsive-sm tbody tr:hover > *,
+.form-admin .table-responsive-sm tfoot tr:hover > * {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.form-admin .card-table__body--merge-rows td,
+.form-admin .card-table__body--merge-rows th {
+  padding-top: 3px;
+  min-width: 150px;
+  padding-bottom: 3px;
+  color: white !important;
+}
+.form-admin .table-responsive-sm thead tr th {
+  color: white !important;
+}
+.form-admin .table-responsive-sm tr td a {
+  color: white;
+  text-decoration: underline;
+}
+.form-admin .table-responsive-sm tr:hover > td a,
+.form-admin .table-responsive-sm tr td a:hover,
+.form-admin .table-responsive-sm a:hover {
+  text-decoration: none;
+}
+.form-admin .card-table__body--merge-rows tr:first-child td,
+.form-admin .card-table__body--merge-rows tr:first-child th {
+  padding-top: 12px;
+}
+.form-admin .card-table__body--merge-rows tr:last-child td,
+.form-admin .card-table__body--merge-rows tr:last-child th {
+  padding-bottom: 12px;
+}
+
+.form-admin .card-table__body--merge-rows tr + tr td,
+.form-admin .card-table__body--merge-rows tr + tr th,
+.form-admin tfoot tr th,
+.form-admin tfoot tr td {
+  border-top: none;
+  color: white !important;
+}
+.form-admin .card-table__body--merge-rows tr {
+  color: white;
+  width: 100% !important;
+}
+.form-admin .card-table__body--merge-rows tr td:last-child,
+.admin-dashboard .form-admin .table-responsive-sm tr td:last-child {
+  opacity: 1 !important;
+  width: 100%;
+}
+
+.form-admin h3,
+.form-admin h2,
+.form-admin h4,
+.form-admin h5,
+.form-admin h6 {
+  color: white;
+}
+.admin-dashboard .table {
   border-spacing: 1;
   border-collapse: collapse;
   background: #fff;
@@ -12432,17 +12546,17 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-origin {
   margin: 0 auto;
   position: relative;
 }
-.admin-dashboard table thead tr {
+.admin-dashboard .table thead tr {
   height: 60px;
   background: #36304a;
 }
-.admin-dashboard table tbody tr {
+.admin-dashboard .table tbody tr {
   transition: all 0.25s;
 }
-.admin-dashboard table tbody tr:hover {
+.admin-dashboard .table tbody tr:hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
-.admin-dashboard table thead th {
+.admin-dashboard .table thead th {
   font-size: 18px;
   color: #fff;
   padding-bottom: 17.5px;

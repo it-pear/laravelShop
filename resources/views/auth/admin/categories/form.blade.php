@@ -32,7 +32,7 @@
     @csrf
     <div class="form-group">      
       <label>Код (наименование на английском)</label>
-      <input type="text" pattern="[A-Za-z]{6,}" name="code" class="form-control"  value="@isset($category){{ $category->code }}@endisset">
+      <input type="text" pattern="[A-Za-z]{6,}" name="code" class="form-control" required value="{{ old('code', isset($category) ? $category->code : null) }}">
       @error('code')
         <div class="invalid-feedback">
           {{ $message }}
@@ -41,11 +41,21 @@
     </div>
     <div class="form-group">
       <label>Название</label>
-      <input type="text" name="name" class="form-control"  value="@isset($category){{ $category->name }}@endisset">
+      <input type="text" name="name" class="form-control" required value="@isset($category){{ $category->name }}@endisset">
+      @error('name')
+        <div class="invalid-feedback">
+          {{ $message }}
+        </div>
+      @enderror
     </div>
     <div class="form-group">
       <label>Описание</label>
-      <textarea name="description" class="form-control" rows="3" value="@isset($category){{ $category->description }}@endisset"></textarea>
+      <textarea name="description" class="form-control" rows="3">@isset($category){{ $category->description }}@endisset</textarea>
+      @error('description')
+        <div class="invalid-feedback">
+          {{ $message }}
+        </div>
+      @enderror
     </div>
     <div class="form-group">
       <label>Картинка</label>

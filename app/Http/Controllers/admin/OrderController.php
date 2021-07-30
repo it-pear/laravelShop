@@ -9,6 +9,10 @@ class OrderController extends Controller
 {
     public function index() {
         $orders = Order::where('status', 1)->get();
-        return view('auth.admin.orders', compact('orders'));
+        return view('auth.admin.orders.index', compact('orders'));
+    }
+    public function show(Order $order)
+    {
+        return view('auth.admin.orders.show', compact('order'));
     }
 }
