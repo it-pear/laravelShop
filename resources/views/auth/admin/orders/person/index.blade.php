@@ -29,8 +29,8 @@
         <div class="col-12 col-lg-3 d-flex">
           <div class="account-nav flex-grow-1">
             <h4 class="account-nav__title">Навигация</h4>
-            <ul>
-              <li class="account-nav__item"><a href="">Мои заказы</a></li>
+            <ul class="directive-menu">
+              <li @routeactive('orders.index') class="account-nav__item"><a href="">Мои заказы</a></li>
               <li class="account-nav__item"><a href="">Редактировать профиль</a></li>
               <li class="account-nav__item"><a href="">Выйти</a></li>
             </ul>

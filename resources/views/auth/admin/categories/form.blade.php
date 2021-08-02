@@ -41,7 +41,7 @@
     </div>
     <div class="form-group">
       <label>Название</label>
-      <input type="text" name="name" class="form-control" required value="@isset($category){{ $category->name }}@endisset">
+      <input type="text" name="name" class="form-control" required value="{{ old('name', isset($category) ? $category->name : null) }}">
       @error('name')
         <div class="invalid-feedback">
           {{ $message }}
@@ -50,7 +50,7 @@
     </div>
     <div class="form-group">
       <label>Описание</label>
-      <textarea name="description" class="form-control" rows="3">@isset($category){{ $category->description }}@endisset</textarea>
+      <textarea name="description" class="form-control" rows="3">{{ old('description', isset($category) ? $category->description : null) }}</textarea>
       @error('description')
         <div class="invalid-feedback">
           {{ $message }}

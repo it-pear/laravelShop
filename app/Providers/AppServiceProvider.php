@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 
@@ -25,7 +26,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Blade::directive('routeactive', function ($route) {
+            return "<?php echo Route::currentRouteNamed($route) ? 'class=\"account-nav__item--active\"' : '' ?>";
+        });
     }
 }
 
