@@ -15,10 +15,12 @@ Route::get('/logout', 'App\Http\Controllers\Auth\LoginController@logout')->name(
 
 Route::middleware(['auth'])->group(function() {
   Route::group([
-    'prefix' => 'person'
+    'prefix' => 'person',
+    'as' => 'person.'
   ], function () {
     Route::get('/orders', 'App\Http\Controllers\person\OrderController@index')->name('orders.index');
     Route::get('/orders/{order}', 'App\Http\Controllers\person\OrderController@show')->name('orders.show');
+    Route::get('/profile', 'App\Http\Controllers\person\OrderController@profile')->name('profile');
   });
 
   Route::group([

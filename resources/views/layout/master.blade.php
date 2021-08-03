@@ -289,7 +289,7 @@
                           </form>
                         @endguest
                         @auth
-                          @if (Auth::user()->isAdmin())
+                          @admin
                             <ul class="account-menu__links">
                             <li><a href="{{ route('home') }}">Панель администратора</a></li>
                               <li><a href="{{ route('get-logout') }}">Выйти</a></li>
@@ -319,13 +319,13 @@
                             <div class="account-menu__divider"></div>
                             <ul class="account-menu__links">
                               <li><a href="">Мой профиль</a></li>
-                              <li><a href="{{ route('orders.index') }}">История заказов</a></li>
+                              <li><a href="{{ route('person.orders.index') }}">История заказов</a></li>
                             </ul>
                             <div class="account-menu__divider"></div>
                             <ul class="account-menu__links">
                               <li><a href="{{ route('get-logout') }}">Выйти</a></li>
                             </ul>
-                          @endif
+                          @endadmin
                         @endauth
                       </div>
                     </div>
@@ -375,7 +375,7 @@
                 <div class="site-footer__widget footer-links">
                   <h5 class="footer-links__title">Мой аккаунт</h5>
                   <ul class="footer-links__list">
-                    <li class="footer-links__item"><a href="{{ route('orders.index') }}" class="footer-links__link">История заказов</a></li>
+                    <li class="footer-links__item"><a href="{{ route('person.orders.index') }}" class="footer-links__link">История заказов</a></li>
                     <li class="footer-links__item"><a href="" class="footer-links__link">Настройки</a></li>
                   </ul>
                 </div>

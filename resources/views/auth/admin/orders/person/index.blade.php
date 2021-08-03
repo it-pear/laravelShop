@@ -27,14 +27,7 @@
     <div class="container">
       <div class="row">
         <div class="col-12 col-lg-3 d-flex">
-          <div class="account-nav flex-grow-1">
-            <h4 class="account-nav__title">Навигация</h4>
-            <ul class="directive-menu">
-              <li @routeactive('orders.index') class="account-nav__item"><a href="">Мои заказы</a></li>
-              <li class="account-nav__item"><a href="">Редактировать профиль</a></li>
-              <li class="account-nav__item"><a href="">Выйти</a></li>
-            </ul>
-          </div>
+          @include('/layout/sidebarprof')
         </div>
         <div class="col-12 col-lg-9 mt-4 mt-lg-0">
           <div class="card">
@@ -56,7 +49,7 @@
                   <tbody>
                     @foreach ($orders as $order)
                       <tr>
-                        <td><a href="">#{{ $order->id }}</a></td>
+                        <td><a href="{{ route('person.orders.show', $order) }}">#{{ $order->id }}</a></td>
                         <td>{{ $order->created_at->format('H:i d/m/Y') }}</td>
                         <td>статус</td>
                         <td>{{ $order->getFullPrice() }}₽</td>
