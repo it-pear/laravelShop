@@ -81,12 +81,30 @@
     </div>
     <div class="form-group">
       <label>Цена</label>
-      <input type="text" name="price" class="form-control" required value="{{ old('price', isset($product) ? $product->price : null) }}">
+      <input type="text" name="price" pattern="[0-9]{1,}" class="form-control" required value="{{ old('price', isset($product) ? $product->price : null) }}">
       @error('price')
         <div class="invalid-feedback">
           {{ $message }}
         </div>
       @enderror
+    </div>
+    <div class="form-group">
+      <label>Дополнительно</label>
+      <div class="container">
+        <div class="row">
+          @foreach ([
+            'hit' => 'Хит',
+            'new' => 'Новинка',
+            'rcommend' => 'Рекомендуемые'
+          ] as $field => $title)
+            <div class="col ml-1 d-flex align-items-center">
+                <span>{{ $title }}</span>
+                <input type="checkbox" class="form-control form-control__check ml-2" id="{{ $field }}" name="{{ $field }}" value="0">
+            </div>
+          @endforeach
+        </div>
+      </div>
+      
     </div>
     <div class="form-group">
       <label for="exampleFormControlFile1">Картинка</label>

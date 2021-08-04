@@ -1239,9 +1239,14 @@ screen and (-ms-high-contrast: active) {
 .form-group {
     margin-bottom: 1.5rem;
 }
-
+.form-group span {
+    color: white;
+}
 .form-check {
     padding-left: 1.5rem;
+}
+.form-control__check {
+    width: 20px;
 }
 
 .form-check-input {

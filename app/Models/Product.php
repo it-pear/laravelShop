@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    protected $fillable = ['code', 'name', 'description', 'price', 'image'];
+    protected $fillable = ['code', 'name', 'category_id', 'description', 'price', 'image', 'hit', 'new', 'recommend'];
     public function category()
     {
         return $this->belongsTo(Category::class);
@@ -17,5 +17,18 @@ class Product extends Model
             return $this->pivot->count * $this->price;
         }
         return $this->price;
+    }
+
+    public function isHit()
+    {
+        return $this->hit == 1;
+    }
+    public function isNew()
+    {
+        return $this->new == 1;
+    }
+    public function isRecommend()
+    {
+        return $this->recommend == 1;
     }
 }
