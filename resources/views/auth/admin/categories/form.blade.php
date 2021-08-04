@@ -33,29 +33,17 @@
     <div class="form-group">      
       <label>Код (наименование на английском)</label>
       <input type="text" pattern="[A-Za-z]{6,}" name="code" class="form-control" required value="{{ old('code', isset($category) ? $category->code : null) }}">
-      @error('code')
-        <div class="invalid-feedback">
-          {{ $message }}
-        </div>
-      @enderror
+      @include('layout.error', ['fieldName' => 'code'])
     </div>
     <div class="form-group">
       <label>Название</label>
       <input type="text" name="name" class="form-control" required value="{{ old('name', isset($category) ? $category->name : null) }}">
-      @error('name')
-        <div class="invalid-feedback">
-          {{ $message }}
-        </div>
-      @enderror
+      @include('layout.error', ['fieldName' => 'name'])
     </div>
     <div class="form-group">
       <label>Описание</label>
       <textarea name="description" class="form-control" rows="3">{{ old('description', isset($category) ? $category->description : null) }}</textarea>
-      @error('description')
-        <div class="invalid-feedback">
-          {{ $message }}
-        </div>
-      @enderror
+      @include('layout.error', ['fieldName' => 'description'])
     </div>
     <div class="form-group">
       <label>Картинка</label>

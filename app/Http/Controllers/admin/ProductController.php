@@ -42,6 +42,7 @@ class ProductController extends Controller
     public function store(ProductRequest $request)
     {
         $params = $request->all();
+        dd($params);
         unset($params['image']);
         if ($request->has('image')) {
             $path = $request->file('image')->store('product');
