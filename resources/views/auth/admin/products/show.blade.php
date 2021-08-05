@@ -14,6 +14,23 @@
       <h6>Категория - <small>{{ $product->category->name }}</small></h6>
       <h6>Описание - <small>{{ $product->description }}</small></h6>
       <h6>Цена - <small>{{ $product->price }}</small></h6>
+      <h6>Дополнительно - 
+        <small>
+          @if ($product->isNew())
+            <u>Новинка</u>
+          @endif
+        </small>
+        <small>
+          @if ($product->isRecommend())
+            <u>Рекомендуемое</u>
+          @endif
+        </small>
+        <small>
+          @if ($product->isHit())
+            <u>Хит</u>
+          @endif
+        </small>
+      </h6>
     </div>
     <div class="admin-section-image">
       <img src="{{ Storage::url($product->image) }}" alt="">

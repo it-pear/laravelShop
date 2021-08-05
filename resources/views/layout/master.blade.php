@@ -255,7 +255,7 @@
                                 </table>
                               </div>
                               <div class="dropcart__buttons">
-                                <a class="btn btn-secondary" href="{{ route('basket') }}">В корзину</a>
+                                <a class="btn btn-secondary" href="{{ route('basket') }}">Добавить</a>
                                 <a class="btn btn-primary" href="{{ route('checkout') }}">Оформить</a>
                               </div>
                             @endif

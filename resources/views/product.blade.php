@@ -146,7 +146,7 @@
                       <div class="input-number__sub"></div>
                     </div>
                   </div>
-                  <div class="product__actions-item product__actions-item--addtocart"><button class="btn btn-primary btn-lg">Add to cart</button></div>
+                  <div class="product__actions-item product__actions-item--addtocart"><button class="btn btn-primary btn-lg">Добавить</button></div>
                   <div class="product__actions-item product__actions-item--wishlist"><button type="button" class="btn btn-secondary btn-svg-icon btn-lg" data-toggle="tooltip" title="Wishlist"><svg width="16px" height="16px">
                         <use xlink:href="images/sprite.svg#wishlist-16"></use>
                       </svg></button></div>
@@ -707,7 +707,7 @@
                   <div class="product-card__availability">Availability: <span class="text-success">In Stock</span>
                   </div>
                   <div class="product-card__prices">$749.00</div>
-                  <div class="product-card__buttons"><button class="btn btn-primary product-card__addtocart" type="button">Add To Cart</button> <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">Add To Cart</button> <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist" type="button"><svg width="16px" height="16px">
+                  <div class="product-card__buttons"><button class="btn btn-primary product-card__addtocart" type="button">Добавить</button> <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">Добавить</button> <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist" type="button"><svg width="16px" height="16px">
                         <use xlink:href="images/sprite.svg#wishlist-16"></use>
                       </svg> <span class="fake-svg-icon fake-svg-icon--wishlist-16"></span></button> <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__compare" type="button"><svg width="16px" height="16px">
                         <use xlink:href="images/sprite.svg#compare-16"></use>
@@ -824,7 +824,7 @@
                   <div class="product-card__availability">Availability: <span class="text-success">In Stock</span>
                   </div>
                   <div class="product-card__prices">$1,019.00</div>
-                  <div class="product-card__buttons"><button class="btn btn-primary product-card__addtocart" type="button">Add To Cart</button> <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">Add To Cart</button> <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist" type="button"><svg width="16px" height="16px">
+                  <div class="product-card__buttons"><button class="btn btn-primary product-card__addtocart" type="button">Добавить</button> <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">Добавить</button> <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist" type="button"><svg width="16px" height="16px">
                         <use xlink:href="images/sprite.svg#wishlist-16"></use>
                       </svg> <span class="fake-svg-icon fake-svg-icon--wishlist-16"></span></button> <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__compare" type="button"><svg width="16px" height="16px">
                         <use xlink:href="images/sprite.svg#compare-16"></use>
@@ -938,7 +938,7 @@
                   <div class="product-card__availability">Availability: <span class="text-success">In Stock</span>
                   </div>
                   <div class="product-card__prices">$850.00</div>
-                  <div class="product-card__buttons"><button class="btn btn-primary product-card__addtocart" type="button">Add To Cart</button> <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">Add To Cart</button> <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist" type="button"><svg width="16px" height="16px">
+                  <div class="product-card__buttons"><button class="btn btn-primary product-card__addtocart" type="button">Добавить</button> <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">Добавить</button> <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist" type="button"><svg width="16px" height="16px">
                         <use xlink:href="images/sprite.svg#wishlist-16"></use>
                       </svg> <span class="fake-svg-icon fake-svg-icon--wishlist-16"></span></button> <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__compare" type="button"><svg width="16px" height="16px">
                         <use xlink:href="images/sprite.svg#compare-16"></use>
@@ -1055,7 +1055,7 @@
                   <div class="product-card__availability">Availability: <span class="text-success">In Stock</span>
                   </div>
                   <div class="product-card__prices"><span class="product-card__new-price">$949.00</span> <span class="product-card__old-price">$1189.00</span></div>
-                  <div class="product-card__buttons"><button class="btn btn-primary product-card__addtocart" type="button">Add To Cart</button> <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">Add To Cart</button> <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist" type="button"><svg width="16px" height="16px">
+                  <div class="product-card__buttons"><button class="btn btn-primary product-card__addtocart" type="button">Добавить</button> <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">Добавить</button> <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist" type="button"><svg width="16px" height="16px">
                         <use xlink:href="images/sprite.svg#wishlist-16"></use>
                       </svg> <span class="fake-svg-icon fake-svg-icon--wishlist-16"></span></button> <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__compare" type="button"><svg width="16px" height="16px">
                         <use xlink:href="images/sprite.svg#compare-16"></use>
@@ -1169,7 +1169,7 @@
                   <div class="product-card__availability">Availability: <span class="text-success">In Stock</span>
                   </div>
                   <div class="product-card__prices">$1,700.00</div>
-                  <div class="product-card__buttons"><button class="btn btn-primary product-card__addtocart" type="button">Add To Cart</button> <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">Add To Cart</button> <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist" type="button"><svg width="16px" height="16px">
+                  <div class="product-card__buttons"><button class="btn btn-primary product-card__addtocart" type="button">Добавить</button> <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">Добавить</button> <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist" type="button"><svg width="16px" height="16px">
                         <use xlink:href="images/sprite.svg#wishlist-16"></use>
                       </svg> <span class="fake-svg-icon fake-svg-icon--wishlist-16"></span></button> <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__compare" type="button"><svg width="16px" height="16px">
                         <use xlink:href="images/sprite.svg#compare-16"></use>
@@ -1283,7 +1283,7 @@
                   <div class="product-card__availability">Availability: <span class="text-success">In Stock</span>
                   </div>
                   <div class="product-card__prices">$3,199.00</div>
-                  <div class="product-card__buttons"><button class="btn btn-primary product-card__addtocart" type="button">Add To Cart</button> <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">Add To Cart</button> <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist" type="button"><svg width="16px" height="16px">
+                  <div class="product-card__buttons"><button class="btn btn-primary product-card__addtocart" type="button">Добавить</button> <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">Добавить</button> <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist" type="button"><svg width="16px" height="16px">
                         <use xlink:href="images/sprite.svg#wishlist-16"></use>
                       </svg> <span class="fake-svg-icon fake-svg-icon--wishlist-16"></span></button> <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__compare" type="button"><svg width="16px" height="16px">
                         <use xlink:href="images/sprite.svg#compare-16"></use>
@@ -1396,7 +1396,7 @@
                   <div class="product-card__availability">Availability: <span class="text-success">In Stock</span>
                   </div>
                   <div class="product-card__prices">$24.00</div>
-                  <div class="product-card__buttons"><button class="btn btn-primary product-card__addtocart" type="button">Add To Cart</button> <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">Add To Cart</button> <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist" type="button"><svg width="16px" height="16px">
+                  <div class="product-card__buttons"><button class="btn btn-primary product-card__addtocart" type="button">Добавить</button> <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">Добавить</button> <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist" type="button"><svg width="16px" height="16px">
                         <use xlink:href="images/sprite.svg#wishlist-16"></use>
                       </svg> <span class="fake-svg-icon fake-svg-icon--wishlist-16"></span></button> <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__compare" type="button"><svg width="16px" height="16px">
                         <use xlink:href="images/sprite.svg#compare-16"></use>
@@ -1509,7 +1509,7 @@
                   <div class="product-card__availability">Availability: <span class="text-success">In Stock</span>
                   </div>
                   <div class="product-card__prices">$15.00</div>
-                  <div class="product-card__buttons"><button class="btn btn-primary product-card__addtocart" type="button">Add To Cart</button> <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">Add To Cart</button> <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist" type="button"><svg width="16px" height="16px">
+                  <div class="product-card__buttons"><button class="btn btn-primary product-card__addtocart" type="button">Добавить</button> <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">Добавить</button> <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist" type="button"><svg width="16px" height="16px">
                         <use xlink:href="images/sprite.svg#wishlist-16"></use>
                       </svg> <span class="fake-svg-icon fake-svg-icon--wishlist-16"></span></button> <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__compare" type="button"><svg width="16px" height="16px">
                         <use xlink:href="images/sprite.svg#compare-16"></use>
@@ -1622,7 +1622,7 @@
                   <div class="product-card__availability">Availability: <span class="text-success">In Stock</span>
                   </div>
                   <div class="product-card__prices">$19.00</div>
-                  <div class="product-card__buttons"><button class="btn btn-primary product-card__addtocart" type="button">Add To Cart</button> <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">Add To Cart</button> <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist" type="button"><svg width="16px" height="16px">
+                  <div class="product-card__buttons"><button class="btn btn-primary product-card__addtocart" type="button">Добавить</button> <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">Добавить</button> <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist" type="button"><svg width="16px" height="16px">
                         <use xlink:href="images/sprite.svg#wishlist-16"></use>
                       </svg> <span class="fake-svg-icon fake-svg-icon--wishlist-16"></span></button> <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__compare" type="button"><svg width="16px" height="16px">
                         <use xlink:href="images/sprite.svg#compare-16"></use>
@@ -1735,7 +1735,7 @@
                   <div class="product-card__availability">Availability: <span class="text-success">In Stock</span>
                   </div>
                   <div class="product-card__prices">$15.00</div>
-                  <div class="product-card__buttons"><button class="btn btn-primary product-card__addtocart" type="button">Add To Cart</button> <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">Add To Cart</button> <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist" type="button"><svg width="16px" height="16px">
+                  <div class="product-card__buttons"><button class="btn btn-primary product-card__addtocart" type="button">Добавить</button> <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">Добавить</button> <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist" type="button"><svg width="16px" height="16px">
                         <use xlink:href="images/sprite.svg#wishlist-16"></use>
                       </svg> <span class="fake-svg-icon fake-svg-icon--wishlist-16"></span></button> <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__compare" type="button"><svg width="16px" height="16px">
                         <use xlink:href="images/sprite.svg#compare-16"></use>
@@ -1848,7 +1848,7 @@
                   <div class="product-card__availability">Availability: <span class="text-success">In Stock</span>
                   </div>
                   <div class="product-card__prices">$149.00</div>
-                  <div class="product-card__buttons"><button class="btn btn-primary product-card__addtocart" type="button">Add To Cart</button> <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">Add To Cart</button> <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist" type="button"><svg width="16px" height="16px">
+                  <div class="product-card__buttons"><button class="btn btn-primary product-card__addtocart" type="button">Добавить</button> <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">Добавить</button> <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist" type="button"><svg width="16px" height="16px">
                         <use xlink:href="images/sprite.svg#wishlist-16"></use>
                       </svg> <span class="fake-svg-icon fake-svg-icon--wishlist-16"></span></button> <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__compare" type="button"><svg width="16px" height="16px">
                         <use xlink:href="images/sprite.svg#compare-16"></use>
@@ -1961,7 +1961,7 @@
                   <div class="product-card__availability">Availability: <span class="text-success">In Stock</span>
                   </div>
                   <div class="product-card__prices">$666.99</div>
-                  <div class="product-card__buttons"><button class="btn btn-primary product-card__addtocart" type="button">Add To Cart</button> <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">Add To Cart</button> <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist" type="button"><svg width="16px" height="16px">
+                  <div class="product-card__buttons"><button class="btn btn-primary product-card__addtocart" type="button">Добавить</button> <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">Добавить</button> <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist" type="button"><svg width="16px" height="16px">
                         <use xlink:href="images/sprite.svg#wishlist-16"></use>
                       </svg> <span class="fake-svg-icon fake-svg-icon--wishlist-16"></span></button> <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__compare" type="button"><svg width="16px" height="16px">
                         <use xlink:href="images/sprite.svg#compare-16"></use>
@@ -2074,7 +2074,7 @@
                   <div class="product-card__availability">Availability: <span class="text-success">In Stock</span>
                   </div>
                   <div class="product-card__prices">$649.00</div>
-                  <div class="product-card__buttons"><button class="btn btn-primary product-card__addtocart" type="button">Add To Cart</button> <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">Add To Cart</button> <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist" type="button"><svg width="16px" height="16px">
+                  <div class="product-card__buttons"><button class="btn btn-primary product-card__addtocart" type="button">Добавить</button> <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">Добавить</button> <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist" type="button"><svg width="16px" height="16px">
                         <use xlink:href="images/sprite.svg#wishlist-16"></use>
                       </svg> <span class="fake-svg-icon fake-svg-icon--wishlist-16"></span></button> <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__compare" type="button"><svg width="16px" height="16px">
                         <use xlink:href="images/sprite.svg#compare-16"></use>
@@ -2187,7 +2187,7 @@
                   <div class="product-card__availability">Availability: <span class="text-success">In Stock</span>
                   </div>
                   <div class="product-card__prices">$1,800.00</div>
-                  <div class="product-card__buttons"><button class="btn btn-primary product-card__addtocart" type="button">Add To Cart</button> <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">Add To Cart</button> <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist" type="button"><svg width="16px" height="16px">
+                  <div class="product-card__buttons"><button class="btn btn-primary product-card__addtocart" type="button">Добавить</button> <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">Добавить</button> <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist" type="button"><svg width="16px" height="16px">
                         <use xlink:href="images/sprite.svg#wishlist-16"></use>
                       </svg> <span class="fake-svg-icon fake-svg-icon--wishlist-16"></span></button> <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__compare" type="button"><svg width="16px" height="16px">
                         <use xlink:href="images/sprite.svg#compare-16"></use>
@@ -2300,7 +2300,7 @@
                   <div class="product-card__availability">Availability: <span class="text-success">In Stock</span>
                   </div>
                   <div class="product-card__prices">$290.00</div>
-                  <div class="product-card__buttons"><button class="btn btn-primary product-card__addtocart" type="button">Add To Cart</button> <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">Add To Cart</button> <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist" type="button"><svg width="16px" height="16px">
+                  <div class="product-card__buttons"><button class="btn btn-primary product-card__addtocart" type="button">Добавить</button> <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">Добавить</button> <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist" type="button"><svg width="16px" height="16px">
                         <use xlink:href="images/sprite.svg#wishlist-16"></use>
                       </svg> <span class="fake-svg-icon fake-svg-icon--wishlist-16"></span></button> <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__compare" type="button"><svg width="16px" height="16px">
                         <use xlink:href="images/sprite.svg#compare-16"></use>
@@ -2413,7 +2413,7 @@
                   <div class="product-card__availability">Availability: <span class="text-success">In Stock</span>
                   </div>
                   <div class="product-card__prices">$1,499.00</div>
-                  <div class="product-card__buttons"><button class="btn btn-primary product-card__addtocart" type="button">Add To Cart</button> <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">Add To Cart</button> <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist" type="button"><svg width="16px" height="16px">
+                  <div class="product-card__buttons"><button class="btn btn-primary product-card__addtocart" type="button">Добавить</button> <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">Добавить</button> <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist" type="button"><svg width="16px" height="16px">
                         <use xlink:href="images/sprite.svg#wishlist-16"></use>
                       </svg> <span class="fake-svg-icon fake-svg-icon--wishlist-16"></span></button> <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__compare" type="button"><svg width="16px" height="16px">
                         <use xlink:href="images/sprite.svg#compare-16"></use>

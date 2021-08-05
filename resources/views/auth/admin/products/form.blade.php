@@ -79,7 +79,7 @@
           @foreach ([
             'hit' => 'Хит',
             'new' => 'Новинка',
-            'rcommend' => 'Рекомендуемые'
+            'recommend' => 'Рекомендуемые'
           ] as $field => $title)
             <div class="col ml-1 d-flex align-items-center">
                 <span>{{ $title }}</span>

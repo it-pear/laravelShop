@@ -118,8 +118,8 @@
       <div class="product-card__prices">{{$product->price}}₽</div>
       <div class="product-card__buttons">
         <form action="{{ route('basket-add', $product) }}" method="POST">
-          <button type="submit" class="btn btn-primary product-card__addtocart" type="button">Add To Cart</button>
-          <button type="submit" class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">Add To Cart</button>
+          <button type="submit" class="btn btn-primary product-card__addtocart" type="button">Добавить</button>
+          <button type="submit" class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">Добавить</button>
           @csrf
         </form>
         
