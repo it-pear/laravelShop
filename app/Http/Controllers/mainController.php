@@ -15,7 +15,9 @@ class MainController extends Controller
     $products = Product::get();
     $categories = Category::get();
     $recommens = Product::where('recommend', 1)->get();
-    return view('index', compact('products', 'categories', 'recommens'));
+    $hits = Product::where('hit', 1)->limit(6)->get();
+    $hit = Product::where('hit', 1)->latest('created_at')->first();
+    return view('index', compact('products', 'categories', 'recommens', 'hits', 'hit'));
   }
   public function contacts() {
     return view('contacts');

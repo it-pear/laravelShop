@@ -2581,6 +2581,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-origin {
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .product-card__rating-legend,
@@ -2605,6 +2606,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-origin {
     line-height: 1;
     font-weight: 700;
     color: #3d464d;
+    text-align: center;
 }
 
 .product-card__new-price {
