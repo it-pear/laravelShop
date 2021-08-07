@@ -325,7 +325,7 @@
                         1200: {items: 4, margin: 14},
                         992:  {items: 4, margin: 10},
                         768:  {items: 3, margin: 10},
-                    }
+                    },
                 },
                 'grid-4-sm': {
                     responsive: {
@@ -343,6 +343,7 @@
                 },
                 'horizontal': {
                     items: 3,
+                    rows: 2,
                     responsive: {
                         1200: {items: 3, margin: 14},
                         992:  {items: 3, margin: 10},

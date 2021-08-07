@@ -11,7 +11,11 @@
     </div>
     <div class="product-card__image product-image">
       <a href="{{ route('product', [$product->category->code, $product->code]) }}" class="product-image__body">
-        <img class="product-image__img" src="/images/products/product-1.jpg" alt="">
+        @if( Storage::url($product->image) == Storage::url($product->null) )
+        <img class="product-image__img" src="/images/photo.png" alt="">
+        @else
+        <img class="product-image__img" src="{{ Storage::url($product->image) }}" alt="">
+        @endif
       </a>
     </div>
     <div class="product-card__info">
@@ -21,87 +25,7 @@
         </a>
       </div>
       <div class="product-card__rating">
-        <div class="product-card__rating-stars">
-          <div class="rating">
-            <div class="rating__body"><svg class="rating__star rating__star--active" width="13px" height="12px">
-                <g class="rating__fill">
-                  <use xlink:href="/images/sprite.svg#star-normal"></use>
-                </g>
-                <g class="rating__stroke">
-                  <use xlink:href="/images/sprite.svg#star-normal-stroke"></use>
-                </g>
-              </svg>
-              <div class="rating__star rating__star--only-edge rating__star--active">
-                <div class="rating__fill">
-                  <div class="fake-svg-icon"></div>
-                </div>
-                <div class="rating__stroke">
-                  <div class="fake-svg-icon"></div>
-                </div>
-              </div><svg class="rating__star rating__star--active" width="13px" height="12px">
-                <g class="rating__fill">
-                  <use xlink:href="/images/sprite.svg#star-normal"></use>
-                </g>
-                <g class="rating__stroke">
-                  <use xlink:href="/images/sprite.svg#star-normal-stroke"></use>
-                </g>
-              </svg>
-              <div class="rating__star rating__star--only-edge rating__star--active">
-                <div class="rating__fill">
-                  <div class="fake-svg-icon"></div>
-                </div>
-                <div class="rating__stroke">
-                  <div class="fake-svg-icon"></div>
-                </div>
-              </div><svg class="rating__star rating__star--active" width="13px" height="12px">
-                <g class="rating__fill">
-                  <use xlink:href="/images/sprite.svg#star-normal"></use>
-                </g>
-                <g class="rating__stroke">
-                  <use xlink:href="/images/sprite.svg#star-normal-stroke"></use>
-                </g>
-              </svg>
-              <div class="rating__star rating__star--only-edge rating__star--active">
-                <div class="rating__fill">
-                  <div class="fake-svg-icon"></div>
-                </div>
-                <div class="rating__stroke">
-                  <div class="fake-svg-icon"></div>
-                </div>
-              </div><svg class="rating__star rating__star--active" width="13px" height="12px">
-                <g class="rating__fill">
-                  <use xlink:href="/images/sprite.svg#star-normal"></use>
-                </g>
-                <g class="rating__stroke">
-                  <use xlink:href="/images/sprite.svg#star-normal-stroke"></use>
-                </g>
-              </svg>
-              <div class="rating__star rating__star--only-edge rating__star--active">
-                <div class="rating__fill">
-                  <div class="fake-svg-icon"></div>
-                </div>
-                <div class="rating__stroke">
-                  <div class="fake-svg-icon"></div>
-                </div>
-              </div><svg class="rating__star" width="13px" height="12px">
-                <g class="rating__fill">
-                  <use xlink:href="/images/sprite.svg#star-normal"></use>
-                </g>
-                <g class="rating__stroke">
-                  <use xlink:href="/images/sprite.svg#star-normal-stroke"></use>
-                </g>
-              </svg>
-              <div class="rating__star rating__star--only-edge">
-                <div class="rating__fill">
-                  <div class="fake-svg-icon"></div>
-                </div>
-                <div class="rating__stroke">
-                  <div class="fake-svg-icon"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        
         <div class="product-card__rating-legend">{{ $product->category->name }}</div>
       </div>
       <ul class="product-card__features-list">

@@ -32,29 +32,14 @@
 
 				<div class="block">
 					<div class="products-view">
-						<div class="products-view__options">
+						<!-- <div class="products-view__options">
 							<div class="view-options view-options--offcanvas--always">
 								<div class="view-options__filters-button"><button type="button" class="filters-button"><svg class="filters-button__icon" width="16px" height="16px">
 											<use xlink:href="images/sprite.svg#filters-16"></use>
 										</svg> <span class="filters-button__title">Filters</span> <span class="filters-button__counter">3</span></button>
 									</div>
-
 							</div>
-							<div class="view-options__legend">Showing 6 of 98 products</div>
-							<div class="view-options__divider"></div>
-							<div class="view-options__control"><label for="">Sort By</label>
-								<div><select class="form-control form-control-sm" name="" id="">
-										<option value="">Default</option>
-										<option value="">Name (A-Z)</option>
-									</select></div>
-							</div>
-							<div class="view-options__control"><label for="">Show</label>
-								<div><select class="form-control form-control-sm" name="" id="">
-										<option value="">12</option>
-										<option value="">24</option>
-									</select></div>
-							</div>
-						</div>
+						</div> -->
 					</div>
 					<div class="products-view__list products-list" data-layout="grid-5-full" data-with-features="false" data-mobile-grid-columns="2">
 						<div class="products-list__body">

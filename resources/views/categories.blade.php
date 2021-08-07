@@ -31,20 +31,9 @@
                 <div class="view-options__filters-button"><button type="button" class="filters-button"><svg class="filters-button__icon" width="16px" height="16px">
                       <use xlink:href="images/sprite.svg#filters-16"></use>
                     </svg> <span class="filters-button__title">Filters</span> <span class="filters-button__counter">3</span></button></div>
-                <div class="view-options__legend">Showing 6 of 98 products</div>
+                <div class="view-options__legend">Все категории товаров</div>
                 <div class="view-options__divider"></div>
-                <div class="view-options__control"><label for="">Sort By</label>
-                  <div><select class="form-control form-control-sm" name="" id="">
-                      <option value="">Default</option>
-                      <option value="">Name (A-Z)</option>
-                    </select></div>
-                </div>
-                <div class="view-options__control"><label for="">Show</label>
-                  <div><select class="form-control form-control-sm" name="" id="">
-                      <option value="">12</option>
-                      <option value="">24</option>
-                    </select></div>
-                </div>
+                
               </div>
             </div>
             <div class="products-view__list products-list" data-layout="grid-5-full" data-with-features="false" data-mobile-grid-columns="2">
@@ -63,93 +52,16 @@
                           </div> -->
                     <div class="product-card__image product-image">
                       <a href="{{ route('category', $category->code) }}" class="product-image__body">
-                        <img class="product-image__img" src="/images/products/product-1.jpg" alt="">
+                        @if( Storage::url($category->image) == Storage::url($category->null) )
+                        <img class="product-image__img" src="/images/photo.png" alt="">
+                        @else
+                        <img class="product-image__img" src="{{ Storage::url($product->image) }}" alt="">
+                        @endif
                       </a>
                     </div>
                     <div class="product-card__info">
                       <div class="product-card__name"><a href="{{ route('category', $category->code) }}">{{$category->name}}</a></div>
                       <div class="product-card__rating">
-                        <div class="product-card__rating-stars">
-                          <div class="rating">
-                            <div class="rating__body"><svg class="rating__star rating__star--active" width="13px" height="12px">
-                                <g class="rating__fill">
-                                  <use xlink:href="images/sprite.svg#star-normal"></use>
-                                </g>
-                                <g class="rating__stroke">
-                                  <use xlink:href="images/sprite.svg#star-normal-stroke"></use>
-                                </g>
-                              </svg>
-                              <div class="rating__star rating__star--only-edge rating__star--active">
-                                <div class="rating__fill">
-                                  <div class="fake-svg-icon"></div>
-                                </div>
-                                <div class="rating__stroke">
-                                  <div class="fake-svg-icon"></div>
-                                </div>
-                              </div><svg class="rating__star rating__star--active" width="13px" height="12px">
-                                <g class="rating__fill">
-                                  <use xlink:href="images/sprite.svg#star-normal"></use>
-                                </g>
-                                <g class="rating__stroke">
-                                  <use xlink:href="images/sprite.svg#star-normal-stroke"></use>
-                                </g>
-                              </svg>
-                              <div class="rating__star rating__star--only-edge rating__star--active">
-                                <div class="rating__fill">
-                                  <div class="fake-svg-icon"></div>
-                                </div>
-                                <div class="rating__stroke">
-                                  <div class="fake-svg-icon"></div>
-                                </div>
-                              </div><svg class="rating__star rating__star--active" width="13px" height="12px">
-                                <g class="rating__fill">
-                                  <use xlink:href="images/sprite.svg#star-normal"></use>
-                                </g>
-                                <g class="rating__stroke">
-                                  <use xlink:href="images/sprite.svg#star-normal-stroke"></use>
-                                </g>
-                              </svg>
-                              <div class="rating__star rating__star--only-edge rating__star--active">
-                                <div class="rating__fill">
-                                  <div class="fake-svg-icon"></div>
-                                </div>
-                                <div class="rating__stroke">
-                                  <div class="fake-svg-icon"></div>
-                                </div>
-                              </div><svg class="rating__star rating__star--active" width="13px" height="12px">
-                                <g class="rating__fill">
-                                  <use xlink:href="images/sprite.svg#star-normal"></use>
-                                </g>
-                                <g class="rating__stroke">
-                                  <use xlink:href="images/sprite.svg#star-normal-stroke"></use>
-                                </g>
-                              </svg>
-                              <div class="rating__star rating__star--only-edge rating__star--active">
-                                <div class="rating__fill">
-                                  <div class="fake-svg-icon"></div>
-                                </div>
-                                <div class="rating__stroke">
-                                  <div class="fake-svg-icon"></div>
-                                </div>
-                              </div><svg class="rating__star" width="13px" height="12px">
-                                <g class="rating__fill">
-                                  <use xlink:href="images/sprite.svg#star-normal"></use>
-                                </g>
-                                <g class="rating__stroke">
-                                  <use xlink:href="images/sprite.svg#star-normal-stroke"></use>
-                                </g>
-                              </svg>
-                              <div class="rating__star rating__star--only-edge">
-                                <div class="rating__fill">
-                                  <div class="fake-svg-icon"></div>
-                                </div>
-                                <div class="rating__stroke">
-                                  <div class="fake-svg-icon"></div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
                         <div class="product-card__rating-legend">({{ $category->products->count() }}) товаров</div>
                       </div>
                       <ul class="product-card__features-list">

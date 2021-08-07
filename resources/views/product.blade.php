@@ -1,5 +1,5 @@
 @extends('/layout/master')
-
+@section('title' , $product->name)
 @section('content')
 <div class="site__body">
   <div class="page-header">
@@ -10,10 +10,11 @@
             <li class="breadcrumb-item"><a href="/">Главная</a>
               <img src="/images/sprite.svg" class="breadcrumb__arrowe-svg" alt="">
             </li>
-            <li class="breadcrumb-item"><a href="">Breadcrumb</a>
+            <li class="breadcrumb-item">
+              <a href="{{ route('category', $product->category->code) }}">{{ $product->category->name }}</a>
               <img src="/images/sprite.svg" class="breadcrumb__arrowe-svg" alt="">
             </li>
-            <li class="breadcrumb-item active" aria-current="page">Brandix Screwdriver SCREW1500ACC</li>
+            <li class="breadcrumb-item active" aria-current="page">{{ $product->name }}</li>
           </ol>
         </nav>
       </div>
@@ -97,48 +98,43 @@
                 </svg></button> <button type="button" class="btn btn-sm btn-light btn-svg-icon" data-toggle="tooltip" data-placement="right" title="Compare"><svg width="16px" height="16px">
                   <use xlink:href="images/sprite.svg#compare-16"></use>
                 </svg></button></div>
-            <h1 class="product__name">{{$product}}</h1>
+            <h1 class="product__name">{{$product->name}}</h1>
             <div class="product__rating">
-              <div class="product__rating-legend"><span>{{ $product }}<span></div>
+              <div class="product__rating-legend"><span>{{ $product->category->name }}<span></div>
             </div>
-            <div class="product__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-              ornare, mi in ornare elementum, libero nibh lacinia urna, quis convallis lorem erat at purus. Maecenas
-              eu varius nisi.</div>
-            <ul class="product__features">
-              <li>Speed: 750 RPM</li>
-              <li>Power Source: Cordless-Electric</li>
-              <li>Battery Cell Type: Lithium</li>
-              <li>Voltage: 20 Volts</li>
-              <li>Battery Capacity: 2 Ah</li>
-            </ul>
+            <div class="product__description">
+              {{ $product->description }}
+            </div>
             <ul class="product__meta">
-              <li class="product__meta-availability">Availability: <span class="text-success">In Stock</span></li>
-              <li>Brand: <a href="">Wakita</a></li>
-              <li>SKU: 83690/32</li>
+              <li class="product__meta-availability">Дополнительно:
+                <span class="text-success">
+
+                </span>
+              </li>
             </ul>
           </div><!-- .product__info / end -->
           <!-- .product__sidebar -->
           <div class="product__sidebar">
             <div class="product__availability">Availability: <span class="text-success">In Stock</span></div>
-            <div class="product__prices">$1,499.00</div><!-- .product__options -->
+            <div class="product__prices">{{ $product->price }}₽</div><!-- .product__options -->
             <form class="product__options">
-              <div class="form-group product__option"><label class="product__option-label">Color</label>
+              <!-- <div class="form-group product__option"><label class="product__option-label">Color</label>
                 <div class="input-radio-color">
                   <div class="input-radio-color__list"><label class="input-radio-color__item input-radio-color__item--white" style="color: #fff;" data-toggle="tooltip" title="White"><input type="radio" name="color"> <span></span></label>
                     <label class="input-radio-color__item" style="color: #ffd333;" data-toggle="tooltip" title="Yellow"><input type="radio" name="color"> <span></span></label> <label class="input-radio-color__item" style="color: #ff4040;" data-toggle="tooltip" title="Red"><input type="radio" name="color"> <span></span></label> <label class="input-radio-color__item input-radio-color__item--disabled" style="color: #4080ff;" data-toggle="tooltip" title="Blue"><input type="radio" name="color" disabled="disabled">
                       <span></span></label>
                   </div>
                 </div>
-              </div>
-              <div class="form-group product__option"><label class="product__option-label">Material</label>
+              </div> -->
+              <!-- <div class="form-group product__option"><label class="product__option-label">Material</label>
                 <div class="input-radio-label">
                   <div class="input-radio-label__list"><label><input type="radio" name="material">
                       <span>Metal</span></label> <label><input type="radio" name="material">
                       <span>Wood</span></label> <label><input type="radio" name="material" disabled="disabled">
                       <span>Plastic</span></label></div>
                 </div>
-              </div>
-              <div class="form-group product__option"><label class="product__option-label" for="product-quantity">Quantity</label>
+              </div> -->
+              <div class="form-group product__option"><label class="product__option-label" for="product-quantity">Количество</label>
                 <div class="product__actions">
                   <div class="product__actions-item">
                     <div class="input-number product__quantity"><input id="product-quantity" class="input-number__input form-control form-control-lg" type="number" min="1" value="1">
@@ -146,13 +142,9 @@
                       <div class="input-number__sub"></div>
                     </div>
                   </div>
-                  <div class="product__actions-item product__actions-item--addtocart"><button class="btn btn-primary btn-lg">Добавить</button></div>
-                  <div class="product__actions-item product__actions-item--wishlist"><button type="button" class="btn btn-secondary btn-svg-icon btn-lg" data-toggle="tooltip" title="Wishlist"><svg width="16px" height="16px">
-                        <use xlink:href="images/sprite.svg#wishlist-16"></use>
-                      </svg></button></div>
-                  <div class="product__actions-item product__actions-item--compare"><button type="button" class="btn btn-secondary btn-svg-icon btn-lg" data-toggle="tooltip" title="Compare"><svg width="16px" height="16px">
-                        <use xlink:href="images/sprite.svg#compare-16"></use>
-                      </svg></button></div>
+                  <div class="product__actions-item product__actions-item--addtocart">
+                    <button class="btn btn-primary btn-lg">Добавить</button>
+                  </div>
                 </div>
               </div>
             </form><!-- .product__options / end -->
@@ -161,49 +153,35 @@
             <div class="product__tags tags">
               <div class="tags__list"><a href="">Mounts</a> <a href="">Electrodes</a> <a href="">Chainsaws</a></div>
             </div>
-            <div class="product__share-links share-links">
+            <!-- <div class="product__share-links share-links">
               <ul class="share-links__list">
                 <li class="share-links__item share-links__item--type--like"><a href="">Like</a></li>
                 <li class="share-links__item share-links__item--type--tweet"><a href="">Tweet</a></li>
                 <li class="share-links__item share-links__item--type--pin"><a href="">Pin It</a></li>
                 <li class="share-links__item share-links__item--type--counter"><a href="">4K</a></li>
               </ul>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
       <div class="product-tabs product-tabs--sticky">
         <div class="product-tabs__list">
           <div class="product-tabs__list-body">
-            <div class="product-tabs__list-container container"><a href="#tab-description" class="product-tabs__item product-tabs__item--active">Description</a> <a href="#tab-specification" class="product-tabs__item">Specification</a> <a href="#tab-reviews" class="product-tabs__item">Reviews</a></div>
+            <div class="product-tabs__list-container container">
+              <a href="#tab-description" class="product-tabs__item product-tabs__item--active">Описание</a>
+              <!-- <a href="#tab-specification" class="product-tabs__item">Характеристики</a> -->
+              <!-- <a href="#tab-reviews" class="product-tabs__item">Reviews</a> -->
+            </div>
           </div>
         </div>
         <div class="product-tabs__content">
           <div class="product-tabs__pane product-tabs__pane--active" id="tab-description">
             <div class="typography">
-              <h3>Product Full Description</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum, diam non iaculis
-                finibus, ipsum arcu sollicitudin dolor, ut cursus sapien sem sed purus. Donec vitae fringilla
-                tortor, sed fermentum nunc. Suspendisse sodales turpis dolor, at rutrum dolor tristique id. Quisque
-                pellentesque ullamcorper felis, eget gravida mi elementum a. Maecenas consectetur volutpat ante, sit
-                amet molestie urna luctus in. Nulla eget dolor semper urna malesuada dictum. Duis eleifend
-                pellentesque dui et finibus. Pellentesque dapibus dignissim augue. Etiam odio est, sodales ac
-                aliquam id, iaculis eget lacus. Aenean porta, ante vitae suscipit pulvinar, purus dui interdum
-                tellus, sed dapibus mi mauris vitae tellus.</p>
-              <h3>Etiam lacus lacus mollis in mattis</h3>
-              <p>Praesent mattis eget augue ac elementum. Maecenas vel ante ut enim mollis accumsan. Vestibulum vel
-                eros at mi suscipit feugiat. Sed tortor purus, vulputate et eros a, rhoncus laoreet orci. Proin
-                sapien neque, commodo at porta in, vehicula eu elit. Vestibulum ante ipsum primis in faucibus orci
-                luctus et ultrices posuere cubilia Curae; Curabitur porta vulputate augue, at sollicitudin nisl
-                molestie eget.</p>
-              <p>Nunc sollicitudin, nunc id accumsan semper, libero nunc aliquet nulla, nec pretium ipsum risus ac
-                neque. Morbi eu facilisis purus. Quisque mi tortor, cursus in nulla ut, laoreet commodo quam.
-                Pellentesque et ornare sapien. In ac est tempus urna tincidunt finibus. Integer erat ipsum,
-                tristique ac lobortis sit amet, dapibus sit amet purus. Nam sed lorem nisi. Vestibulum ultrices
-                tincidunt turpis, sit amet fringilla odio scelerisque non.</p>
+              <h3>Полное описание товара</h3>
+              {{ $product->description }}
             </div>
           </div>
-          <div class="product-tabs__pane" id="tab-specification">
+          <!-- <div class="product-tabs__pane" id="tab-specification">
             <div class="spec">
               <h3 class="spec__header">Specification</h3>
               <div class="spec__section">
@@ -580,7 +558,7 @@
                 </div>
               </form>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -588,13 +566,32 @@
   <div class="block block-products-carousel" data-layout="grid-5" data-mobile-grid-columns="2">
     <div class="container">
       <div class="block-header">
-        <h3 class="block-header__title">Related Products</h3>
+        <h3 class="block-header__title">Похожие товары</h3>
         <div class="block-header__divider"></div>
-        <div class="block-header__arrows-list"><button class="block-header__arrow block-header__arrow--left" type="button"><svg width="7px" height="11px">
-              <use xlink:href="images/sprite.svg#arrow-rounded-left-7x11"></use>
-            </svg></button> <button class="block-header__arrow block-header__arrow--right" type="button"><svg width="7px" height="11px">
-              <use xlink:href="images/sprite.svg#arrow-rounded-right-7x11"></use>
-            </svg></button></div>
+        <div class="block-header__arrows-list">
+          <button class="block-header__arrow block-header__arrow--left" type="button">
+            <svg version="1.1" id="Capa_1" width="14px" height="14px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                viewBox="0 0 443.52 443.52" style="enable-background:new 0 0 443.52 443.52;" xml:space="preserve">
+              <g>
+                <g>
+                  <path d="M143.492,221.863L336.226,29.129c6.663-6.664,6.663-17.468,0-24.132c-6.665-6.662-17.468-6.662-24.132,0l-204.8,204.8
+                    c-6.662,6.664-6.662,17.468,0,24.132l204.8,204.8c6.78,6.548,17.584,6.36,24.132-0.42c6.387-6.614,6.387-17.099,0-23.712
+                    L143.492,221.863z"/>
+                </g>
+            </svg>
+            </button> 
+            <button class="block-header__arrow block-header__arrow--right" type="button">
+            <svg version="1.1" id="Capa_1" width="14px" height="14px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+              viewBox="0 0 512.002 512.002" style="enable-background:new 0 0 512.002 512.002;" xml:space="preserve">
+              <g>
+                <g>
+                  <path d="M388.425,241.951L151.609,5.79c-7.759-7.733-20.321-7.72-28.067,0.04c-7.74,7.759-7.72,20.328,0.04,28.067l222.72,222.105
+                    L123.574,478.106c-7.759,7.74-7.779,20.301-0.04,28.061c3.883,3.89,8.97,5.835,14.057,5.835c5.074,0,10.141-1.932,14.017-5.795
+                    l236.817-236.155c3.737-3.718,5.834-8.778,5.834-14.05S392.156,245.676,388.425,241.951z"/>
+                </g>
+            </svg>
+          </button>
+        </div>
       </div>
       <div class="block-products-carousel__slider">
         <div class="block-products-carousel__preloader"></div>
@@ -2090,91 +2087,7 @@
                   </svg> <span class="fake-svg-icon"></span></button>
                 <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="/images/products/product-14.jpg" alt=""></a></div>
                 <div class="product-card__info">
-                  <div class="product-card__name"><a href="product.html">Brandix Air Compressor DELTAKX500</a></div>
-                  <div class="product-card__rating">
-                    <div class="product-card__rating-stars">
-                      <div class="rating">
-                        <div class="rating__body"><svg class="rating__star rating__star--active" width="13px" height="12px">
-                            <g class="rating__fill">
-                              <use xlink:href="images/sprite.svg#star-normal"></use>
-                            </g>
-                            <g class="rating__stroke">
-                              <use xlink:href="images/sprite.svg#star-normal-stroke"></use>
-                            </g>
-                          </svg>
-                          <div class="rating__star rating__star--only-edge rating__star--active">
-                            <div class="rating__fill">
-                              <div class="fake-svg-icon"></div>
-                            </div>
-                            <div class="rating__stroke">
-                              <div class="fake-svg-icon"></div>
-                            </div>
-                          </div><svg class="rating__star rating__star--active" width="13px" height="12px">
-                            <g class="rating__fill">
-                              <use xlink:href="images/sprite.svg#star-normal"></use>
-                            </g>
-                            <g class="rating__stroke">
-                              <use xlink:href="images/sprite.svg#star-normal-stroke"></use>
-                            </g>
-                          </svg>
-                          <div class="rating__star rating__star--only-edge rating__star--active">
-                            <div class="rating__fill">
-                              <div class="fake-svg-icon"></div>
-                            </div>
-                            <div class="rating__stroke">
-                              <div class="fake-svg-icon"></div>
-                            </div>
-                          </div><svg class="rating__star rating__star--active" width="13px" height="12px">
-                            <g class="rating__fill">
-                              <use xlink:href="images/sprite.svg#star-normal"></use>
-                            </g>
-                            <g class="rating__stroke">
-                              <use xlink:href="images/sprite.svg#star-normal-stroke"></use>
-                            </g>
-                          </svg>
-                          <div class="rating__star rating__star--only-edge rating__star--active">
-                            <div class="rating__fill">
-                              <div class="fake-svg-icon"></div>
-                            </div>
-                            <div class="rating__stroke">
-                              <div class="fake-svg-icon"></div>
-                            </div>
-                          </div><svg class="rating__star" width="13px" height="12px">
-                            <g class="rating__fill">
-                              <use xlink:href="images/sprite.svg#star-normal"></use>
-                            </g>
-                            <g class="rating__stroke">
-                              <use xlink:href="images/sprite.svg#star-normal-stroke"></use>
-                            </g>
-                          </svg>
-                          <div class="rating__star rating__star--only-edge">
-                            <div class="rating__fill">
-                              <div class="fake-svg-icon"></div>
-                            </div>
-                            <div class="rating__stroke">
-                              <div class="fake-svg-icon"></div>
-                            </div>
-                          </div><svg class="rating__star" width="13px" height="12px">
-                            <g class="rating__fill">
-                              <use xlink:href="images/sprite.svg#star-normal"></use>
-                            </g>
-                            <g class="rating__stroke">
-                              <use xlink:href="images/sprite.svg#star-normal-stroke"></use>
-                            </g>
-                          </svg>
-                          <div class="rating__star rating__star--only-edge">
-                            <div class="rating__fill">
-                              <div class="fake-svg-icon"></div>
-                            </div>
-                            <div class="rating__stroke">
-                              <div class="fake-svg-icon"></div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="product-card__rating-legend">7 Reviews</div>
-                  </div>
+                  <div class="product-card__name">{{ $product->name }}</div>
                   <ul class="product-card__features-list">
                     <li>Speed: 750 RPM</li>
                     <li>Power Source: Cordless-Electric</li>
@@ -2198,12 +2111,18 @@
           </div>
           <div class="block-products-carousel__column">
             <div class="block-products-carousel__cell">
-              <div class="product-card product-card--hidden-actions"><button class="product-card__quickview" type="button"><svg width="16px" height="16px">
+              <div class="product-card product-card--hidden-actions">
+                <!-- <button class="product-card__quickview" type="button"><svg width="16px" height="16px">
                     <use xlink:href="images/sprite.svg#quickview-16"></use>
-                  </svg> <span class="fake-svg-icon"></span></button>
-                <div class="product-card__image product-image"><a href="product.html" class="product-image__body"><img class="product-image__img" src="/images/products/product-15.jpg" alt=""></a></div>
+                  </svg> <span class="fake-svg-icon"></span>
+                </button> -->
+                <div class="product-card__image product-image">
+                  <a href="product.html" class="product-image__body">
+                    <img class="product-image__img" src="/images/products/product-15.jpg" alt="">
+                  </a>
+                </div>
                 <div class="product-card__info">
-                  <div class="product-card__name"><a href="product.html">Brandix Electric Jigsaw JIG7000BQ</a></div>
+                  <div class="product-card__name">Brandix Electric Jigsaw JIG7000BQ</div>
                   <div class="product-card__rating">
                     <div class="product-card__rating-stars">
                       <div class="rating">
@@ -2412,7 +2331,7 @@
                 <div class="product-card__actions">
                   <div class="product-card__availability">Availability: <span class="text-success">In Stock</span>
                   </div>
-                  <div class="product-card__prices">$1,499.00</div>
+                  <div class="product-card__prices">{{ $product->price }}₽</div>
                   <div class="product-card__buttons"><button class="btn btn-primary product-card__addtocart" type="button">Добавить</button> <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">Добавить</button> <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist" type="button"><svg width="16px" height="16px">
                         <use xlink:href="images/sprite.svg#wishlist-16"></use>
                       </svg> <span class="fake-svg-icon fake-svg-icon--wishlist-16"></span></button> <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__compare" type="button"><svg width="16px" height="16px">

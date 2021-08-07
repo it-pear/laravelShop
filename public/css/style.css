@@ -8420,6 +8420,9 @@ screen and (-ms-high-contrast: active) {
 
 .product__description {
     font-size: 16px;
+    overflow: hidden;
+  line-height: 1.3em;
+  height: 3.9em;
 }
 
 .product__features {

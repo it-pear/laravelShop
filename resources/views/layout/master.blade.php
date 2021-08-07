@@ -397,8 +397,8 @@
                     <input type="text" class="footer-newsletter__form-input form-control" id="footer-newsletter-address" placeholder="Email@example.ru">
                     <button class="footer-newsletter__form-button btn btn-primary">Подписаться</button>
                   </form>
-                  <div class="footer-newsletter__text footer-newsletter__text--social">Следите за нами в социальных сетях
-                  </div><!-- social-links -->
+                  <!-- <div class="footer-newsletter__text footer-newsletter__text--social">Следите за нами в социальных сетях
+                  </div>
                   <div class="social-links footer-newsletter__social-links social-links--shape--circle">
                     <ul class="social-links__list">
                       <li class="social-links__item"><a class="social-links__link social-links__link--type--rss" href="" target="_blank"><i class="fas fa-rss"></i></a></li>
@@ -407,7 +407,7 @@
                       <li class="social-links__item"><a class="social-links__link social-links__link--type--twitter" href="" target="_blank"><i class="fab fa-twitter"></i></a></li>
                       <li class="social-links__item"><a class="social-links__link social-links__link--type--instagram" href="" target="_blank"><i class="fab fa-instagram"></i></a></li>
                     </ul>
-                  </div><!-- social-links / end -->
+                  </div> -->
                 </div>
               </div>
             </div>
