@@ -6,9 +6,9 @@
         </svg> 
         <span class="fake-svg-icon"></span>
       </button>
-    <div class="product-card__badges-list">
+    <!-- <div class="product-card__badges-list">
       <div class="product-card__badge product-card__badge--new">New</div>
-    </div>
+    </div> -->
     <div class="product-card__image product-image">
       <a href="{{ route('product', [$product->category->code, $product->code]) }}" class="product-image__body">
         @if( Storage::url($product->image) == Storage::url($product->null) )

@@ -32,7 +32,7 @@ class MainController extends Controller
     return view('policy');
   }
   public function categories() {
-    $categories = Category::get();
+    $categories = Category::paginate(9);
     return view('categories', compact('categories'));
   }
   public function services() {

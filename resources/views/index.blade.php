@@ -316,7 +316,6 @@
                   <a href="{{ route('category', $category->code) }}">{{$category->name}}</a>
                 </div>
                 <ul class="category-card__links">
-                  <li><a href="">Drills</a></li>
                   @foreach($category->products->slice(0, 3) as $product)
                     <li><a href="{{ route('product', [$product->category->code, $product->code]) }}">{{ $product->name }}</a></li>
                   @endforeach
