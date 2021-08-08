@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Services extends Model
 {
-    use HasFactory;
+    protected $fillable = ['code', 'name', 'description', 'price', 'image'];
 }

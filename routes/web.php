@@ -27,13 +27,14 @@ Route::middleware(['auth'])->group(function() {
     'prefix' => 'admin'
   ], function(){
     Route::group(['middleware' => 'is_admin' ], function() {
-      Route::get('/home', 'App\Http\Controllers\Admin\HomeController@index')->name('home');
-      Route::get('/orders', 'App\Http\Controllers\Admin\OrderController@index')->name('orders');
-      Route::get('/orders/{order}', 'App\Http\Controllers\Admin\OrderController@show')->name('orders.show');
+      Route::get('/home', 'App\Http\Controllers\admin\HomeController@index')->name('home');
+      Route::get('/orders', 'App\Http\Controllers\admin\OrderController@index')->name('orders');
+      Route::get('/orders/{order}', 'App\Http\Controllers\admin\OrderController@show')->name('orders.show');
     });
     
-    Route::resource('categories', 'App\Http\Controllers\Admin\CategoryController');
-    Route::resource('products', 'App\Http\Controllers\Admin\ProductController');
+    Route::resource('categories', 'App\Http\Controllers\admin\CategoryController');
+    Route::resource('products', 'App\Http\Controllers\admin\ProductController');
+    Route::resource('services', 'App\Http\Controllers\admin\ServicesController');
   });
 });
 

@@ -78,6 +78,10 @@
         @endforeach
       </tbody>
     </table>
+    <br>
+    <div class="pagination">
+      {{ $orders->links() }}
+    </div>
   </div>
 
 

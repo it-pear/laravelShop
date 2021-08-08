@@ -8419,8 +8419,8 @@ screen and (-ms-high-contrast: active) {
 }
 
 .product__description {
-    font-size: 16px;
-    overflow: hidden;
+  font-size: 16px;
+  overflow: hidden;
   line-height: 1.3em;
   height: 3.9em;
 }
@@ -14225,4 +14225,51 @@ screen and (-ms-high-contrast: active) {
     font-weight: 600;
     font-size: 14px;
     border-radius: 5px;
+
+}
+
+.pagination {
+    
+}
+.pagination nav > div:first-child {
+    display: none;
+}
+.pagination nav > div:nth-child(2) {
+    display: flex;
+}
+.pagination nav .relative {
+  display: flex;  
+}
+.pagination nav p{
+    display: none;
+}
+.pagination nav svg {
+    width: 20px;
+}
+.pagination nav span,
+.pagination nav a {
+    padding: 0 !important;
+    background: rgba(255, 255, 255, 0.01)  !important;
+    border: none !important;
+    box-shadow: none !important;
+    display: flex;
+    align-items: center;
+    justify-content: center !important;
+}
+.pagination nav span[aria-current='page'] .cursor-default {
+    background: #c33 !important;
+    color: white !important;
+}
+.pagination nav .relative span,
+.pagination nav .relative a {
+    margin: 0 2px !important;
+    width: 33px !important;
+    height: 33px !important;
+    border-radius: 2px;
+    font-weight: 600 !important;
+    color: black !important;
+}
+.pagination nav .relative span:hover,
+.pagination nav .relative a:hover {
+    background: white !important;
 }

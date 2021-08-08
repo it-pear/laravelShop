@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class OrderController extends Controller
 {
     public function index() {
-        $orders = Order::where('status', 1)->get();
+        $orders = Order::where('status', 1)->paginate(10);
         return view('auth.admin.orders.index', compact('orders'));
     }
     public function show(Order $order)

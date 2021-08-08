@@ -1,27 +1,29 @@
 @extends('/layout/admin')
-@section('title', 'Категории')
+@section('title', 'Услуги')
 
 @section('content')
 
-<h2>Категории</h2>
-<div class="table-responsive table-admin-categories">
+<h2>Услуги</h2>
+<div class="table-responsive table-admin-services">
   <table class="table table-striped table-sm">
     <thead>
       <tr>
         <th style="width: 15%">#</th>
         <th style="width: 25%">Code</th>
-        <th style="width: 45%">Название</th>
+        <th style="width: 40%">Название</th>
+        <th style="width: 10%">Цена</th>
         <th style="width: 20%"></th>
       </tr>
     </thead>
     <tbody>
-      @foreach ($categories as $category)
+      @foreach ($services as $service)
       <tr>
-        <td>{{ $category->id }}</td>
-        <td>{{ $category->code }}</td>
-        <td>{{ $category->name }}</td>
+        <td>{{ $service->id }}</td>
+        <td>{{ $service->code }}</td>
+        <td>{{ $service->name }}</td>
+        <td>{{ $service->price }}</td>
         <td style="display: flex;justify-content: flex-end;">
-          <a href="{{ route('categories.show', $category) }}">
+          <a href="{{ route('services.show', $service) }}">
             <button type="button" class="btn btn-success">
               <svg version="1.1" id="Layer_1" width="20" height="20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
                 <g>
@@ -41,7 +43,7 @@
               </svg>
             </button>
           </a>
-          <a href="{{ route('categories.edit', $category) }}">
+          <a href="{{ route('services.edit', $service) }}">
             <button type="button" class="btn btn-warning">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 477.873 477.873" style="enable-background:new 0 0 477.873 477.873;" xml:space="preserve">
                 <g>
@@ -58,20 +60,20 @@
             </button>
           </a>
 
-            <form action="{{ route('categories.destroy', $category) }}" method="POST">
-              @csrf
-              @method('DELETE')
-              <button type="submit" class="btn btn-danger">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" id="Layer_1" enable-background="new 0 0 512 512" viewBox="0 0 512 512">
-                  <g>
-                    <path d="m424 64h-88v-16c0-26.467-21.533-48-48-48h-64c-26.467 0-48 21.533-48 48v16h-88c-22.056 0-40 17.944-40 40v56c0 8.836 7.164 16 16 16h8.744l13.823 290.283c1.221 25.636 22.281 45.717 47.945 45.717h242.976c25.665 0 46.725-20.081 47.945-45.717l13.823-290.283h8.744c8.836 0 16-7.164 16-16v-56c0-22.056-17.944-40-40-40zm-216-16c0-8.822 7.178-16 16-16h64c8.822 0 16 7.178 16 16v16h-96zm-128 56c0-4.411 3.589-8 8-8h336c4.411 0 8 3.589 8 8v40c-4.931 0-331.567 0-352 0zm313.469 360.761c-.407 8.545-7.427 15.239-15.981 15.239h-242.976c-8.555 0-15.575-6.694-15.981-15.239l-13.751-288.761h302.44z" />
-                    <path d="m256 448c8.836 0 16-7.164 16-16v-208c0-8.836-7.164-16-16-16s-16 7.164-16 16v208c0 8.836 7.163 16 16 16z" />
-                    <path d="m336 448c8.836 0 16-7.164 16-16v-208c0-8.836-7.164-16-16-16s-16 7.164-16 16v208c0 8.836 7.163 16 16 16z" />
-                    <path d="m176 448c8.836 0 16-7.164 16-16v-208c0-8.836-7.164-16-16-16s-16 7.164-16 16v208c0 8.836 7.163 16 16 16z" />
-                  </g>
-                </svg>
-              </button>
-            </form>
+          <form action="{{ route('services.destroy', $service) }}" method="POST">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="btn btn-danger">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" id="Layer_1" enable-background="new 0 0 512 512" viewBox="0 0 512 512">
+                <g>
+                  <path d="m424 64h-88v-16c0-26.467-21.533-48-48-48h-64c-26.467 0-48 21.533-48 48v16h-88c-22.056 0-40 17.944-40 40v56c0 8.836 7.164 16 16 16h8.744l13.823 290.283c1.221 25.636 22.281 45.717 47.945 45.717h242.976c25.665 0 46.725-20.081 47.945-45.717l13.823-290.283h8.744c8.836 0 16-7.164 16-16v-56c0-22.056-17.944-40-40-40zm-216-16c0-8.822 7.178-16 16-16h64c8.822 0 16 7.178 16 16v16h-96zm-128 56c0-4.411 3.589-8 8-8h336c4.411 0 8 3.589 8 8v40c-4.931 0-331.567 0-352 0zm313.469 360.761c-.407 8.545-7.427 15.239-15.981 15.239h-242.976c-8.555 0-15.575-6.694-15.981-15.239l-13.751-288.761h302.44z" />
+                  <path d="m256 448c8.836 0 16-7.164 16-16v-208c0-8.836-7.164-16-16-16s-16 7.164-16 16v208c0 8.836 7.163 16 16 16z" />
+                  <path d="m336 448c8.836 0 16-7.164 16-16v-208c0-8.836-7.164-16-16-16s-16 7.164-16 16v208c0 8.836 7.163 16 16 16z" />
+                  <path d="m176 448c8.836 0 16-7.164 16-16v-208c0-8.836-7.164-16-16-16s-16 7.164-16 16v208c0 8.836 7.163 16 16 16z" />
+                </g>
+              </svg>
+            </button>
+          </form>
 
         </td>
       </tr>
@@ -80,10 +82,10 @@
   </table>
   <br>
   <div class="pagination">
-    {{ $categories->links() }}
+    {{ $services->links() }}
   </div>
   <br>
-  <a href="{{ route('categories.create') }}" class="btn btn-info">Создать категорию</a>
+  <a href="{{ route('services.create') }}" class="btn btn-info">Добавить услугу</a>
 </div>
 
 
