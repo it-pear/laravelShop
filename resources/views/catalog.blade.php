@@ -32,8 +32,16 @@
             <div class="block-sidebar__header">
               <div class="block-sidebar__title">Фильтр товаров</div>
               <button class="block-sidebar__close" type="button">
-                <svg width="20px" height="20px">
-                  <use xlink:href="images/sprite.svg#cross-20"></use>
+                <svg version="1.1" id="Capa_1" width="24px" height="24px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512.001 512.001" style="enable-background:new 0 0 512.001 512.001;" xml:space="preserve">
+                  <g>
+                    <g>
+                      <path d="M284.286,256.002L506.143,34.144c7.811-7.811,7.811-20.475,0-28.285c-7.811-7.81-20.475-7.811-28.285,0L256,227.717
+                          L34.143,5.859c-7.811-7.811-20.475-7.811-28.285,0c-7.81,7.811-7.811,20.475,0,28.285l221.857,221.857L5.858,477.859
+                          c-7.811,7.811-7.811,20.475,0,28.285c3.905,3.905,9.024,5.857,14.143,5.857c5.119,0,10.237-1.952,14.143-5.857L256,284.287
+                          l221.857,221.857c3.905,3.905,9.024,5.857,14.143,5.857s10.237-1.952,14.143-5.857c7.811-7.811,7.811-20.475,0-28.285
+                          L284.286,256.002z"></path>
+                    </g>
+                  </g>
                 </svg>
               </button>
             </div>
@@ -42,6 +50,30 @@
                 <div class="widget-filters widget widget-filters--offcanvas--mobile" data-collapse data-collapse-opened-class="filter--opened">
                   <h4 class="widget-filters__title widget__title">Фильтр товаров</h4>
                   <div class="widget-filters__list">
+
+                    <div class="widget-filters__item">
+                      <div class="filter filter--opened" data-collapse-item="">
+                        <button type="button" class="filter__title" data-collapse-trigger="">Писк по названию
+                          <svg version="1.1" id="Layer_1" class="filter__arrow" width="16px" height="9px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                              viewBox="0 0 330 330" style="enable-background:new 0 0 330 330;" xml:space="preserve">
+                            <path id="XMLID_225_" d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393
+                              c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393
+                              s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"/>
+                            <g>
+                            </g>
+                          </svg>
+                        </button>
+                        <div class="filter__body" data-collapse-content="">
+                          <div class="filter__container">
+                            <div class="filter-list">
+                              <div class="filter-list__list">
+                              <input type="text" class="form-control" placeholder="Замок" name="search" value="{{ request()->search }}">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                     
                     <div class="widget-filters__item">
                       <div class="filter filter--opened" data-collapse-item="">
@@ -63,7 +95,12 @@
                                   <label class="filter-list__item">
                                     <span class="filter-list__input input-radio">
                                       <span class="input-radio__body">
-                                        <input class="input-radio__input" name="category" type="radio" value="{{ $category->id }}">
+                                        <input class="input-radio__input" name="category" type="radio"
+                                          value="{{ $category->id }}"
+                                          @if( $category->id == request()->category)
+                                            checked="checked"
+                                          @endif
+                                        >
                                         <span class="input-radio__circle"></span>
                                       </span>
                                     </span>
@@ -92,18 +129,24 @@
                         </button>
                         <div class="filter__body" data-collapse-content>
                           <div class="filter__container">
-                            <div class="filter-price" data-min="0" data-max="200000" data-from="0" data-to="200000">
+                            <div class="filter-price" data-min="0" data-max="200000"
+                              @if( request()->toprice == '')
+                                data-from="0"
+                              @else
+                                data-from="{{ request()->toprice }}"
+                              @endif
+                              @if( request()->doprice == '')
+                                data-to="200000"
+                              @else
+                                data-to="{{ request()->doprice }}"
+                              @endif
+                            >
                               <div class="filter-price__slider"></div>
                               <div class="filter-price__title"><span class="filter-price__min-value"></span>₽ –
                                 <span class="filter-price__max-value"></span>₽
                               </div>
                             </div>
                           </div>
-                          @if( request()->toprice == '')
-                            гавно
-                          @else
-                            {{ request()->toprice }}
-                          @endif
                           <input type="hidden" class="toprice" name="toprice" value="0">
                           <input type="hidden" class="doprice" name="doprice" value="200000">
                         </div>
@@ -250,11 +293,14 @@
           <div class="products-view">
             <div class="products-view__options">
               <div class="view-options view-options--offcanvas--mobile">
-                <div class="view-options__filters-button">
+                <div class="view-options__filters-button mt-2">
                   <button type="button" class="filters-button">
-                    <svg class="filters-button__icon" width="16px" height="16px">
-                      <use xlink:href="images/sprite.svg#filters-16"></use>
-                    </svg> <span class="filters-button__title">Фильтр</span> <span class="filters-button__counter">3</span>
+                    <svg height="15px" viewBox="0 -53 384 384" width="15px" xmlns="http://www.w3.org/2000/svg">
+                      <path d="m368 154.667969h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0"></path>
+                      <path d="m368 32h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0"></path>
+                      <path d="m368 277.332031h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0"></path>
+                    </svg>
+                    <span class="filters-button__title ml-1">Фильтр</span>
                   </button>
                 </div>
 

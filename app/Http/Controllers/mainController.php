@@ -56,6 +56,9 @@ class MainController extends Controller
     if ($request->has('category')) {
       $productsQuery->where('category_id', '=', $request->category);
     }
+    if ($request->filled('search')) {
+      $productsQuery->where('name', 'LIKE', '%' . $request->search . '%');
+    }
 
     $products = $productsQuery->orderBy('price', 'asc')->paginate(9)->withPath("?" . $request->getQueryString());
     return view('catalog', compact('products', 'categories'));

@@ -57,9 +57,6 @@
           </option>
           
         @endforeach
-        
-        <option value="">wewer</option>
-        <option value="">cvb</option>
       </select>
     </div>
     <div class="form-group">

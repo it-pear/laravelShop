@@ -140,7 +140,7 @@
             </a>
           </div>
           <div class="site-header__search">
-            <div class="search search--location--header">
+            <!-- <div class="search search--location--header">
               <div class="search__body">
                 <form class="search__form" action="">
                   <input class="search__input" name="search" placeholder="Введите название товара" aria-label="Site search" type="text" autocomplete="off">
@@ -153,7 +153,7 @@
                 </form>
                 <div class="search__suggestions suggestions suggestions--location--header"></div>
               </div>
-            </div>
+            </div> -->
           </div>
           <div class="site-header__phone">
             <div class="site-header__phone-title">Телефон:</div>
