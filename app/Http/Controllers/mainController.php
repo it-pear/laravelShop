@@ -43,6 +43,23 @@ class MainController extends Controller
     $category = Category::where('code', $code)->first();
     return view('category', compact('category'));
   }
+  public function catalog(Request $request) {
+    $categories = Category::get();
+    $productsQuery = Product::query();
+
+    if ($request->filled('toprice')) {
+      $productsQuery->where('price', '>=', $request->toprice);
+    }
+    if ($request->filled('doprice')) {
+      $productsQuery->where('price', '<=', $request->doprice);
+    }
+    if ($request->has('category')) {
+      $productsQuery->where('category_id', '=', $request->category);
+    }
+
+    $products = $productsQuery->orderBy('price', 'asc')->paginate(9)->withPath("?" . $request->getQueryString());
+    return view('catalog', compact('products', 'categories'));
+  }
   public function product($category, $product) {
     $product = Product::where('code', $product)->first();
     return view('product', compact('product'));

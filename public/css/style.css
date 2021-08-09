@@ -181,6 +181,9 @@ h6 {
 .page-header__container {
     padding-bottom: 32px;
 }
+.catalog_page .page-header__container {
+    padding-bottom: 0;
+}
 
 .page-header__breadcrumb {
     padding-top: 16px;
@@ -9979,11 +9982,20 @@ screen and (max-width: 374px) and (-ms-high-contrast: active) {
     display: flex;
 }
 
+
 @media (min-width: 992px) {
+    .shop-layout__content {
+        margin-top: 32px;
+    }
     .shop-layout__sidebar {
         width: 255px;
         -ms-flex-negative: 0;
         flex-shrink: 0;
+    }
+    .shop-layout__sidebar > .block-sidebar{
+        position: sticky;
+        top: 0;
+        padding-top: 32px;
     }
     .shop-layout__content {
         width: calc(100% - 285px);

@@ -166,7 +166,7 @@
             <div class="nav-panel__container container">
               <div class="nav-panel__row">
                 <div class="nav-panel__departments">
-                  <a href="{{ route('categories') }}" class="departments__button">
+                  <a href="{{ route('catalog') }}" class="departments__button">
                     <svg height="18px" viewBox="0 -53 384 384" width="32px" xmlns="http://www.w3.org/2000/svg">
                       <path d="m368 154.667969h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0" />
                       <path d="m368 32h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0" />
@@ -265,7 +265,7 @@
                             </table>
                           </div>
                           <div class="dropcart__buttons">
-                            <a class="btn btn-secondary" href="{{ route('basket') }}">Добавить</a>
+                            <a class="btn btn-secondary" href="{{ route('basket') }}">В корзину</a>
                             <a class="btn btn-primary" href="{{ route('checkout') }}">Оформить</a>
                           </div>
                           @endif
@@ -372,7 +372,7 @@
                 <div class="site-footer__widget footer-links">
                   <h5 class="footer-links__title">Разделы</h5>
                   <ul class="footer-links__list">
-                    <li class="footer-links__item"><a href="{{ route('categories') }}" class="footer-links__link">Каталог</a></li>
+                    <li class="footer-links__item"><a href="{{ route('catalog') }}" class="footer-links__link">Каталог</a></li>
                     <li class="footer-links__item"><a href="{{ route('contacts') }}" class="footer-links__link">Контакты</a></li>
                     <li class="footer-links__item"><a href="{{ route('services') }}" class="footer-links__link">Услуги</a></li>
                     <li class="footer-links__item"><a href="{{ route('buy') }}" class="footer-links__link">Как купить</a></li>
@@ -468,7 +468,7 @@
         <ul class="mobile-links mobile-links--level--0" data-collapse data-collapse-opened-class="mobile-links__item--open">
           <li class="mobile-links__item">
             <div class="mobile-links__item-title">
-              <a href="{{ route('categories') }}" class="mobile-links__item-link">Каталог</a>
+              <a href="{{ route('catalog') }}" class="mobile-links__item-link">Каталог</a>
             </div>
           </li>
           <li class="mobile-links__item">

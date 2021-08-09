@@ -449,7 +449,7 @@
                 <div class="post-card__name">
                   <a href="">{{ $service->name }}</a>
                 </div>
-                <div class="post-card__date">October 19, 2019</div>
+                <div class="post-card__date">{{ $service->created_at }}</div>
                 <div class="post-card__content">
                   {{ $service->description }}
                 </div>

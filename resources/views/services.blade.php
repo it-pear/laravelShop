@@ -39,7 +39,7 @@
                         <div class="post-card__name"><a href="">{{ $service->name }}</a>
                         </div>
                         <div class="post-card__content">
-                        {{ $service->description }}
+                        {!! $service->description !!}
                         </div>
                         <div class="post-card__read-more"><a href="" class="btn btn-secondary btn-sm">Подробнее</a>
                         </div>

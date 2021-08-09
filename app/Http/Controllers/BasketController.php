@@ -29,6 +29,7 @@ class BasketController extends Controller
 
   public function checkoutConfirm(Request $request)
   {
+    dd($request->name);
     $orderId = session('orderId');
     if (is_null($orderId)) {
         return redirect()->route('index');
