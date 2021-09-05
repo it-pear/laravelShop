@@ -228,13 +228,17 @@
                             @foreach ($order->products as $product)
                             <div class="dropcart__product">
                               <div class="product-image dropcart__product-image">
-                                <a href="product.html" class="product-image__body">
-                                  <img class="product-image__img" src="/images/products/product-1.jpg" alt="">
+                                <a href="{{ route('product', [$product->category->code, $product->code]) }}" class="product-image__body">
+                                @if( Storage::url($product->image) == Storage::url($product->null) )
+                                <img class="product-image__img" src="/images/photo.png" alt="">
+                                @else
+                                <img class="product-image__img" src="{{ Storage::url($product->image) }}" alt="">
+                                @endif
                                 </a>
                               </div>
                               <div class="dropcart__product-info">
                                 <div class="dropcart__product-name">
-                                  <a href="product.html">{{ $product->name }}</a>
+                                  <a href="{{ route('product', [$product->category->code, $product->code]) }}">{{ $product->name }}</a>
                                 </div>
                                 <ul class="dropcart__product-options">
                                   <li>{{ $product->category->name }}</li>

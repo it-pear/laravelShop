@@ -189,8 +189,8 @@
       </div>
     </div>
   </div><!-- .block-products-carousel / end -->
-  <!-- .block-banner -->
-  <div class="block block-banner">
+
+  <!-- <div class="block block-banner">
     <div class="container"><a href="" class="block-banner__body">
         <div class="block-banner__image block-banner__image--desktop" style="background-image: url('images/banners/banner-1.jpg')"></div>
         <div class="block-banner__image block-banner__image--mobile" style="background-image: url('images/banners/banner-1-mobile.jpg')"></div>
@@ -198,7 +198,7 @@
         <div class="block-banner__text">Hammers, Chisels, Universal Pliers, Nippers, Jigsaws, Saws</div>
         <div class="block-banner__button"><span class="btn btn-sm btn-primary">Подробнее</span></div>
       </a></div>
-  </div><!-- .block-banner / end -->
+  </div> -->
   <!-- .block-products -->
   <div class="block block-products block-products--layout--large-first" data-mobile-grid-columns="2">
     <div class="container">

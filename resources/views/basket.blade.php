@@ -7,7 +7,7 @@
       <div class="page-header__breadcrumb">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index.html">Главная</a> 
+            <li class="breadcrumb-item"><a href="/">Главная</a> 
               <img src="/images/sprite.svg" class="breadcrumb__arrowe-svg" alt="">
             </li>
             <li class="breadcrumb-item active" aria-current="page">Корзина товаров</li>
@@ -65,8 +65,8 @@
                 <li>{{ $product->category->name }}</li>
               </ul>
             </td>
-            <td class="cart-table__column cart-table__column--price" data-title="Price">{{ $product->price }}₽</td>
-            <td class="cart-table__column cart-table__column--quantity" data-title="Quantity">
+            <td class="cart-table__column cart-table__column--price" data-title="Цена">{{ $product->price }}₽</td>
+            <td class="cart-table__column cart-table__column--quantity" data-title="Количество">
               <div class="input-number">
                 <input class="form-control input-number__input" type="number" min="1" value="{{ $product->pivot->count }}">
                 <form action="{{ route('basket-add', $product) }}" method="POST">
@@ -79,7 +79,7 @@
                 </form>
               </div>
             </td>
-            <td class="cart-table__column cart-table__column--total" data-title="Total">{{ $product->getPriceFoCount() }}₽</td>
+            <td class="cart-table__column cart-table__column--total" data-title="Цена">{{ $product->getPriceFoCount() }}₽</td>
             <td class="cart-table__column cart-table__column--remove">
               <form action="{{ route('basket-delte', $product) }}" method="POST">
                 <button type="submit" class="btn btn-light btn-sm btn-svg-icon">

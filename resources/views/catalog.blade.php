@@ -129,7 +129,7 @@
                         </button>
                         <div class="filter__body" data-collapse-content>
                           <div class="filter__container">
-                            <div class="filter-price" data-min="0" data-max="200000"
+                            <div class="filter-price" data-min="0" data-max="30000"
                               @if( request()->toprice == '')
                                 data-from="0"
                               @else
@@ -148,7 +148,7 @@
                             </div>
                           </div>
                           <input type="hidden" class="toprice" name="toprice" value="0">
-                          <input type="hidden" class="doprice" name="doprice" value="200000">
+                          <input type="hidden" class="doprice" name="doprice" value="30000">
                         </div>
                       </div>
                     </div>
