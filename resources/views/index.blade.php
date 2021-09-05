@@ -174,11 +174,12 @@
                   </div>
                   <div class="product-card__prices">{{ $product->price }}₽</div>
                   <div class="product-card__buttons">
-                  <form action="{{ route('basket-add', $product) }}" method="POST">
-                    <button type="submit" class="btn btn-primary product-card__addtocart" type="button">Добавить</button>
-                    <button type="submit" class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">Добавить</button>
-                    @csrf
-                  </form>                   
+                    <form action="{{ route('basket-add', $product) }}" method="POST">
+                      <button type="submit" class="btn btn-primary product-card__addtocart" type="button">Добавить</button>
+                      <button type="submit" class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">Добавить</button>
+                      @csrf
+                    </form>         
+                    <button class="btn btn-secondary product-card__baytocart" type="button">Купить в 1 клик</button>          
                   </div>
                 </div>
               </div>
@@ -236,10 +237,11 @@
                 <div class="product-card__prices d-flex justify-content-center">{{ $hit->price }}₽</div>
                 <div class="product-card__buttons">
                   <form action="{{ route('basket-add', $product) }}" method="POST">
-                    <button type="submit" class="btn btn-primary product-card__addtocart" type="button">Добавить</button>
-                    <button type="submit" class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">Добавить</button>
+                    <button type="submit" class="btn btn-primary product-card__addtocart">Добавить</button>
+                    <button type="submit" class="btn btn-secondary product-card__addtocart product-card__addtocart--list">Добавить</button>
                     @csrf
                   </form> 
+                  <button class="btn btn-secondary product-card__baytocart" type="button">Купить в 1 клик</button>
                 </div>
               </div>
             </div>
@@ -281,6 +283,7 @@
                       <button type="submit" class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">Добавить</button>
                       @csrf
                     </form> 
+                    <button class="btn btn-secondary product-card__baytocart" type="button">Купить в 1 клик</button>
                   </div>
                 </div>
               </div>
@@ -396,6 +399,7 @@
                       <button type="submit" class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">Добавить</button>
                       @csrf
                     </form> 
+                    <button class="btn btn-secondary product-card__baytocart" type="button">Купить в 1 клик</button>
                   </div>
                 </div>
               </div>

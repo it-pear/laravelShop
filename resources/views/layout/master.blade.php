@@ -524,6 +524,45 @@
       </div>
     </div>
   </div><!-- photoswipe / end -->
+
+  <div class="modal-bcg"></div>
+  <div class="modal">
+    <div class="modal-section">
+      <div class="head">
+        <h5>Купить "" в один клик </h5>
+        <small>Всего лишь заполните форму ниже и наш менеджер перезвонит вам для уточнения дополнительных данных для покупки товара</small>
+        <button class="btn btn-secondary modal-close close">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512.001 512.001" style="enable-background:new 0 0 512.001 512.001;" xml:space="preserve">
+              <g>
+                <g>
+                  <path d="M284.286,256.002L506.143,34.144c7.811-7.811,7.811-20.475,0-28.285c-7.811-7.81-20.475-7.811-28.285,0L256,227.717    L34.143,5.859c-7.811-7.811-20.475-7.811-28.285,0c-7.81,7.811-7.811,20.475,0,28.285l221.857,221.857L5.858,477.859    c-7.811,7.811-7.811,20.475,0,28.285c3.905,3.905,9.024,5.857,14.143,5.857c5.119,0,10.237-1.952,14.143-5.857L256,284.287    l221.857,221.857c3.905,3.905,9.024,5.857,14.143,5.857s10.237-1.952,14.143-5.857c7.811-7.811,7.811-20.475,0-28.285    L284.286,256.002z"/>
+                </g>
+              </g>
+            </svg>
+        </button>
+      </div>
+      <br>
+    <form>
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <label for="form-name">Ваше Имя</label> 
+          <input type="text" id="form-name" class="form-control" placeholder="Иван">
+        </div>
+        <div class="form-group col-md-12">
+          <label for="form-email">Ваш телефон</label> 
+          <input type="tel" id="form-email" class="form-control" placeholder="+7 (999) 999-99-99">
+        </div>
+        <div class="form-group col-md-12">
+          <label for="form-adres">Ваш адрес <small>(доставка по ульяновску - баслатна)</small></label> 
+          <input type="text" id="form-adres" class="form-control" placeholder="Город, улица, номер дома">
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Отправить</button>
+    </form>
+    </div>
+  </div>
+  
+
   <!-- js -->
   <script src="/vendor/jquery/jquery.min.js"></script>
   <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -536,6 +575,22 @@
   <script src="/js/main.js"></script>
   <script src="/js/header.js"></script>
   <script src="/vendor/svg4everybody/svg4everybody.min.js"></script>
+
+  <script>
+
+    $(document).ready(function(){
+      $('.modal-close').click(function(){
+        $('.modal-bcg').hide(300);
+        $('.modal').css('display','none');
+      });
+      $('.product-card__baytocart').click(function(){
+        $('.modal-bcg').show(300);
+        $('.modal').css('display','flex');
+      });
+     
+    })
+
+  </script>
 </body>
 
 </html>

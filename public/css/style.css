@@ -12528,10 +12528,12 @@ screen and (max-width: 374px) and (-ms-high-contrast: active) {
     font-size: 0.875rem;
     height: calc(1.875rem + 2px);
     line-height: 1.25;
-    padding: 0.375rem 1rem;
+    padding: 0.375rem 0.6rem;
     font-weight: 500;
 }
-
+.block-products__list .product-card__baytocart{
+    padding: 0.375rem 0.3rem !important;
+}
 .block-products-carousel[data-layout="grid-4"] .product-card .product-card__buttons .btn.btn-svg-icon {
     width: calc(1.875rem + 2px);
 }
@@ -14289,4 +14291,50 @@ screen and (-ms-high-contrast: active) {
 .pagination nav .relative span:hover,
 .pagination nav .relative a:hover {
     background: white !important;
+}
+
+
+
+.modal-bcg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display: none;
+}
+.modal {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 101;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.modal .modal-section {
+    position: absolute;
+    z-index: 101;
+    background-color: white;
+    padding: 24px;
+    border-radius: 2px;
+    margin: 0 15px;
+}
+.modal .modal-section .head {
+    padding-right: 25px;
+    position: relative;
+}
+.modal .modal-section .head small{
+    max-width: 552px;
+    display: block;
+}
+.modal .modal-section .head .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 10px;
 }
