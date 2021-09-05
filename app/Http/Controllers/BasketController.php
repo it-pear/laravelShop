@@ -32,7 +32,7 @@ class BasketController extends Controller
     // dd($request->name);
     $orderId = session('orderId');
     if (is_null($orderId)) {
-        return redirect()->route('index');
+      return redirect()->route('index');
     }
     $order = Order::find($orderId);
     $success = $order->saveOrder($request->name, $request->phone);
@@ -53,6 +53,15 @@ class BasketController extends Controller
     }
     $order = Order::find($orderId);
     return view('checkout', compact('order'));
+  }
+  public function checkoutnologin() 
+  {
+    $orderId = session('orderId');
+    if (is_null($orderId)) {
+      return redirect()->route('index');
+    }
+    $order = Order::find($orderId);
+    return view('checkoutnolog', compact('order'));
   }
 
   public function basketAdd($productId)

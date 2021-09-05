@@ -529,8 +529,8 @@
   <div class="modal">
     <div class="modal-section">
       <div class="head">
-        <h5>Купить "" в один клик </h5>
-        <small>Всего лишь заполните форму ниже и наш менеджер перезвонит вам для уточнения дополнительных данных для покупки товара</small>
+        <h5>Купить "<span class="title_product"></span>" в один клик </h5>
+        <small>Всего-лишь заполните форму ниже и наш менеджер перезвонит вам для уточнения дополнительных данных для покупки товара</small>
         <button class="btn btn-secondary modal-close close">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512.001 512.001" style="enable-background:new 0 0 512.001 512.001;" xml:space="preserve">
               <g>
@@ -548,15 +548,17 @@
           <label for="form-name">Ваше Имя</label> 
           <input type="text" id="form-name" class="form-control" placeholder="Иван">
         </div>
+        <input type="hidden" class="modalname">
         <div class="form-group col-md-12">
           <label for="form-email">Ваш телефон</label> 
           <input type="tel" id="form-email" class="form-control" placeholder="+7 (999) 999-99-99">
         </div>
         <div class="form-group col-md-12">
-          <label for="form-adres">Ваш адрес <small>(доставка по ульяновску - баслатна)</small></label> 
+          <label for="form-adres">Ваш адрес <small>(доставка по Ульяновску - беслатно)</small></label> 
           <input type="text" id="form-adres" class="form-control" placeholder="Город, улица, номер дома">
         </div>
       </div>
+      @csrf
       <button type="submit" class="btn btn-primary">Отправить</button>
     </form>
     </div>
@@ -580,11 +582,14 @@
 
     $(document).ready(function(){
       $('.modal-close').click(function(){
-        $('.modal-bcg').hide(300);
+        $('.modal-bcg').hide();
         $('.modal').css('display','none');
       });
       $('.product-card__baytocart').click(function(){
-        $('.modal-bcg').show(300);
+        let name = $(this).closest('.product-card').find('.product-card__name').text();
+        $('.modalname').val(name);
+        $('.title_product').text(name);
+        $('.modal-bcg').show();
         $('.modal').css('display','flex');
       });
      

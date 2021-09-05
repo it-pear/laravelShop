@@ -38,6 +38,10 @@ Route::middleware(['auth'])->group(function() {
   });
 });
 
+Route::middleware(['checkout_auth'])->group(function() {
+  Route::get('/checkout', 'App\Http\Controllers\BasketController@checkout')->name('checkout');
+});
+
 
 
 Route::get('/', 'App\Http\Controllers\MainController@index')->name('index');
@@ -47,7 +51,7 @@ Route::get('/policy', 'App\Http\Controllers\MainController@policy')->name('polic
 Route::get('/categories', 'App\Http\Controllers\MainController@categories')->name('categories');
 Route::get('/services', 'App\Http\Controllers\MainController@services')->name('services');
 Route::get('/basket', 'App\Http\Controllers\BasketController@basket')->name('basket');
-Route::get('/checkout', 'App\Http\Controllers\BasketController@checkout')->name('checkout');
+Route::get('/checkout-nologin', 'App\Http\Controllers\BasketController@checkoutnologin')->name('checkoutnologin');
 Route::post('/checkout/send', 'App\Http\Controllers\BasketController@checkoutConfirm')->name('checkout-confirm');
 
 Route::post('/basket/add/{id}', 'App\Http\Controllers\BasketController@basketAdd')->name('basket-add');

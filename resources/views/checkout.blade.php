@@ -36,23 +36,13 @@
     <div class="container">
       <div class="row">
         <div class="col-12 mb-3">
-          <div class="alert alert-lg alert-primary">Есть аккаунт? <a href="/login">Войти</a></div>
+        {{ Auth::user()->name }}, ваш заказ почти готов, осталось заполнить поля ниже и следить за заказом через личный кабинет.
         </div>
         <form action="{{ route('checkout-confirm') }}" method="POST" class="row">
           <div class="col-12 col-lg-6 col-xl-7">
             <div class="card mb-lg-0">
               <div class="card-body">
                 <h3 class="card-title">Детали заказа</h3>
-                <div class="form-row">
-                  <div class="form-group col-md-6">
-                    <label for="checkout-first-name">Имя</label>
-                    <input type="text" class="form-control" id="checkout-first-name" name="name" placeholder="Введите ваше имя">
-                  </div>
-                  <div class="form-group col-md-6">
-                    <label for="checkout-last-name">Фамилия</label>
-                    <input type="text" class="form-control" id="checkout-last-name" placeholder="Введите вашу фамилию">
-                  </div>
-                </div>
                 <div class="form-group">
                   <label for="checkout-state">Субъект страны</label>
                   <input type="text" class="form-control" id="checkout-state">
@@ -72,16 +62,6 @@
                 <div class="form-group">
                   <label for="checkout-postcode">Почтовый индекс</label>
                   <input type="text" class="form-control" id="checkout-postcode">
-                </div>
-                <div class="form-row">
-                  <div class="form-group col-md-6">
-                    <label for="checkout-email">Email адрес</label>
-                    <input type="email" class="form-control" id="checkout-email" placeholder="example@mail.ru">
-                  </div>
-                  <div class="form-group col-md-6">
-                    <label for="checkout-phone">Телефон</label>
-                    <input type="text" class="form-control" name="phone" id="checkout-phone" placeholder="+7 (999) 999-99-99">
-                  </div>
                 </div>
               </div>
               <div class="card-divider"></div>
