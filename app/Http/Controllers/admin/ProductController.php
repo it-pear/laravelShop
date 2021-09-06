@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\ProductRequest;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Product;
+use App\Models\ImagesCollection;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
@@ -42,11 +43,19 @@ class ProductController extends Controller
     public function store(ProductRequest $request)
     {
         $params = $request->all();
+        
         unset($params['image']);
         if ($request->has('image')) {
             $params['image'] = $request->file('image')->store('products');
         }
-
+        foreach ($request->photos as $photo) {
+            $filename = $photo->store('photos');
+            ImagesCollection::create([
+                'product_code' => $request->code,
+                'filename' => $filename
+            ]);
+        }
+        
         Product::create($params);
         return redirect()->route('products.index');
     }

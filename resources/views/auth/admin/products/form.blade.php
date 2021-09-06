@@ -93,9 +93,16 @@
       
     </div>
     <div class="form-group">
-      <label for="exampleFormControlFile1">Картинка</label>
+      <label for="exampleFormControlFile1">Главная картинка</label>
       <input type="file" class="form-control-file" name="image" id="exampleFormControlFile1" style="color: white;">
     </div>
+    <div class="form-group">
+      <div>
+        <label for="exampleFormControlFile2">Изображения для галереи</label>
+      </div>
+      <input multiple="multiple" name="photos[]" type="file" id="exampleFormControlFile2" style="color: white;"> 
+    </div>
+    
     @isset($product)
       <button type="submit" class="btn btn-primary">Сохранить</button>
       @else 

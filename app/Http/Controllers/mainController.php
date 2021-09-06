@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\ImagesCollection;
 use App\Models\Services;
 
 
@@ -65,7 +66,8 @@ class MainController extends Controller
   }
   public function product($category, $product) {
     $product = Product::where('code', $product)->first();
-    return view('product', compact('product'));
+    $images = ImagesCollection::where('product_code', $product->code)->get();
+    return view('product', compact('product', 'images'));
   }
 
 }
