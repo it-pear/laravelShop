@@ -14127,12 +14127,22 @@ screen and (-ms-high-contrast: active) {
     width: 100%;
     flex-wrap: wrap;
 }
-.admin-dashboard .form-admin .imageCollection .imageCollection__img {
+.admin-dashboard .form-admin .imageCollection .imageCollectionSection {
     max-width: 100px;
     /* flex: 0 0 15%; */
     margin: 0 7.5px;
     margin-top: 25px;
 }
+.admin-dashboard .form-admin .imageCollection .imageCollectionSection .imageCollection__img {
+    width: 100%;
+}
+.admin-dashboard .form-admin .imageCollection .imageCollectionSection .btn {
+    width: 100%;
+}
+.admin-dashboard .form-admin .imageCollection .imageCollectionSection .btn svg {
+    margin: 0 auto;
+}
+
 
 
 .admin-dashboard .table {

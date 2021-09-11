@@ -34,6 +34,7 @@ Route::middleware(['auth'])->group(function() {
     
     Route::resource('categories', 'App\Http\Controllers\admin\CategoryController');
     Route::resource('products', 'App\Http\Controllers\admin\ProductController');
+    Route::resource('images', 'App\Http\Controllers\admin\ImagesController');
     Route::resource('services', 'App\Http\Controllers\admin\ServicesController');
   });
 });
