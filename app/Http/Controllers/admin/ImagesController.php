@@ -82,6 +82,6 @@ class ImagesController extends Controller
     public function destroy(ImagesCollection $image)
     {   
         $image->delete();
-        return redirect()->route('products.index');
+        return back();
     }
 }
