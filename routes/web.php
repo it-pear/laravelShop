@@ -30,12 +30,14 @@ Route::middleware(['auth'])->group(function() {
       Route::get('/home', 'App\Http\Controllers\admin\HomeController@index')->name('home');
       Route::get('/orders', 'App\Http\Controllers\admin\OrderController@index')->name('orders');
       Route::get('/orders/{order}', 'App\Http\Controllers\admin\OrderController@show')->name('orders.show');
+
+      Route::resource('categories', 'App\Http\Controllers\admin\CategoryController');
+      Route::get('upload', 'App\Http\Controllers\admin\ProductController@upload')->name('upload');
+      Route::resource('products', 'App\Http\Controllers\admin\ProductController');
+      Route::resource('images', 'App\Http\Controllers\admin\ImagesController');
+      Route::resource('services', 'App\Http\Controllers\admin\ServicesController');
     });
     
-    Route::resource('categories', 'App\Http\Controllers\admin\CategoryController');
-    Route::resource('products', 'App\Http\Controllers\admin\ProductController');
-    Route::resource('images', 'App\Http\Controllers\admin\ImagesController');
-    Route::resource('services', 'App\Http\Controllers\admin\ServicesController');
   });
 });
 

@@ -13994,6 +13994,13 @@ screen and (-ms-high-contrast: active) {
 .form-admin .table-responsive-sm {
     font-size: 15px;
 }
+.table-responsive {
+    width: 100%;
+}
+.table-responsive .table-responsive-btns {
+    display: flex;
+    justify-content: space-between;
+}
 
 .form-admin .table-responsive-sm a:not(.btn):hover {
     text-decoration: underline;

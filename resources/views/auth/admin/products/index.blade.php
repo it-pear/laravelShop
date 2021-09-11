@@ -85,7 +85,11 @@
     {{ $products->links() }}
   </div>
   <br>
-  <a href="{{ route('products.create') }}" class="btn btn-info">Создать товар</a>
+  <div class="table-responsive-btns">
+    <a href="{{ route('products.create') }}" class="btn btn-info">Создать товар</a>
+    <a href="{{ route('upload') }}" class="btn btn-success">Загрузить товары</a>
+  </div>
+  
 </div>
 
 
