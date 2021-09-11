@@ -66,9 +66,11 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function show(Product $product, ImagesCollection $ImagesCollection)
     {
-        return view('auth.admin.products.show', compact('product'));
+        $images = ImagesCollection::where('product_code', $product->code)->get();
+        // dd($images);
+        return view('auth.admin.products.show', compact('product', 'images'));
     }
 
     /**

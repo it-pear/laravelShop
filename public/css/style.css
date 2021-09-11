@@ -14122,6 +14122,19 @@ screen and (-ms-high-contrast: active) {
     color: white;
 }
 
+.admin-dashboard .form-admin .imageCollection {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.admin-dashboard .form-admin .imageCollection .imageCollection__img {
+    max-width: 100px;
+    /* flex: 0 0 15%; */
+    margin: 0 7.5px;
+    margin-top: 25px;
+}
+
+
 .admin-dashboard .table {
     border-spacing: 1;
     border-collapse: collapse;
@@ -14228,6 +14241,7 @@ screen and (-ms-high-contrast: active) {
     margin-bottom: 30px;
     font-size: 20px;
 }
+
 
 .admin-section h6:last-child {
     margin-bottom: 0;

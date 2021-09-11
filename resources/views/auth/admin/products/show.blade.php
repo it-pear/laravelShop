@@ -30,13 +30,31 @@
             <u>Хит</u>
           @endif
         </small>
-      </h6>
+      </h6>   
+      <h6></h6>
     </div>
+    
     <div class="admin-section-image">
       <img src="{{ Storage::url($product->image) }}" alt="">
     </div>
   </div>
-  
+  <div class="imageCollection"> 
+    @foreach($images as $image)
+      <img class="imageCollection__img" src="{{ Storage::url($image->filename) }}" alt="">
+    @endforeach
+    @foreach($images as $image)
+      <img class="imageCollection__img" src="{{ Storage::url($image->filename) }}" alt="">
+    @endforeach
+    @foreach($images as $image)
+      <img class="imageCollection__img" src="{{ Storage::url($image->filename) }}" alt="">
+    @endforeach
+    @foreach($images as $image)
+      <img class="imageCollection__img" src="{{ Storage::url($image->filename) }}" alt="">
+    @endforeach
+    @foreach($images as $image)
+      <img class="imageCollection__img" src="{{ Storage::url($image->filename) }}" alt="">
+    @endforeach
+  </div>
 </div>
 
 @endsection
