@@ -18,8 +18,11 @@ class ProductImport implements ToModel
     {
         if (isset($row[0]) && $row[0]) {
             $categry = Category::where('code', $row[1])->first();
-            $date = ($dirName = date( 'YmdHis', time() ) + rand(5, 45));
-            // dd($date);
+            $time = date('YmdHis');
+            $permitted_chars = '0123456789abcdefghijklmnopqrstuvwxyz';
+            $random = substr(str_shuffle($permitted_chars), 0, 10) . $time;
+            
+            // dd($random);
             if (is_null($categry)) {
                 return new Category([
                     'name'     => $row[0],
@@ -27,7 +30,7 @@ class ProductImport implements ToModel
                 ]);
                 return new Product([
                     'name'     => $row[0],
-                    'code'    => $date, 
+                    'code'    => $random, 
                     'description'  => '', 
                     'price'    => $row[3],
                     'category_id'    => $row[4]
@@ -35,7 +38,7 @@ class ProductImport implements ToModel
             } else {
                 return new Product([
                     'name'     => $row[2],
-                    'code'    => $date, 
+                    'code'    => $random, 
                     'description'  => '', 
                     'price'    => $row[3],
                     'category_id'    => $categry->id
