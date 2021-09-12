@@ -45,7 +45,7 @@ Route::middleware(['checkout_auth'])->group(function() {
   Route::get('/checkout', 'App\Http\Controllers\BasketController@checkout')->name('checkout');
 });
 
-
+Route::get('/products/import', 'App\Http\Controllers\import\ProductController@import')->name('import.products');
 
 Route::get('/', 'App\Http\Controllers\MainController@index')->name('index');
 Route::get('/contacts', 'App\Http\Controllers\MainController@contacts')->name('contacts');
