@@ -22,6 +22,7 @@ class ProductController extends Controller
         $products = Product::paginate(10);
         return view('auth.admin.products.index', compact('products'));
     }
+    
 
     /**
      * Show the form for creating a new resource.
@@ -32,6 +33,17 @@ class ProductController extends Controller
     {
         $categories = Category::get();
         return view('auth.admin.products.form', compact('categories'));
+    }
+
+    /**
+     * upload a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function upload()
+    {
+        return view('auth.admin.products.upload');
     }
 
     /**
@@ -66,9 +78,11 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function show(Product $product, ImagesCollection $ImagesCollection)
     {
-        return view('auth.admin.products.show', compact('product'));
+        $images = ImagesCollection::where('product_code', $product->code)->get();
+        // dd($images);
+        return view('auth.admin.products.show', compact('product', 'images'));
     }
 
     /**

@@ -13994,6 +13994,13 @@ screen and (-ms-high-contrast: active) {
 .form-admin .table-responsive-sm {
     font-size: 15px;
 }
+.table-responsive {
+    width: 100%;
+}
+.table-responsive .table-responsive-btns {
+    display: flex;
+    justify-content: space-between;
+}
 
 .form-admin .table-responsive-sm a:not(.btn):hover {
     text-decoration: underline;
@@ -14122,6 +14129,29 @@ screen and (-ms-high-contrast: active) {
     color: white;
 }
 
+.admin-dashboard .form-admin .imageCollection {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.admin-dashboard .form-admin .imageCollection .imageCollectionSection {
+    max-width: 100px;
+    /* flex: 0 0 15%; */
+    margin: 0 7.5px;
+    margin-top: 25px;
+}
+.admin-dashboard .form-admin .imageCollection .imageCollectionSection .imageCollection__img {
+    width: 100%;
+}
+.admin-dashboard .form-admin .imageCollection .imageCollectionSection .btn {
+    width: 100%;
+}
+.admin-dashboard .form-admin .imageCollection .imageCollectionSection .btn svg {
+    margin: 0 auto;
+}
+
+
+
 .admin-dashboard .table {
     border-spacing: 1;
     border-collapse: collapse;
@@ -14228,6 +14258,7 @@ screen and (-ms-high-contrast: active) {
     margin-bottom: 30px;
     font-size: 20px;
 }
+
 
 .admin-section h6:last-child {
     margin-bottom: 0;
