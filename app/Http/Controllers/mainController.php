@@ -66,8 +66,9 @@ class MainController extends Controller
   }
   public function product($category, $product) {
     $product = Product::where('code', $product)->first();
+    $products = Product::where('category_id', $product->category_id)->limit(2)->get();
     $images = ImagesCollection::where('product_code', $product->code)->get();
-    return view('product', compact('product', 'images'));
+    return view('product', compact('product', 'products', 'images'));
   }
 
 }
