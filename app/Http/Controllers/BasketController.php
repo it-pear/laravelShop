@@ -90,7 +90,7 @@ class BasketController extends Controller
       $order->save();
     }
     
-    return redirect()->route('basket');
+    return back();
   }
 
   public function basketRemove($productId)

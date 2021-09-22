@@ -60,13 +60,17 @@ class MainController extends Controller
     if ($request->filled('search')) {
       $productsQuery->where('name', 'LIKE', '%' . $request->search . '%');
     }
-
-    $products = $productsQuery->orderBy('price', 'asc')->paginate(9)->withPath("?" . $request->getQueryString());
+    if ($request->filled('sortprice')) {
+      $productsQuery->orderBy('price', $request->sortprice);
+    }
+    // dd($request->sortprice);
+    // ->orderBy('price', 'asc')
+    $products = $productsQuery->paginate(18)->withPath("?" . $request->getQueryString());
     return view('catalog', compact('products', 'categories'));
   }
   public function product($category, $product) {
     $product = Product::where('code', $product)->first();
-    $products = Product::where('category_id', $product->category_id)->limit(2)->get();
+    $products = Product::where('category_id', $product->category_id)->limit(10)->get();
     $images = ImagesCollection::where('product_code', $product->code)->get();
     return view('product', compact('product', 'products', 'images'));
   }

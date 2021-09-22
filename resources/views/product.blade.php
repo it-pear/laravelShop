@@ -210,44 +210,42 @@
         <div class="block-products-carousel__preloader"></div>
         <div class="owl-carousel">
           @foreach($products as $product)
-            <div class="block-products-carousel__column">
-              <div class="block-products-carousel__cell">
-                <div class="product-card product-card--hidden-actions">                  
-                  <div class="product-card__image product-image">
+            <div class="block-products-carousel__cell">
+              <div class="product-card product-card--hidden-actions">
+                <div class="product-card__image product-image">
+                  <a href="{{ route('product', [$product->category->code, $product->code]) }}" class="product-image__body">
                     @if( Storage::url($product->image) == Storage::url($product->null) )
-                      <a href="/images/photo.png" data-width="700" data-height="700" class="product-image__body" target="_blank">
-                        <img class="product-image__img" src="/images/photo.png" alt="">
-                      </a>
+                    <img class="product-image__img" src="/images/photo.png" alt="">
                     @else
-                      <a href="{{ Storage::url($product->image) }}" data-width="700" data-height="700" class="product-image__body" target="_blank">
-                        <img class="product-image__img" src="{{ Storage::url($product->image) }}" alt="">
-                      </a>
+                    <img class="product-image__img" src="{{ Storage::url($product->image) }}" alt="">
                     @endif
+                  </a>
+                </div>
+                <div class="product-card__info">
+                  <div class="product-card__name">
+                    <a href="{{ route('product', [$product->category->code, $product->code]) }}">
+                      {{ $product->name }}
+                    </a>
                   </div>
-                  <div class="product-card__info">
-                    <div class="product-card__name">
-                      <a href="product.html">{{ $product->name }}</a>
-                    </div>
-                    <div class="product-card__rating">
-                      <div class="product-card__rating-legend">9 Reviews</div>
-                    </div>
+                  <div class="product-card__rating">
+                    <div class="product-card__rating-legend">{{ $product->category->name }}</div>
                   </div>
-                  <div class="product-card__actions">
-                    </div>
-                    <div class="product-card__prices">{{ $product->price }}₽</div>
-                    <div class="product-card__buttons"><button class="btn btn-primary product-card__addtocart" type="button">Добавить</button> <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">Добавить</button> <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist" type="button"><svg width="16px" height="16px">
-                          <use xlink:href="images/sprite.svg#wishlist-16"></use>
-                        </svg> <span class="fake-svg-icon fake-svg-icon--wishlist-16"></span></button> <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__compare" type="button"><svg width="16px" height="16px">
-                          <use xlink:href="images/sprite.svg#compare-16"></use>
-                        </svg> <span class="fake-svg-icon fake-svg-icon--compare-16"></span></button></div>
+                </div>
+                <div class="product-card__actions">
+                  <div class="product-card__prices">{{ $product->price }}₽</div>
+                  <div class="product-card__buttons">
+                    <form action="{{ route('basket-add', $product) }}" method="POST">
+                      <button type="submit" class="btn btn-primary product-card__addtocart" type="button">Добавить</button>
+                      <button type="submit" class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">Добавить</button>
+                      @csrf
+                    </form> 
+                    <button class="btn btn-secondary product-card__baytocart" type="button">Купить в клик</button>
                   </div>
                 </div>
               </div>
             </div>
           @endforeach
-          
-        </div>
-      </div>
+      </div><br>
     </div>
   </div><!-- .block-products-carousel / end -->
 </div>

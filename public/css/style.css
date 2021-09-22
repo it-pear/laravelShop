@@ -2568,6 +2568,12 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-origin {
     font-size: 15px;
     line-height: 19px;
 }
+@media (max-width: 772px) {
+    .product-card__name {
+        font-size: 13px;
+        line-height: 15px;
+    }
+}
 
 .product-card__name a {
     color: inherit;
@@ -2627,6 +2633,20 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-origin {
     display: -ms-flexbox;
     display: flex;
     margin-top: 24px;
+}
+@media (max-width: 772px) {
+    .product-card__buttons form {
+        width: 100%;
+    }
+    .product-card__buttons {
+        flex-direction: column;
+    }
+    .product-card__buttons .btn,
+    .product-card__addtocart{
+        width: 100%;
+        margin: 0;
+        margin-bottom: 8px;
+    }
 }
 
 .product-card__buttons> :first-child {
@@ -4045,7 +4065,11 @@ screen and (-ms-high-contrast: active) {
     -ms-flex-positive: 1;
     flex-grow: 1;
 }
-
+.filter-list__list__price {
+    height: 300px;
+    padding-right: 6px;
+    overflow-y: scroll;
+}
 .filter-list__counter {
     padding-top: 3px;
     font-size: 12px;
@@ -9640,6 +9664,11 @@ screen and (max-width: 374px) and (-ms-high-contrast: active) {
     font-size: 18px;
     font-weight: 500;
 }
+@media (max-width: 772px) {
+    .category-five .product-card .product-card__name {
+        font-size: 14px;
+    }
+}
 
 .products-list[data-layout="list"] .product-card .product-card__rating {
     margin-top: 4px;
@@ -14292,6 +14321,7 @@ screen and (-ms-high-contrast: active) {
 }
 .pagination nav .relative {
   display: flex;  
+  flex-wrap: wrap;
 }
 .pagination nav p{
     display: none;
