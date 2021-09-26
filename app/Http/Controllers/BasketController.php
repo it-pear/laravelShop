@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Order;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class BasketController extends Controller
 {
@@ -29,15 +30,17 @@ class BasketController extends Controller
 
   public function checkoutConfirm(Request $request)
   {
-    // dd($request->name);
+    $email = Auth::check() ? Auth::user()->email : $request->email;
+    // dd($email);
     $orderId = session('orderId');
     if (is_null($orderId)) {
       return redirect()->route('index');
     }
     $order = Order::find($orderId);
-    $success = $order->saveOrder($request->name, $request->phone);
+    $success = $order->saveOrder($request->name, $request->phone, $email);
     if ($success) {
-      session()->flash('success', 'Ваш заказ принят в обработку');
+      // session()->flash('success', 'Ваш заказ принят в обработку');
+      return view('mail.orderCreated');
     } else {
       session()->flash('warning', 'Случилась ошибка');
     }
@@ -64,10 +67,10 @@ class BasketController extends Controller
     return view('checkoutnolog', compact('order'));
   }
 
-  public function basketAdd($productId)
+  public function basketAdd(Request $request, $productId)
   {
+    $count = $request->count;
     $orderId = session('orderId');
-    
     if (is_null($orderId)) 
     {
       $order = Order::create();
@@ -75,15 +78,30 @@ class BasketController extends Controller
     } else {
       $order = Order::find($orderId);
     }
+    
+    // dd($pivotRow->count);
 
     if ($order->products->contains($productId))
     {
       $pivotRow = $order->products()->where('product_id', $productId)->first()->pivot;
-      $pivotRow->count++;
+      if (is_null($count)) {
+        $pivotRow->count++;
+      } else {
+        $pivotRow->count = $count;
+      }
+      
       $pivotRow->update();
     } else {
       $order->products()->attach($productId);
     }
+    $pivotRow = $order->products()->where('product_id', $productId)->first()->pivot;
+    if (is_null($count)) {
+      $pivotRow->count;  
+    } else {
+      $pivotRow->count = $count;
+    }
+    $pivotRow->update();
+    // $order->products()->detach($productId);
 
     if (Auth::check()) {
       $order->user_id = Auth::id();

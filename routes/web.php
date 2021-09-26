@@ -28,8 +28,9 @@ Route::middleware(['auth'])->group(function() {
   ], function(){
     Route::group(['middleware' => 'is_admin' ], function() {
       Route::get('/home', 'App\Http\Controllers\admin\HomeController@index')->name('home');
-      Route::get('/orders', 'App\Http\Controllers\admin\OrderController@index')->name('orders');
-      Route::get('/orders/{order}', 'App\Http\Controllers\admin\OrderController@show')->name('orders.show');
+      Route::resource('/orders', 'App\Http\Controllers\admin\OrderController');
+      // Route::post('/orders', 'App\Http\Controllers\admin\OrderController@destroy')->name('orders.destroy');
+      // Route::get('/orders/{order}', 'App\Http\Controllers\admin\OrderController@show')->name('orders.show');
 
       Route::resource('categories', 'App\Http\Controllers\admin\CategoryController');
       Route::get('upload', 'App\Http\Controllers\admin\ProductController@upload')->name('upload');

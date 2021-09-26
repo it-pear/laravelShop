@@ -123,18 +123,19 @@
               </div> -->
               <div class="form-group product__option"><label class="product__option-label" for="product-quantity">Количество</label>
                 <div class="product__actions">
-                  <div class="product__actions-item">
-                    <div class="input-number product__quantity"><input id="product-quantity" class="input-number__input form-control form-control-lg" type="number" min="1" value="1">
-                      <div class="input-number__add"></div>
-                      <div class="input-number__sub"></div>
+                  <form action="{{ route('basket-add', $product->id) }}" method="POST" style="display: flex;">
+                    <div class="product__actions-item">
+                      <div class="input-number product__quantity">
+                        <input id="product-quantity" class="input-number__input form-control form-control-lg" name="count" type="number" min="1" value="1">
+                        <div class="input-number__add"></div>
+                        <div class="input-number__sub"></div>
+                      </div>
                     </div>
-                  </div>
-                  <div class="product__actions-item product__actions-item--addtocart">
-                    <form action="{{ route('basket-add', $product->id) }}" method="POST">
+                    <div class="product__actions-item product__actions-item--addtocart">
                       <button type="submit" class="btn btn-primary btn-lg">Добавить</button>
                       @csrf
-                    </form>
-                  </div>
+                    </div>
+                  </form>
                 </div>
               </div>
             </div><!-- .product__options / end -->

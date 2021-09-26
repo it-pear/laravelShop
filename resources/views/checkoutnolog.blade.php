@@ -76,7 +76,7 @@
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="checkout-email">Email адрес</label>
-                    <input type="email" class="form-control" id="checkout-email" placeholder="example@mail.ru">
+                    <input type="email" class="form-control" id="checkout-email" name="email" placeholder="example@mail.ru">
                   </div>
                   <div class="form-group col-md-6">
                     <label for="checkout-phone">Телефон</label>

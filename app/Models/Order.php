@@ -4,6 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\OrderCreated;
+
 
 class Order extends Model
 {
@@ -35,7 +38,7 @@ class Order extends Model
     }
 
 
-    public function saveOrder($name, $phone) 
+    public function saveOrder($name, $phone, $email) 
     {
         if ($this->status == 0) {
             $this->name = $name;
@@ -43,6 +46,7 @@ class Order extends Model
             $this->status = 1;
             $this->save();
             session()->forget('orderId');
+            Mail::to($email)->send(new OrderCreated());
             return true;    
         } else {
             return false;
