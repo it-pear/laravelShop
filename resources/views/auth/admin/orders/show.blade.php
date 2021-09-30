@@ -11,9 +11,19 @@
       <h6>#Id - <small>{{ $order->id }}</small></h6>
       <h6>Заказчик - <small>{{ $order->name }}</small></h6>
       <h6>Номер телефона - <small>{{ $order->phone }}</small></h6>
+      <form action="">
+        <label><b>Статус заказа</b></label>
+        <div class="form-group" style="display: flex; align-items:center;">
+          <select class="form-control" style="min-width: 203px;">
+            <option>В обработке</option>
+            <option>Отправлен</option>
+            <option>Завершен</option>
+          </select>
+          <button class="btn btn-primary btn-lg" type="submit" style="height: 36px;padding: 8px 20px;margin-left: 24px;">Изменить</button>
+        </div>
+      </form>
     </div>
   </div>
-  <br><br>
   <h5>Заказанный товар</h5>
   <div class="table-responsive-sm">
     <table>

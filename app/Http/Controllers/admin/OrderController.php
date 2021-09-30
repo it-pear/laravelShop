@@ -20,4 +20,22 @@ class OrderController extends Controller
         $order->delete();
         return redirect()->route('orders.index');
     }
+    public function update(Request $request, Request $order)
+    {
+        $params = $request->all();
+        
+        unset($params['image']);
+        if ($request->has('image')) {
+            Storage::delete($product->image);
+            $params['image'] = $request->file('image')->store('products');
+        }
+
+        foreach (['new', 'hit', 'recommend'] as $fieldName) {
+            if (!isset($params[$fieldName])) {
+                $params[$fieldName] = 0;
+            } 
+        }
+        $product->update($params);
+        return redirect()->route('products.index');
+    }
 }
