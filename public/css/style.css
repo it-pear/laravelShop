@@ -1243,6 +1243,9 @@ screen and (-ms-high-contrast: active) {
 .form-group {
     margin-bottom: 1.5rem;
 }
+.form-group label {
+    font-size: 14px;
+}
 .form-group span {
     color: white;
 }
@@ -4765,6 +4768,7 @@ screen and (-ms-high-contrast: active) {
     transition: background-color 0.2s;
     border-radius: 2px;
     height: 42px;
+    font-size: 14px;
     padding: 0 14px;
     display: -ms-flexbox;
     display: flex;

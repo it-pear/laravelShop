@@ -32,6 +32,7 @@ class BasketController extends Controller
   {
     $email = Auth::check() ? Auth::user()->email : $request->email;
     // dd($email);
+    dd($request);
     $orderId = session('orderId');
     if (is_null($orderId)) {
       return redirect()->route('index');

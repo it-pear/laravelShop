@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class OrderController extends Controller
 {
     public function index() {
-        $orders = Order::where('status', 1)->paginate(10);
+        $orders = Order::where('status', '>=', 1)->paginate(10);
         return view('auth.admin.orders.index', compact('orders'));
     }
     public function show(Order $order)
@@ -20,22 +20,10 @@ class OrderController extends Controller
         $order->delete();
         return redirect()->route('orders.index');
     }
-    public function update(Request $request, Request $order)
+    public function update(Request $request, Order $order)
     {
         $params = $request->all();
-        
-        unset($params['image']);
-        if ($request->has('image')) {
-            Storage::delete($product->image);
-            $params['image'] = $request->file('image')->store('products');
-        }
-
-        foreach (['new', 'hit', 'recommend'] as $fieldName) {
-            if (!isset($params[$fieldName])) {
-                $params[$fieldName] = 0;
-            } 
-        }
-        $product->update($params);
-        return redirect()->route('products.index');
+        $order->update($params);
+        return redirect()->back();
     }
 }

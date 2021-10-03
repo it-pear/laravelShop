@@ -60,11 +60,20 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
+            'name' => ['required', 'string', 'min:3', 'max:255'] ,
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
+            'password_confirmation' => ['required', 'string', 'min:8'],
+            ],
+            [
+                'required' => 'Данное поле необходимо заполнить',
+                'email.unique' => 'Данное поле должно быть уникальным',
+                'min' => 'Данное поле не должно содержать меньше :min символов',
+                'password.confirmed' => 'Пароли не совпадают',
+            ]
+        );
     }
+
 
     /**
      * Create a new user instance after a valid registration.

@@ -46,41 +46,41 @@
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="checkout-first-name">Имя</label>
-                    <input type="text" class="form-control" id="checkout-first-name" name="name" placeholder="Введите ваше имя">
+                    <input type="text" class="form-control" id="checkout-first-name" name="name" required placeholder="Введите ваше имя">
                   </div>
                   <div class="form-group col-md-6">
                     <label for="checkout-last-name">Фамилия</label>
-                    <input type="text" class="form-control" id="checkout-last-name" placeholder="Введите вашу фамилию">
+                    <input type="text" class="form-control" id="checkout-last-name" name="name2" required placeholder="Введите вашу фамилию">
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="checkout-state">Субъект страны</label>
-                  <input type="text" class="form-control" id="checkout-state">
+                  <input type="text" class="form-control" name="country" required id="checkout-state">
                 </div>
                 <div class="form-group">
                   <label for="checkout-company-name">Город <span class="text-muted">(Город доставки)</span></label>
-                  <input type="text" class="form-control" id="checkout-company-name" placeholder="Введие город доставки">
+                  <input type="text" class="form-control" name="city" required id="checkout-company-name" placeholder="Введие город доставки">
                 </div>
                 <div class="form-group">
                   <label for="checkout-street-address">Улица</label>
-                  <input type="text" class="form-control" id="checkout-street-address" placeholder="Укажите улицу">
+                  <input type="text" class="form-control" name="street" required id="checkout-street-address" placeholder="Укажите улицу">
                 </div>
                 <div class="form-group">
                   <label for="checkout-address">Номер дома<span class="text-muted"> (укажите номер дома)</span></label>
-                  <input type="text" class="form-control" id="checkout-address">
+                  <input type="text" class="form-control" name="home" required id="checkout-address">
                 </div>                
                 <div class="form-group">
                   <label for="checkout-postcode">Почтовый индекс</label>
-                  <input type="text" class="form-control" id="checkout-postcode">
+                  <input type="text" class="form-control" name="index" required id="checkout-postcode">
                 </div>
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="checkout-email">Email адрес</label>
-                    <input type="email" class="form-control" id="checkout-email" name="email" placeholder="example@mail.ru">
+                    <input type="email" class="form-control" id="checkout-email" required name="email" placeholder="example@mail.ru">
                   </div>
                   <div class="form-group col-md-6">
                     <label for="checkout-phone">Телефон</label>
-                    <input type="text" class="form-control" name="phone" id="checkout-phone" placeholder="+7 (999) 999-99-99">
+                    <input type="text" class="form-control" name="phone" id="checkout-phone" required placeholder="+7 (999) 999-99-99">
                   </div>
                 </div>
               </div>
@@ -89,7 +89,7 @@
                 <h3 class="card-title">Детали заказа</h3>
                 <div class="form-group">
                   <label for="checkout-comment">(необязательно)</label>
-                  <textarea id="checkout-comment" class="form-control" rows="4"></textarea>
+                  <textarea id="checkout-comment" class="form-control" name="message" rows="4"></textarea>
                 </div>
               </div>
             </div>
@@ -127,7 +127,7 @@
                       <label class="payment-methods__item-header">
                         <span class="payment-methods__item-radio input-radio">
                           <span class="input-radio__body">
-                            <input class="input-radio__input" name="checkout_payment_method" type="radio" value="cityto">
+                            <input class="input-radio__input" name="checkout_payment_method" type="radio" value="1">
                             <span class="input-radio__circle"></span>
                           </span>
                         </span>
@@ -143,7 +143,7 @@
                       <label class="payment-methods__item-header">
                         <span class="payment-methods__item-radio input-radio">
                           <span class="input-radio__body">
-                            <input class="input-radio__input" name="checkout_payment_method" type="radio" value="mailto">
+                            <input class="input-radio__input" name="checkout_payment_method" type="radio" value="2">
                             <span class="input-radio__circle"></span>
                           </span>
                         </span>
@@ -159,7 +159,7 @@
                       <label class="payment-methods__item-header">
                         <span class="payment-methods__item-radio input-radio">
                           <span class="input-radio__body">
-                            <input class="input-radio__input" name="checkout_payment_method" type="radio" checked="checked" value="adresto">
+                            <input class="input-radio__input" name="checkout_payment_method" type="radio" checked="checked" value="3">
                             <span class="input-radio__circle"></span>
                           </span>
                         </span>

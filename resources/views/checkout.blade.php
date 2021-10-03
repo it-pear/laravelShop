@@ -45,23 +45,23 @@
                 <h3 class="card-title">Детали заказа</h3>
                 <div class="form-group">
                   <label for="checkout-state">Субъект страны</label>
-                  <input type="text" class="form-control" id="checkout-state">
+                  <input type="text" class="form-control" name="country" required id="checkout-state">
                 </div>
                 <div class="form-group">
                   <label for="checkout-company-name">Город <span class="text-muted">(Город доставки)</span></label>
-                  <input type="text" class="form-control" id="checkout-company-name" placeholder="Введие город доставки">
+                  <input type="text" class="form-control" name="city" required id="checkout-company-name" placeholder="Введие город доставки">
                 </div>
                 <div class="form-group">
                   <label for="checkout-street-address">Улица</label>
-                  <input type="text" class="form-control" id="checkout-street-address" placeholder="Укажите улицу">
+                  <input type="text" class="form-control" name="street" required id="checkout-street-address" placeholder="Укажите улицу">
                 </div>
                 <div class="form-group">
                   <label for="checkout-address">Номер дома<span class="text-muted"> (укажите номер дома)</span></label>
-                  <input type="text" class="form-control" id="checkout-address">
+                  <input type="text" class="form-control" name="home" required id="checkout-address">
                 </div>                
                 <div class="form-group">
                   <label for="checkout-postcode">Почтовый индекс</label>
-                  <input type="text" class="form-control" id="checkout-postcode">
+                  <input type="text" class="form-control" name="index" required id="checkout-postcode">
                 </div>
               </div>
               <div class="card-divider"></div>
@@ -69,7 +69,7 @@
                 <h3 class="card-title">Детали заказа</h3>
                 <div class="form-group">
                   <label for="checkout-comment">(необязательно)</label>
-                  <textarea id="checkout-comment" class="form-control" rows="4"></textarea>
+                  <textarea id="checkout-comment" class="form-control" name="message" rows="4"></textarea>
                 </div>
               </div>
             </div>
@@ -107,7 +107,7 @@
                       <label class="payment-methods__item-header">
                         <span class="payment-methods__item-radio input-radio">
                           <span class="input-radio__body">
-                            <input class="input-radio__input" name="checkout_payment_method" type="radio" value="cityto">
+                            <input class="input-radio__input" name="checkout_payment_method" type="radio" value="1">
                             <span class="input-radio__circle"></span>
                           </span>
                         </span>
@@ -123,7 +123,7 @@
                       <label class="payment-methods__item-header">
                         <span class="payment-methods__item-radio input-radio">
                           <span class="input-radio__body">
-                            <input class="input-radio__input" name="checkout_payment_method" type="radio" value="mailto">
+                            <input class="input-radio__input" name="checkout_payment_method" type="radio" value="2">
                             <span class="input-radio__circle"></span>
                           </span>
                         </span>
@@ -139,7 +139,7 @@
                       <label class="payment-methods__item-header">
                         <span class="payment-methods__item-radio input-radio">
                           <span class="input-radio__body">
-                            <input class="input-radio__input" name="checkout_payment_method" type="radio" checked="checked" value="adresto">
+                            <input class="input-radio__input" name="checkout_payment_method" type="radio" checked="checked" value="3">
                             <span class="input-radio__circle"></span>
                           </span>
                         </span>

@@ -11,14 +11,30 @@
       <h6>#Id - <small>{{ $order->id }}</small></h6>
       <h6>Заказчик - <small>{{ $order->name }}</small></h6>
       <h6>Номер телефона - <small>{{ $order->phone }}</small></h6>
-      <form action="">
+      <form action="{{ route('orders.update', $order) }}" method="POST">
         <label><b>Статус заказа</b></label>
         <div class="form-group" style="display: flex; align-items:center;">
-          <select class="form-control" style="min-width: 203px;">
-            <option>В обработке</option>
-            <option>Отправлен</option>
-            <option>Завершен</option>
+          <select class="form-control" name="status" style="min-width: 203px;">
+            <option 
+              value="{{ $order->status }}"
+              selected
+            >
+              @if($order->status == 1)
+                В обработке
+              @endif
+              @if($order->status == 2)
+                Отправлен
+              @endif
+              @if($order->status == 3)
+                Завершен
+              @endif
+            </option>
+            <option value="1">В обработке</option>
+            <option value="2">Отправлен</option>
+            <option value="3">Завершен</option>
           </select>
+          @method('PUT')
+          @csrf
           <button class="btn btn-primary btn-lg" type="submit" style="height: 36px;padding: 8px 20px;margin-left: 24px;">Изменить</button>
         </div>
       </form>
