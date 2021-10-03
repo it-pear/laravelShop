@@ -8,10 +8,7 @@
       <div class="page-header__breadcrumb">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="/">Home</a> <svg class="breadcrumb-arrow" width="6px" height="9px">
-                <use xlink:href="images/sprite.svg#arrow-rounded-right-6x9"></use>
-              </svg></li>
-            <li class="breadcrumb-item"><a href="">Breadcrumb</a> <svg class="breadcrumb-arrow" width="6px" height="9px">
+            <li class="breadcrumb-item"><a href="/">Главная</a> <svg class="breadcrumb-arrow" width="6px" height="9px">
                 <use xlink:href="images/sprite.svg#arrow-rounded-right-6x9"></use>
               </svg></li>
             <li class="breadcrumb-item active" aria-current="page">Мой профиль</li>
@@ -51,7 +48,17 @@
                       <tr>
                         <td><a href="{{ route('person.orders.show', $order) }}">#{{ $order->id }}</a></td>
                         <td>{{ $order->created_at->format('H:i d/m/Y') }}</td>
-                        <td>статус</td>
+                        <td>
+                        @if ( $order->status === 1 )
+                          На обработке
+                        @elseif ( $order->status === 2 )
+                          Отправлен
+                        @elseif ( $order->status === 3 )
+                          Завершен
+                        @else 
+                          нет информации
+                        @endif
+                        </td>
                         <td>{{ $order->getFullPrice() }}₽</td>
                       </tr>
                     @endforeach
