@@ -18,7 +18,6 @@ class ProductImport implements ToModel
     */
     public function model(array $row)
     {
-        dd('sdf');
         if (isset($row[0]) && $row[0]) {
             $categry = Category::where('code', $row[1])->first();
             $time = date('YmdHis');
