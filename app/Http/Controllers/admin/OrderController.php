@@ -20,7 +20,7 @@ class OrderController extends Controller
         $order->delete();
         return redirect()->route('orders.index');
     }
-    public function update(Request $request, Request $order)
+    public function update(Request $request, Order $order)
     {
         $params = $request->all();
         
