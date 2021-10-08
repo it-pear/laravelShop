@@ -31,7 +31,7 @@ class BasketController extends Controller
   public function checkoutConfirm(Request $request)
   {
     $email = Auth::check() ? Auth::user()->email : $request->email;
-    // dd($email);
+    // dd($request);
     $orderId = session('orderId');
     if (is_null($orderId)) {
       return redirect()->route('index');

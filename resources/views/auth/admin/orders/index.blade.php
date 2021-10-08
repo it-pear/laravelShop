@@ -13,6 +13,7 @@
           <th>Телефон</th>
           <th>Дата заказа</th>
           <th>Сумма</th>
+          <th>Статус</th>
           <th></th>
         </tr>
       </thead>
@@ -24,6 +25,17 @@
             <td>{{ $order->phone }}</td>
             <td>{{ $order->created_at->format('H:i d/m/Y') }}</td>
             <td>{{ $order->getFullPrice() }}₽</td>
+            <td>
+              @if($order->status == 1)
+                <span style="color: red;">В обработке</span>
+              @endif
+              @if($order->status == 2)
+                <span style="color: Orange;">Отправлен</span>
+              @endif
+              @if($order->status == 3)
+                <span style="color: green;">Завершен</span>
+              @endif
+            </td>
             <td>
               <a href="{{ route('orders.show', $order) }}">
                 <button type="button" class="btn btn-success">
