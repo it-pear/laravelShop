@@ -15,8 +15,9 @@
             <div class="alert alert-danger mb-3">{{ session()->get('warning') }}</div>
           @endif
       </div>
-      <form action="{{ route('import.products') }}" enctype="multipart/form-data" method="GET"> 
+      <form action="{{ route('import.products') }}" enctype="multipart/form-data" method="POST"> 
         <div style="display: flex;">
+        {{ csrf_field() }}
           <h6>Загрузите файл: </h6>
           <input class="ml-4" type="file" name="excel" style="background-color: rgba(255,255,255,0.5);">
           <button type="submit" class="btn btn-info" style="margin-left: auto;">Загрузить товар</button>

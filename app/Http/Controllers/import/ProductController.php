@@ -12,18 +12,12 @@ class ProductController extends Controller
 {
     public function import(ImportRequest $request) 
     {
-        // $request->file('excel')->store('excel');
         try {
-            Excel::import(new ProductImport, $request->excel);
+            Excel::import(new ProductImport, request()->file('excel'));
             return back()->with('success', 'Товары успешно загружены');
         } catch  (FileNotFoundException  $e) {
             return back()->with('warning', 'Произошла ошибка - товары не загружены!');
-        } finally {
-            return back();
-        }
+        } 
         
-    }
-    public function imp(Request $request) {
-        dd($request->excel);
     }
 }
