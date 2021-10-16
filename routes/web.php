@@ -18,9 +18,9 @@ Route::middleware(['auth'])->group(function() {
     'prefix' => 'person',
     'as' => 'person.'
   ], function () {
-    Route::get('/orders', 'App\Http\Controllers\person\OrderController@index')->name('orders.index');
-    Route::get('/orders/{order}', 'App\Http\Controllers\person\OrderController@show')->name('orders.show');
-    Route::get('/profile', 'App\Http\Controllers\person\OrderController@profile')->name('profile');
+    Route::get('/orders', 'App\Http\Controllers\Person\OrderController@index')->name('orders.index');
+    Route::get('/orders/{order}', 'App\Http\Controllers\Person\OrderController@show')->name('orders.show');
+    Route::get('/profile', 'App\Http\Controllers\Person\OrderController@profile')->name('profile');
   });
 
   Route::group([

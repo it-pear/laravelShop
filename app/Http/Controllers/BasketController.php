@@ -1,11 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
+use App\Http\Requests\RegisterRequest;
 use App\Models\Order;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Mail;
 
 class BasketController extends Controller
 {
@@ -28,10 +27,10 @@ class BasketController extends Controller
     return view('basket', compact('order'));
   }  
 
-  public function checkoutConfirm(Request $request)
+  public function checkoutConfirm(RegisterRequest $request)
   {
     $email = Auth::check() ? Auth::user()->email : $request->email;
-    // dd($request);
+    dd($request->request);
     $orderId = session('orderId');
     if (is_null($orderId)) {
       return redirect()->route('index');

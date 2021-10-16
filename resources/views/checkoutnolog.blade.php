@@ -82,6 +82,10 @@
                     <label for="checkout-phone">Телефон</label>
                     <input type="text" class="form-control" name="phone" id="checkout-phone" required placeholder="+7 (999) 999-99-99">
                   </div>
+                  <div class="form-group col-md-6">
+                    <label for="checkout-email">Пароль для личного кабинета</label>
+                    <input type="password" class="form-control" id="checkout-email" required name="password">
+                  </div>
                 </div>
               </div>
               <div class="card-divider"></div>
