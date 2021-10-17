@@ -48,7 +48,7 @@ class Order extends Model
             $this->user_id = $userId;
             $this->save();
             session()->forget('orderId');
-            Mail::to($email)->send(new OrderCreated());
+            Mail::to('yurecblinovgelarm@gmail.com')->send(new OrderCreated());
             return true;    
         } else {
             return false;
