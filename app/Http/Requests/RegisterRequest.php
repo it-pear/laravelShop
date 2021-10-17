@@ -2,91 +2,41 @@
 
 namespace App\Http\Requests;
 
-use App\Http\Controllers\Controller;
-use App\Providers\RouteServiceProvider;
-use App\Models\User;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Foundation\Auth\RegistersUsers;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Validator;
+use Illuminate\Foundation\Http\FormRequest;
 
-class RegisterController extends Controller
+class RegisterRequest extends FormRequest
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Register Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles the registration of new users as well as their
-    | validation and creation. By default this controller uses a trait to
-    | provide this functionality without requiring any additional code.
-    |
-    */
-
-    use RegistersUsers;
-
-    // protected function redirectTo()
-    // {
-    //   if (Auth::user()->isAdmin()) {
-    //       return route('home');
-    //   } else {
-    //       return route('person.orders.index');
-    //   }
-    // }
-
     /**
-     * Where to redirect users after registration.
+     * Determine if the user is authorized to make this request.
      *
-     * @var string
+     * @return bool
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
-
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    public function authorize()
     {
-      $this->middleware('guest');
+        return true;
     }
 
     /**
-     * Get a validator for an incoming registration request.
+     * Get the validation rules that apply to the request.
      *
-     * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
+     * @return array
      */
-    protected function validator(array $data)
+    public function rules()
     {
-        return Validator::make($data, [
-            'name' => ['required', 'string', 'min:3', 'max:255'] ,
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'password_confirmation' => ['required', 'string', 'min:8'],
-            ],
-            [
-                'required' => 'Данное поле необходимо заполнить',
-                'email.unique' => 'Данное поле должно быть уникальным',
-                'min' => 'Данное поле не должно содержать меньше :min символов',
-                'password.confirmed' => 'Пароли не совпадают',
-            ]
-        );
+        $rules = [
+            'name' => 'required|string|min:3|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:8'
+        ];
+
+        return $rules;
     }
-
-
-    /**
-     * Create a new user instance after a valid registration.
-     *
-     * @param  array  $data
-     * @return \App\Models\User
-     */
-    protected function create(array $data)
+    public function messages()
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
+        return [
+            'required' => 'Данное поле необходимо заполнить',
+            'email.unique' => 'Данное поле должно быть уникальным',
+            'min' => 'Данное поле не должно содержать меньше :min символов'
+        ];
     }
 }

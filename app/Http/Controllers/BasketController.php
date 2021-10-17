@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\RegisterRequest;
 use App\Models\Order;
+use Illuminate\Support\Facades\Hash;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 class BasketController extends Controller
@@ -29,14 +31,41 @@ class BasketController extends Controller
 
   public function checkoutConfirm(RegisterRequest $request)
   {
-    $email = Auth::check() ? Auth::user()->email : $request->email;
-    dd($request->request);
+    $email = $request->email;
+    // dd($request->password);
     $orderId = session('orderId');
     if (is_null($orderId)) {
       return redirect()->route('index');
     }
     $order = Order::find($orderId);
-    $success = $order->saveOrder($request->name, $request->phone, $email);
+    User::create([
+      'name' => $request->name,
+      'email' => $email,
+      'password' => Hash::make($request->password)
+    ]);
+    $user = User::where('email', $email)->first();
+    $userId = $user->id;
+    $success = $order->saveOrder($request->name, $request->phone, $email, $userId);
+    if ($success) {
+      // session()->flash('success', 'Ваш заказ принят в обработку');
+      
+      return view('mail.orderCreated');
+    } else {
+      session()->flash('warning', 'Случилась ошибка');
+    }
+
+    return redirect()->route('index');
+  }
+  public function checkoutConfirmAuth(Request $request)
+  {
+    $email = Auth::user()->email;
+    $orderId = session('orderId');
+    if (is_null($orderId)) {
+      return redirect()->route('index');
+    }
+    $userId = Auth::user()->id;
+    $order = Order::find($orderId);
+    $success = $order->saveOrder($request->name, $request->phone, $email, $userId);
     if ($success) {
       // session()->flash('success', 'Ваш заказ принят в обработку');
       return view('mail.orderCreated');

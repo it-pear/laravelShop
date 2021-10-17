@@ -69,17 +69,17 @@
       </div>
       <div class="col-12 col-lg-4">
         <div class="block block-sidebar block-sidebar--position--end">
-          <div class="block-sidebar__item">
+          <!-- <div class="block-sidebar__item">
             <div class="widget-search">
               <form class="widget-search__body"><input class="widget-search__input" placeholder="Blog search..." type="text" autocomplete="off" spellcheck="false"> <button class="widget-search__button" type="submit"><svg width="20px" height="20px">
                     <use xlink:href="images/sprite.svg#search-20"></use>
                   </svg></button></form>
             </div>
-          </div>
-          <div class="block-sidebar__item">
+          </div> -->
+          <!-- <div class="block-sidebar__item">
             <div class="widget-aboutus widget">
               <h4 class="widget__title">Услуги</h4>
-              <div class="widget-aboutus__text">На данной странице вы можете просмотреть все услуги предоставляемые нашим магазином. Также вы можете следить за нами в социальных сетях.</div><!-- social-links -->
+              <div class="widget-aboutus__text">На данной странице вы можете просмотреть все услуги предоставляемые нашим магазином. Также вы можете следить за нами в социальных сетях.</div>
               <div class="social-links widget-aboutus__socials social-links--shape--rounded">
                 <ul class="social-links__list">
                   <li class="social-links__item"><a class="social-links__link social-links__link--type--rss" href="" target="_blank"><i class="fas fa-rss"></i></a></li>
@@ -88,9 +88,9 @@
                   <li class="social-links__item"><a class="social-links__link social-links__link--type--twitter" href="" target="_blank"><i class="fab fa-twitter"></i></a></li>
                   <li class="social-links__item"><a class="social-links__link social-links__link--type--instagram" href="" target="_blank"><i class="fab fa-instagram"></i></a></li>
                 </ul>
-              </div><!-- social-links / end -->
+              </div>
             </div>
-          </div>
+          </div> -->
 
           <div class="block-sidebar__item">
             <div class="widget-newsletter widget">

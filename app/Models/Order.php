@@ -39,12 +39,13 @@ class Order extends Model
     }
 
 
-    public function saveOrder($name, $phone, $email) 
+    public function saveOrder($name, $phone, $email, $userId) 
     {
         if ($this->status == 0) {
             $this->name = $name;
             $this->phone = $phone;
             $this->status = 1;
+            $this->user_id = $userId;
             $this->save();
             session()->forget('orderId');
             Mail::to($email)->send(new OrderCreated());

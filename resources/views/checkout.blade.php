@@ -38,7 +38,7 @@
         <div class="col-12 mb-3">
         {{ Auth::user()->name }}, ваш заказ почти готов, осталось заполнить поля ниже и следить за заказом через личный кабинет.
         </div>
-        <form action="{{ route('checkout-confirm') }}" method="POST" class="row">
+        <form action="{{ route('checkout-confirm-auth') }}" method="POST" class="row">
           <div class="col-12 col-lg-6 col-xl-7">
             <div class="card mb-lg-0">
               <div class="card-body">
