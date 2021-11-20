@@ -39,16 +39,23 @@ class Order extends Model
   }
 
 
-  public function saveOrder($name, $phone, $email, $userId) 
+  public function saveOrder($name, $phone, $email, $userId, $country, $city, $street, $home, $index, $message, $checkout_payment_method) 
   {
     if ($this->status == 0) {
       $this->name = $name;
       $this->phone = $phone;
       $this->status = 1;
       $this->user_id = $userId;
+      $this->country = $country;
+      $this->city = $city;
+      $this->street = $street;
+      $this->home = $home;
+      $this->index = $index;
+      $this->message = $message;
+      $this->checkout_payment_method = $checkout_payment_method;
       $this->save();
       session()->forget('orderId');
-      Mail::to('yurecblinovgelarm@gmail.com')->send(new OrderCreated());
+      Mail::to('yurecblinovgelarm@gmail.com')->send(new OrderCreated($name));
       return true;  
     } else {
       return false;

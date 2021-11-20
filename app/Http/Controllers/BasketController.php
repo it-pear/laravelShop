@@ -32,20 +32,29 @@ class BasketController extends Controller
   public function checkoutConfirm(RegisterRequest $request)
   {
     $email = $request->email;
-    // dd($request->password);
     $orderId = session('orderId');
     if (is_null($orderId)) {
       return redirect()->route('index');
     }
+    // dd($request->request);
     $order = Order::find($orderId);
     User::create([
-      'name' => $request->name,
+      'name' => $request->name . ' ' . $request->name2,
       'email' => $email,
       'password' => Hash::make($request->password)
     ]);
     $user = User::where('email', $email)->first();
     $userId = $user->id;
-    $success = $order->saveOrder($request->name, $request->phone, $email, $userId);
+    $country = $request->country;
+    $city = $request->city;
+    $street = $request->street;
+    $home = $request->home;
+    $index = $request->index;
+    $message = $request->message;
+    $checkout_payment_method = $request->checkout_payment_method;
+    $success = $order->saveOrder(
+      $request->name, $request->phone, $email, $userId, $country, $city, $street, $home, $index, $message, $checkout_payment_method
+    );
     if ($success) {
       // session()->flash('success', 'Ваш заказ принят в обработку');
       
@@ -63,9 +72,18 @@ class BasketController extends Controller
     if (is_null($orderId)) {
       return redirect()->route('index');
     }
+    $country = $request->country;
+    $city = $request->city;
+    $street = $request->street;
+    $home = $request->home;
+    $index = $request->index;
+    $message = $request->message;
+    $checkout_payment_method = $request->checkout_payment_method;
     $userId = Auth::user()->id;
     $order = Order::find($orderId);
-    $success = $order->saveOrder($request->name, $request->phone, $email, $userId);
+    $success = $order->saveOrder(
+      $request->name, $request->phone, $email, $userId, $country, $city, $street, $home, $index, $message, $checkout_payment_method
+    );
     if ($success) {
       // session()->flash('success', 'Ваш заказ принят в обработку');
       return view('mail.orderCreated');

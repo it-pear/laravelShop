@@ -26,9 +26,9 @@ class OrderCreated extends Mailable
      *
      * @return $this
      */
-    public function build()
+    public function build($name)
     {
        // return $this->view('mail.orderCreated');
-       return $this->from('yurecblinovgelarm@gmail.com')->view('mail.orderCreated');
+       return $this->from('yurecblinovgelarm@gmail.com')->view('mail.orderCreated', compact($name));
     }
 }
