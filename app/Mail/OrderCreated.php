@@ -29,7 +29,6 @@ class OrderCreated extends Mailable
     public function build()
     {
        // return $this->view('mail.orderCreated');
-       return $this->from('yurecblinovgelarm@gmail.com')
-                ->view('mail.orderCreated');
+       return $this->from('yurecblinovgelarm@gmail.com')->view('mail.orderCreated');
     }
 }

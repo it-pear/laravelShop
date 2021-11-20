@@ -31,8 +31,11 @@ class LoginController extends Controller
     }
     protected function redirectTo()
     {
+        $orderId = session('orderId');
         if (Auth::user()->isAdmin()) {
             return route('home');
+        } else if (!is_null($orderId)) {
+            return route('checkout');
         } else {
             return route('person.orders.index');
         }
