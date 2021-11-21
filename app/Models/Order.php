@@ -44,6 +44,7 @@ class Order extends Model
     if ($this->status == 0) {
       $this->name = $name;
       $this->phone = $phone;
+      
       $this->status = 1;
       $this->user_id = $userId;
       $this->country = $country;

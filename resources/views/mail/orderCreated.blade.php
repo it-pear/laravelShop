@@ -8,8 +8,25 @@
   <title>Document</title>
 </head>
 <body>
-test mail send 
-<br>
-
+  <table>
+    <tbody>
+      <tr>
+        <td>status</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>country</td>
+        <td>russia</td>
+      </tr>
+      <tr>
+        <td>city</td>
+        <td>moscow</td>
+      </tr>
+      <tr>
+        <td>street</td>
+        <td>lenina</td>
+      </tr>
+    </tbody>
+  </table>
 </body>
 </html>

@@ -18,7 +18,7 @@ class OrderCreated extends Mailable
      *
      * @return void
      */
-    public $phone;
+
     public function __construct()
     {
         // 
