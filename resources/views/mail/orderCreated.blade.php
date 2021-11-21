@@ -10,6 +10,6 @@
 <body>
 test mail send 
 <br>
-$name ////
+
 </body>
 </html>

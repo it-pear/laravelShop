@@ -36,7 +36,7 @@ class BasketController extends Controller
     if (is_null($orderId)) {
       return redirect()->route('index');
     }
-    // dd($request->request);
+    dd($request->request);
     $order = Order::find($orderId);
     User::create([
       'name' => $request->name . ' ' . $request->name2,
@@ -68,6 +68,7 @@ class BasketController extends Controller
   public function checkoutConfirmAuth(Request $request)
   {
     $email = Auth::user()->email;
+    $name = Auth::user()->name;
     $orderId = session('orderId');
     if (is_null($orderId)) {
       return redirect()->route('index');
@@ -82,7 +83,7 @@ class BasketController extends Controller
     $userId = Auth::user()->id;
     $order = Order::find($orderId);
     $success = $order->saveOrder(
-      $request->name, $request->phone, $email, $userId, $country, $city, $street, $home, $index, $message, $checkout_payment_method
+      $name, $request->phone, $email, $userId, $country, $city, $street, $home, $index, $message, $checkout_payment_method
     );
     if ($success) {
       // session()->flash('success', 'Ваш заказ принят в обработку');

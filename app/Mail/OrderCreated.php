@@ -3,9 +3,11 @@
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
+use App\Models\Order;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Http\Request;
 
 class OrderCreated extends Mailable
 {
@@ -16,9 +18,10 @@ class OrderCreated extends Mailable
      *
      * @return void
      */
+    public $phone;
     public function __construct()
     {
-        //
+        // 
     }
 
     /**
@@ -26,9 +29,10 @@ class OrderCreated extends Mailable
      *
      * @return $this
      */
-    public function build($name)
+    public function build()
     {
+        // dd($request);
        // return $this->view('mail.orderCreated');
-       return $this->from('yurecblinovgelarm@gmail.com')->view('mail.orderCreated', compact($name));
+       return $this->from('yurecblinovgelarm@gmail.com')->view('mail.orderCreated');
     }
 }

@@ -44,6 +44,10 @@
               <div class="card-body">
                 <h3 class="card-title">Детали заказа</h3>
                 <div class="form-group">
+                  <label for="checkout-phone">Номер телефона</label>
+                  <input type="text" class="form-control" name="phone" required id="checkout-phone">
+                </div>
+                <div class="form-group">
                   <label for="checkout-state">Субъект страны</label>
                   <input type="text" class="form-control" name="country" required id="checkout-state">
                 </div>
