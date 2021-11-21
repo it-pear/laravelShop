@@ -87,7 +87,7 @@ class BasketController extends Controller
     );
     if ($success) {
       // session()->flash('success', 'Ваш заказ принят в обработку');
-      return view('mail.orderCreated');
+      return view('contacts');
     } else {
       session()->flash('warning', 'Случилась ошибка');
     }

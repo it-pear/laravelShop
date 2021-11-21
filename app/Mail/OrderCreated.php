@@ -13,17 +13,13 @@ class OrderCreated extends Mailable
 {
     use Queueable, SerializesModels;
 
-    /**
-     * Create a new message instance.
-     *
-     * @return void
-     */
+    protected $phone;
 
-    public function __construct()
+    public function __construct($phone)
     {
-        // 
+        $this->phone = $phone;
     }
-
+    
     /**
      * Build the message.
      *
@@ -31,8 +27,7 @@ class OrderCreated extends Mailable
      */
     public function build()
     {
-        // dd($request);
        // return $this->view('mail.orderCreated');
-       return $this->from('yurecblinovgelarm@gmail.com')->view('mail.orderCreated');
+       return $this->from('yurecblinovgelarm@gmail.com')->view('mail.orderCreated', ['phone' => '3333333']);
     }
 }

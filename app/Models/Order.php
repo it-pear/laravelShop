@@ -44,7 +44,6 @@ class Order extends Model
     if ($this->status == 0) {
       $this->name = $name;
       $this->phone = $phone;
-      
       $this->status = 1;
       $this->user_id = $userId;
       $this->country = $country;
@@ -56,7 +55,7 @@ class Order extends Model
       $this->checkout_payment_method = $checkout_payment_method;
       $this->save();
       session()->forget('orderId');
-      Mail::to('yurecblinovgelarm@gmail.com')->send(new OrderCreated());
+      Mail::to('yurecblinovgelarm@gmail.com')->send(new OrderCreated($phone));
       return true;  
     } else {
       return false;
