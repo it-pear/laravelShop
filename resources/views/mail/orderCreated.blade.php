@@ -9,19 +9,19 @@
 <body>
   
   <div style="display: flex;">
-    <h2>Имя: {{ $data[0] }}</h2>
+    <h2 style="margin: 3px 0;">Имя: {{ $data[0] }}</h2>
   </div>
   <div style="display: flex;">
-    <h2>Имя: {{ $data[1] }}</h2>
+    <h2 style="margin: 3px 0;">Имя: {{ $data[1] }}</h2>
   </div>
   <div style="display: flex;">
-    <h2>Имя: {{ $data[2] }}</h2>
+    <h2 style="margin: 3px 0;">Имя: {{ $data[2] }}</h2>
   </div>
   <div style="display: flex;">
-    <h2>Имя: {{ $data[3] }}</h2>
+    <h2 style="margin: 3px 0;">Имя: {{ $data[3] }}</h2>
   </div>
   <div style="display: flex;">
-    <h2>Имя: {{ $data[4] }}</h2>
+    <h2 style="margin: 3px 0;">Имя: {{ $data[4] }}</h2>
   </div>
 
 </body>
