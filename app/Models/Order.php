@@ -54,8 +54,19 @@ class Order extends Model
       $this->message = $message;
       $this->checkout_payment_method = $checkout_payment_method;
       $this->save();
+      $data = [
+        $name,
+        $phone,
+        $country,
+        $city,
+        $street,
+        $home,
+        $index,
+        $message,
+        $checkout_payment_method
+      ];
       session()->forget('orderId');
-      Mail::to('yurecblinovgelarm@gmail.com')->send(new OrderCreated($phone));
+      Mail::to('yurecblinovgelarm@gmail.com')->send(new OrderCreated($data));
       return true;  
     } else {
       return false;

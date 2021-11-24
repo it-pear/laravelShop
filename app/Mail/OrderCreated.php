@@ -13,11 +13,16 @@ class OrderCreated extends Mailable
 {
     use Queueable, SerializesModels;
 
-    protected $phone;
+    protected $data;
 
-    public function __construct($phone)
+    public function __construct($data)
     {
-        $this->phone = $phone;
+        // $data = [
+        //     'asd',
+        //     'sdffd'
+        //   ];
+        // dd($data[0]);
+        $this->data = $data;
     }
     
     /**
@@ -28,6 +33,6 @@ class OrderCreated extends Mailable
     public function build()
     {
        // return $this->view('mail.orderCreated');
-       return $this->from('yurecblinovgelarm@gmail.com')->view('mail.orderCreated', ['phone' => '3333333']);
+       return $this->from('yurecblinovgelarm@gmail.com')->view('mail.orderCreated', ['data' => $this->data]);
     }
 }
