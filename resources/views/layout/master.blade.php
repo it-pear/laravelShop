@@ -551,25 +551,25 @@
         </button>
       </div>
       <br>
-    <form>
-      <div class="form-row">
-        <div class="form-group col-md-12">
-          <label for="form-name">Ваше Имя</label> 
-          <input type="text" id="form-name" class="form-control" placeholder="Иван">
+      <form action="{{ route('subscription') }}" method="POST">
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <label for="form-name">Ваше Имя</label> 
+            <input type="text" id="form-name" class="form-control" placeholder="Иван"  name="names">
+          </div>
+          <input type="hidden" class="modalname" name="product">
+          <div class="form-group col-md-12">
+            <label for="form-email">Ваш телефон</label> 
+            <input type="tel" id="form-email" class="form-control" placeholder="+7 (999) 999-99-99" name="phone">
+          </div>
+          <div class="form-group col-md-12">
+            <label for="form-adres">Ваш адрес <small>(доставка по Ульяновску - беслатно)</small></label> 
+            <input type="text" id="form-adres" class="form-control" placeholder="Город, улица, номер дома" name="adres">
+          </div>
         </div>
-        <input type="hidden" class="modalname">
-        <div class="form-group col-md-12">
-          <label for="form-email">Ваш телефон</label> 
-          <input type="tel" id="form-email" class="form-control" placeholder="+7 (999) 999-99-99">
-        </div>
-        <div class="form-group col-md-12">
-          <label for="form-adres">Ваш адрес <small>(доставка по Ульяновску - беслатно)</small></label> 
-          <input type="text" id="form-adres" class="form-control" placeholder="Город, улица, номер дома">
-        </div>
-      </div>
-      @csrf
-      <button type="submit" class="btn btn-primary">Отправить</button>
-    </form>
+        @csrf
+        <button type="submit" class="btn btn-primary">Отправить</button>
+      </form>
     </div>
   </div>
   

@@ -58,6 +58,7 @@ Route::get('/basket', 'App\Http\Controllers\BasketController@basket')->name('bas
 Route::get('/checkout-nologin', 'App\Http\Controllers\BasketController@checkoutnologin')->name('checkoutnologin');
 Route::post('/checkout/send', 'App\Http\Controllers\BasketController@checkoutConfirm')->name('checkout-confirm');
 Route::post('/checkout/sendauth', 'App\Http\Controllers\BasketController@checkoutConfirmAuth')->name('checkout-confirm-auth');
+Route::post('/subscription', 'App\Http\Controllers\MainController@sendmail')->name('subscription');
 
 Route::post('/basket/add/{id}', 'App\Http\Controllers\BasketController@basketAdd')->name('basket-add');
 Route::post('/basket/remove/{id}', 'App\Http\Controllers\BasketController@basketRemove')->name('basket-remove');

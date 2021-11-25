@@ -17,11 +17,6 @@ class OrderCreated extends Mailable
 
     public function __construct($data)
     {
-        // $data = [
-        //     'asd',
-        //     'sdffd'
-        //   ];
-        // dd($data[0]);
         $this->data = $data;
     }
     

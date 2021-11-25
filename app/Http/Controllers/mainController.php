@@ -7,21 +7,37 @@ use App\Models\Category;
 use App\Models\Product;
 use App\Models\ImagesCollection;
 use App\Models\Services;
-
-
+use Illuminate\Support\Facades\Mail;
+use App\Mail\SubscriptionMail;
+use Illuminate\Support\Facades\Cache;
 
 class MainController extends Controller
 {
+  
   public function index() {
-    $products = Product::get();
-    $categories = Category::get();
-    $recommends = Product::where('recommend', 1)->limit(8)->get();
-    $hits = Product::where('hit', 1)->limit(6)->get();
-    $hit = Product::where('hit', 1)->latest('created_at')->first();
-    $news = Product::where('new', 1)->limit(6)->get();
-    $categories = Category::limit(6)->get();
-    $services = Services::get();
-    return view('index', compact('products', 'categories', 'recommends', 'hits', 'hit', 'news', 'categories', 'services'));
+    $response = Cache::remember('index_page', 60*60, function() {
+      $products = Product::get();
+      $categories = Category::get();
+      $recommends = Product::where('recommend', 1)->limit(8)->get();
+      $hits = Product::where('hit', 1)->limit(6)->get();
+      $hit = Product::where('hit', 1)->latest('created_at')->first();
+      $news = Product::where('new', 1)->limit(6)->get();
+      $categories = Category::limit(6)->get();
+      $services = Services::get();
+      return compact('products', 'categories', 'recommends', 'hits', 'hit', 'news', 'categories', 'services');
+    });
+    
+    return view('index', $response);
+  }
+  public function sendmail(Request $request) {
+    $data = [
+      $request->names,
+      $request->phone,
+      $request->product,
+      $request->adres
+    ];
+    Mail::to('yurecblinovgelarm@gmail.com')->send(new SubscriptionMail($data));
+    return redirect()->route('contacts');
   }
   public function contacts() {
     return view('contacts');

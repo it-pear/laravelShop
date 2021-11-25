@@ -86,7 +86,7 @@ class BasketController extends Controller
       $name, $request->phone, $email, $userId, $country, $city, $street, $home, $index, $message, $checkout_payment_method
     );
     if ($success) {
-      // session()->flash('success', 'Ваш заказ принят в обработку');
+      session()->flash('success', 'Ваш заказ принят в обработку');
       return view('contacts');
     } else {
       session()->flash('warning', 'Случилась ошибка');
