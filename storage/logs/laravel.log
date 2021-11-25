@@ -1,0 +1,34 @@
+[2021-11-25 21:56:44] local.DEBUG: Message-ID: <cabe174aff03e57d334fb1552e493a53@127.0.0.1>
+Date: Thu, 25 Nov 2021 21:56:44 +0000
+Subject: Subscription Mail
+From: yurecblinovgelarm@gmail.com
+To: yurecblinovgelarm@gmail.com
+MIME-Version: 1.0
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Заявка на покупку одного продукта</title>
+</head>
+<body>
+  
+  <div style="display: flex;">
+    <p style="margin: 3px 0;">Имя: {{ $data }}</p>
+  </div>
+  <div style="display: flex;">
+    <p style="margin: 3px 0;">Номер: {{ $data }}</p>
+  </div>
+  <div style="display: flex;">
+    <p style="margin: 3px 0;">Товар: {{ $data }}</p>
+  </div>
+  <div style="display: flex;">
+    <p style="margin: 3px 0;">Адрес: {{ $data }}</p>
+  </div>
+
+</body>
+</html>  
