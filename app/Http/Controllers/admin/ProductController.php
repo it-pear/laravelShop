@@ -107,13 +107,27 @@ class ProductController extends Controller
     public function update(ProductRequest $request, Product $product)
     {
         $params = $request->all();
-        
         unset($params['image']);
         if ($request->has('image')) {
             Storage::delete($product->image);
             $params['image'] = $request->file('image')->store('products');
         }
-
+        
+        if ($request->has('photos')) {
+            $images = ImagesCollection::where('product_code', $product->code)->get();
+            foreach ($images as $img) {
+                $img->delete();
+                Storage::delete($img->filename);
+            }
+            foreach ($request->photos as $photo) {
+                $filename = $photo->store('photos');
+                ImagesCollection::create([
+                    'product_code' => $request->code,
+                    'filename' => $filename
+                ]);
+            }
+        }
+        
         foreach (['new', 'hit', 'recommend'] as $fieldName) {
             if (!isset($params[$fieldName])) {
                 $params[$fieldName] = 0;
