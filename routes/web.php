@@ -37,6 +37,7 @@ Route::middleware(['auth'])->group(function() {
       Route::resource('products', 'App\Http\Controllers\admin\ProductController');
       Route::resource('images', 'App\Http\Controllers\admin\ImagesController');
       Route::resource('services', 'App\Http\Controllers\admin\ServicesController');
+      Route::resource('properties', 'App\Http\Controllers\admin\PropertyController');
     });
     
   });
