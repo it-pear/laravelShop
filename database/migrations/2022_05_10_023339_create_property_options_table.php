@@ -15,7 +15,10 @@ class CreatePropertyOptionsTable extends Migration
     {
         Schema::create('property_options', function (Blueprint $table) {
             $table->id();
+            $table->unsignedInteger('property_id');
+            $table->string('name');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
