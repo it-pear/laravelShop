@@ -4073,6 +4073,7 @@ screen and (-ms-high-contrast: active) {
     height: 300px;
     padding-right: 6px;
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 .filter-list__counter {
     padding-top: 3px;
