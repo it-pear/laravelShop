@@ -25,7 +25,7 @@ Route::middleware(['auth'])->group(function() {
 
   Route::group([
     'prefix' => 'admin'
-  ], function(){
+  ], function () {
     Route::group(['middleware' => 'is_admin' ], function() {
       Route::get('/home', 'App\Http\Controllers\admin\HomeController@index')->name('home');
       Route::resource('/orders', 'App\Http\Controllers\admin\OrderController');
@@ -37,8 +37,9 @@ Route::middleware(['auth'])->group(function() {
       Route::resource('products', 'App\Http\Controllers\admin\ProductController');
       Route::resource('images', 'App\Http\Controllers\admin\ImagesController');
       Route::resource('services', 'App\Http\Controllers\admin\ServicesController');
+      Route::resource('properties', 'App\Http\Controllers\admin\PropertyController');
+      Route::resource('properties/{property}/property-options', 'App\Http\Controllers\admin\PropertyOptionController');
     });
-    
   });
 });
 
