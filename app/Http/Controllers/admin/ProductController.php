@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Models\Product;
 use App\Models\ImagesCollection;
 use App\Models\Category;
+use App\Models\Property;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -32,7 +33,8 @@ class ProductController extends Controller
     public function create()
     {
         $categories = Category::get();
-        return view('auth.admin.products.form', compact('categories'));
+        $properties = Property::get();
+        return view('auth.admin.products.form', compact('categories', 'properties'));
     }
 
     /**
@@ -94,7 +96,8 @@ class ProductController extends Controller
     public function edit(Product $product)
     {
         $categories = Category::get();
-        return view('auth.admin.products.form', compact('product', 'categories'));
+        $properties = Property::get();
+        return view('auth.admin.products.form', compact('product', 'categories', 'properties'));
     }
 
     /**
@@ -133,6 +136,9 @@ class ProductController extends Controller
                 $params[$fieldName] = 0;
             } 
         }
+
+        $product->properties()->sync($request->property_id);
+
         $product->update($params);
         return redirect()->route('products.index');
     }

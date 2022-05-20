@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\Property;
+use App\Models\PropertyOption;
 use App\Models\Product;
 use App\Models\ImagesCollection;
 use App\Models\Services;
@@ -62,6 +64,7 @@ class MainController extends Controller
   }
   public function catalog(Request $request) {
     $categories = Category::get();
+    $propertyOptions = PropertyOption::get();
     $productsQuery = Product::query();
 
     if ($request->filled('toprice')) {
@@ -72,6 +75,7 @@ class MainController extends Controller
     }
     if ($request->has('category')) {
       $productsQuery->where('category_id', '=', $request->category);
+     
     }
     if ($request->filled('search')) {
       $productsQuery->where('name', 'LIKE', '%' . $request->search . '%');
@@ -82,7 +86,7 @@ class MainController extends Controller
     // dd($request->sortprice);
     // ->orderBy('price', 'asc')
     $products = $productsQuery->paginate(18)->withPath("?" . $request->getQueryString());
-    return view('catalog', compact('products', 'categories'));
+    return view('catalog', compact('products', 'categories', 'propertyOptions'));
   }
   public function product($category, $product) {
     $product = Product::where('code', $product)->first();
