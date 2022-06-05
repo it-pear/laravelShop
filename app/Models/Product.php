@@ -21,7 +21,7 @@ class Product extends Model
 
     public function PropertyOption()
     {
-        return $this->belongsToMany(PropertyOption::class);
+        return $this->belongsToMany(PropertyOption::class, 'propuct_property_option');
     }
 
     public function getPriceFoCount() {

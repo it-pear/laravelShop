@@ -136,17 +136,16 @@
                                   <label class="filter-list__item">
                                     <span class="filter-list__input input-radio">
                                       <span class="input-radio__body">
-                                        <!-- <input class="input-radio__input" name="category" type="radio"
-                                          value="{{ $category->id }}"
-                                          @if( $category->id == request()->category)
+                                        <input class="input-radio__input" name="property" type="radio"
+                                          value="{{ $property->id }}"
+                                          @if( $property->id == request()->property)
                                             checked="checked"
                                           @endif
-                                        > -->
+                                        >
                                         <span class="input-radio__circle"></span>
                                       </span>
                                     </span>
                                     <span class="filter-list__title">{{ $property->name }}</span>
-                                    <span class="filter-list__title">{{ $property->products->count()}}</span>
                                   </label>
                                 @endforeach
                               </div>

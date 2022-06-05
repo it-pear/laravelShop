@@ -12,6 +12,7 @@ use App\Models\Services;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SubscriptionMail;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\DB;
 
 class MainController extends Controller
 {
@@ -75,7 +76,6 @@ class MainController extends Controller
     }
     if ($request->has('category')) {
       $productsQuery->where('category_id', '=', $request->category);
-     
     }
     if ($request->filled('search')) {
       $productsQuery->where('name', 'LIKE', '%' . $request->search . '%');
@@ -83,8 +83,12 @@ class MainController extends Controller
     if ($request->filled('sortprice')) {
       $productsQuery->orderBy('price', $request->sortprice);
     }
-    // dd($request->sortprice);
-    // ->orderBy('price', 'asc')
+    if ($request->filled('property')) {
+      $productsQuery->whereHas('PropertyOption', function($query) {
+        $query->where('property_option_id', '=', '4');
+      })->get();
+    }
+
     $products = $productsQuery->paginate(18)->withPath("?" . $request->getQueryString());
     return view('catalog', compact('products', 'categories', 'propertyOptions'));
   }
