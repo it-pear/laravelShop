@@ -4,6 +4,14 @@
 @section('content')
 
 <h2>Товар</h2>
+<form method="GET" action="{{ route('products.index') }}">
+  @csrf
+  <input type="text" class="form-control" placeholder="Введите название товара" name="search" value="{{ request()->search }}">
+  <button type="submit" class="btn btn-info" style="margin-top: 14px">Поиск товара</button>
+  <a href="{{ route('products.index') }}" class="btn btn-success" style="margin-top: 14px">Сбросить</a>
+</form>
+
+<br>
 <div class="table-responsive table-admin-products">
   <table class="table table-striped table-sm">
     <thead>

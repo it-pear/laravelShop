@@ -65,13 +65,13 @@
       @include('layout.error', ['fieldName' => 'description'])
     </div>
     <div class="form-group">
-      <label>Дополнительные атрибуты</label>
-      <select name="property_id[]" class="custom-select" multiple>
-        @foreach($properties as $property)
+      <label>Выберите бренд товара</label>
+      <select name="property_option_id" class="custom-select" required>
+        @foreach($property_option as $property)
           <option 
             value="{{ $property->id }}"
             @isset($product)
-              @if($product->properties->contains($property->id))
+              @if($product->PropertyOption->contains($property->id))
                 selected
               @endif
             @endisset

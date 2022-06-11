@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    protected $fillable = ['code', 'name', 'category_id', 'description', 'price', 'image', 'hit', 'new', 'recommend'];
+    protected $fillable = ['product_id', 'code', 'name', 'category_id', 'description', 'price', 'image', 'hit', 'new', 'recommend'];
     
     public function category()
     {
@@ -21,7 +21,7 @@ class Product extends Model
 
     public function PropertyOption()
     {
-        return $this->belongsToMany(PropertyOption::class, 'propuct_property_option');
+        return $this->belongsToMany(PropertyOption::class, 'propuct_property_option')->withTimestamps();
     }
 
     public function getPriceFoCount() {

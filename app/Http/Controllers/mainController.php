@@ -12,7 +12,6 @@ use App\Models\Services;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SubscriptionMail;
 use Illuminate\Support\Facades\Cache;
-use Illuminate\Support\Facades\DB;
 
 class MainController extends Controller
 {

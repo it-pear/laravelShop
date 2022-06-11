@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Models\Product;
 use App\Models\ImagesCollection;
 use App\Models\Category;
-use App\Models\Property;
+use App\Models\PropertyOption;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -18,9 +18,13 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $products = Product::paginate(10);
+        $productsQuery = Product::query();
+        if ($request->filled('search')) {
+          $productsQuery->where('name', 'LIKE', '%' . $request->search . '%');
+        }
+        $products = $productsQuery->paginate(10)->withPath("?" . $request->getQueryString());
         return view('auth.admin.products.index', compact('products'));
     }
     
@@ -33,8 +37,8 @@ class ProductController extends Controller
     public function create()
     {
         $categories = Category::get();
-        $properties = Property::get();
-        return view('auth.admin.products.form', compact('categories', 'properties'));
+        $property_option = PropertyOption::get();
+        return view('auth.admin.products.form', compact('categories', 'property_option'));
     }
 
     /**
@@ -54,23 +58,28 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ProductRequest $request)
+    public function store(ProductRequest $request, Product $product)
     {
         $params = $request->all();
-        
+        // dd($request->property_option_id);
         unset($params['image']);
         if ($request->has('image')) {
             $params['image'] = $request->file('image')->store('products');
         }
-        foreach ($request->photos as $photo) {
-            $filename = $photo->store('photos');
-            ImagesCollection::create([
-                'product_code' => $request->code,
-                'filename' => $filename
-            ]);
+        if ($request->has('photos')) {
+            foreach ($request->photos as $photo) {
+                $filename = $photo->store('photos');
+                ImagesCollection::create([
+                    'product_code' => $request->code,
+                    'filename' => $filename
+                ]);
+            } 
         }
-        
-        Product::create($params);
+        $model = Product::create($params);
+        $product['id'] = $model->id;
+        if (!is_null($request->property_option_id)) {
+            $product->PropertyOption()->sync($request->property_option_id);
+        }
         return redirect()->route('products.index');
     }
 
@@ -83,7 +92,6 @@ class ProductController extends Controller
     public function show(Product $product, ImagesCollection $ImagesCollection)
     {
         $images = ImagesCollection::where('product_code', $product->code)->get();
-        // dd($images);
         return view('auth.admin.products.show', compact('product', 'images'));
     }
 
@@ -96,8 +104,8 @@ class ProductController extends Controller
     public function edit(Product $product)
     {
         $categories = Category::get();
-        $properties = Property::get();
-        return view('auth.admin.products.form', compact('product', 'categories', 'properties'));
+        $property_option = PropertyOption::get();
+        return view('auth.admin.products.form', compact('product', 'categories', 'property_option'));
     }
 
     /**
@@ -136,9 +144,8 @@ class ProductController extends Controller
                 $params[$fieldName] = 0;
             } 
         }
-
-        $product->properties()->sync($request->property_id);
-
+ 
+        $product->PropertyOption()->sync($request->property_option_id);
         $product->update($params);
         return redirect()->route('products.index');
     }
