@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\View;
 use App\Models\Order;
 
 Auth::routes([
-  'reset' => false,
+  'reset' => true,
   'confirm' => false,
   'verify' => false,
 ]);
