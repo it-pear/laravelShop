@@ -83,8 +83,8 @@ class MainController extends Controller
       $productsQuery->orderBy('price', $request->sortprice);
     }
     if ($request->filled('property')) {
-      $productsQuery->whereHas('PropertyOption', function($query) {
-        $query->where('property_option_id', '=', '4');
+      $productsQuery->whereHas('PropertyOption', function($query) use ($request) {
+        $query->where('property_option_id', '=', $request->property);
       })->get();
     }
 
