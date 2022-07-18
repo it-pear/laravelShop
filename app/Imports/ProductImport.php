@@ -7,8 +7,11 @@ use App\Models\ImagesCollection;
 use Illuminate\Support\Collection;
 use App\Models\Category;
 use App\Models\PropertyOption;
+use App\Models\PropuctPropertyOption;
 use Illuminate\Support\Facades\Hash;
 use Maatwebsite\Excel\Concerns\ToModel;
+
+
 
 class ProductImport implements ToModel
 {
@@ -30,63 +33,66 @@ class ProductImport implements ToModel
 
             function imageItteration($row, $random) {
                 ImagesCollection::create([
-                    'filename' => 'products/' . $row[2] . '/' . $row[6],
+                    'filename' => 'products/' . $row[3] . '/' . $row[6],
                     'product_code' => $random
                 ]);
                 ImagesCollection::create([
-                    'filename' => 'products/' . $row[2] . '/' . $row[7],
+                    'filename' => 'products/' . $row[3] . '/' . $row[7],
                     'product_code' => $random
                 ]);
                 ImagesCollection::create([
-                    'filename' => 'products/' . $row[2] . '/' . $row[8],
+                    'filename' => 'products/' . $row[3] . '/' . $row[8],
                     'product_code' => $random
                 ]);
                 ImagesCollection::create([
-                    'filename' => 'products/' . $row[2] . '/' . $row[9],
+                    'filename' => 'products/' . $row[3] . '/' . $row[9],
                     'product_code' => $random
                 ]);
             }
-            function brandsItteration($brend, $row) {
+            function brandsItteration($result2, $brend, $row) {
                 if (is_null($brend)) {
-                    return new PropertyOption([
+                    $property = PropertyOption::create([
                         'property_id'     => 1,
                         'name'    => $row[2]
                     ]);
+                    PropuctPropertyOption::create([
+                        'property_option_id'     => $property->id,
+                        'product_id'    => $result2->id
+                    ]);
                 } else {
-                    // здесь нужно сделать добавление новой ячейки в балице продукт->свойство->опция
-                    dd($brend);
+                    PropuctPropertyOption::create([
+                        'property_option_id'     => $brend->id,
+                        'product_id'    => $result2->id
+                    ]);
                 }
             }
-            
-            // dd('public/' . $row[2] . '/' . $row[5]);
-            // dd($random . $random);
-            dd($brend);
+
             if (is_null($categry)) {
                 imageItteration($row, $random);
-                return new Category([
-                    'name'     => $row[0],
+                $result1 = Category::create([
+                    'name'    => $row[0],
                     'code'    => $row[1]
                 ]);
-                return new Product([
-                    'name'     => $row[0],
+                $result2 = Product::create([
+                    'name'    => $row[3],
                     'code'    => $random, 
                     'description'  => '', 
-                    'price'    => $row[3],
-                    'category_id'    => $row[4],
-                    'image'    => 'products/' . $row[2] . '/' . $row[5]
+                    'price'    => $row[4],
+                    'category_id'    => $result1->id,
+                    'image'    => 'products/' . $row[3] . '/' . $row[6]
                 ]);
-                brandsItteration($brend, $row);
+                brandsItteration($result2, $brend, $row);
             } else {
                 imageItteration($row, $random);
-                return new Product([
-                    'name'     => $row[2],
+                $result2 = Product::create([
+                    'name'     => $row[3],
                     'code'    => $random, 
                     'description'  => '', 
-                    'price'    => $row[3],
+                    'price'    => $row[4],
                     'category_id'    => $categry->id,
-                    'image'    => 'products/' . $row[2] . '/' . $row[5]
+                    'image'    => 'products/' . $row[3] . '/' . $row[6]
                 ]);
-                brandsItteration($brend, $row);
+                brandsItteration($result2, $brend, $row);
             }
         }
         
