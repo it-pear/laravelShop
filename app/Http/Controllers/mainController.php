@@ -17,7 +17,7 @@ class MainController extends Controller
 {
   
   public function index() {
-    $response = Cache::remember('index_page', 60*60, function() {
+    // $response = Cache::remember('index_page', 60*60, function() {
       $products = Product::get();
       $categories = Category::get();
       $recommends = Product::where('recommend', 1)->limit(8)->get();
@@ -26,10 +26,10 @@ class MainController extends Controller
       $news = Product::where('new', 1)->limit(6)->get();
       $categories = Category::limit(6)->get();
       $services = Services::get();
-      return compact('products', 'categories', 'recommends', 'hits', 'hit', 'news', 'categories', 'services');
-    });
+      // return compact('products', 'categories', 'recommends', 'hits', 'hit', 'news', 'categories', 'services');
+    // });
     
-    return view('index', $response);
+    return view('index', compact('products', 'categories', 'recommends', 'hits', 'hit', 'news', 'categories', 'services'));
   }
   public function sendmail(Request $request) {
     $data = [
