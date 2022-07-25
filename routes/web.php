@@ -20,7 +20,7 @@ Route::middleware(['auth'])->group(function() {
   ], function () {
     Route::get('/orders', 'App\Http\Controllers\Person\OrderController@index')->name('orders.index');
     Route::get('/orders/{order}', 'App\Http\Controllers\Person\OrderController@show')->name('orders.show');
-    Route::get('/profile', 'App\Http\Controllers\Person\OrderController@profile')->name('profile');
+    // Route::get('/profile', 'App\Http\Controllers\Person\OrderController@profile')->name('profile');
   });
 
   Route::group([
@@ -34,7 +34,10 @@ Route::middleware(['auth'])->group(function() {
 
       Route::resource('categories', 'App\Http\Controllers\admin\CategoryController');
       Route::get('upload', 'App\Http\Controllers\admin\ProductController@upload')->name('upload');
+
+      Route::post('products/{product}/updateImage', 'App\Http\Controllers\admin\ProductController@updateImage')->name('products.updateImage');
       Route::resource('products', 'App\Http\Controllers\admin\ProductController');
+
       Route::resource('images', 'App\Http\Controllers\admin\ImagesController');
       Route::resource('services', 'App\Http\Controllers\admin\ServicesController');
       Route::resource('properties', 'App\Http\Controllers\admin\PropertyController');

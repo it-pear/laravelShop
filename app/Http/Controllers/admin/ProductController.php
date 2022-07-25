@@ -151,6 +151,19 @@ class ProductController extends Controller
     }
 
     /**
+     * update general image the product
+     *
+     * @param  \App\Models\Product  $product
+     * @return \Illuminate\Http\Response
+     */
+    public function updateImage(Request $request, Product $product)
+    {
+        $params = $request->all();
+        $product->update($params);
+        return redirect()->back();
+    }
+
+    /**
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Product  $product

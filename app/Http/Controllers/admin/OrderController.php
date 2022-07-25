@@ -12,7 +12,7 @@ class OrderController extends Controller
         if ($request->filled('search')) {
           $ordersQuery->where('phone', 'LIKE', '%' . $request->search . '%');
         }
-        $orders = $ordersQuery->where('status', '>=', 1)->paginate(10)->withPath("?" . $request->getQueryString());
+        $orders = $ordersQuery->orderBy('created_at','DESC')->where('status', '>=', 1)->paginate(10)->withPath("?" . $request->getQueryString());
         // $orders = Order::where('status', '>=', 1)->paginate(10);
         return view('auth.admin.orders.index', compact('orders'));
     }

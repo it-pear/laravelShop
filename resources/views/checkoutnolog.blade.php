@@ -44,17 +44,17 @@
               <div class="card-body">
                 <h3 class="card-title">Детали заказа</h3>
                 <div class="form-row">
-                  <div class="form-group col-md-6">
+                  <div class="form-group col-md-12">
                     <label for="checkout-first-name">Имя</label>
                     <input type="text" class="form-control" id="checkout-first-name" name="name" required placeholder="Введите ваше имя">
                   </div>
-                  <div class="form-group col-md-6">
+                  <!-- <div class="form-group col-md-6">
                     <label for="checkout-last-name">Фамилия</label>
                     <input type="text" class="form-control" id="checkout-last-name" name="name2" required placeholder="Введите вашу фамилию">
-                  </div>
+                  </div> -->
                 </div>
                 <div class="form-group">
-                  <label for="checkout-state">Субъект страны</label>
+                  <label for="checkout-state">Регион страны</label>
                   <input type="text" class="form-control" name="country" required id="checkout-state">
                 </div>
                 <div class="form-group">

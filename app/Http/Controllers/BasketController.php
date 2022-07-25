@@ -36,10 +36,10 @@ class BasketController extends Controller
     if (is_null($orderId)) {
       return redirect()->route('index');
     }
-    dd($request->request);
+
     $order = Order::find($orderId);
     User::create([
-      'name' => $request->name . ' ' . $request->name2,
+      'name' => $request->name,
       'email' => $email,
       'password' => Hash::make($request->password)
     ]);
@@ -56,9 +56,9 @@ class BasketController extends Controller
       $request->name, $request->phone, $email, $userId, $country, $city, $street, $home, $index, $message, $checkout_payment_method
     );
     if ($success) {
-      // session()->flash('success', 'Ваш заказ принят в обработку');
-      
-      return view('mail.orderCreated');
+      session()->flash('success', 'Ваш заказ принят в обработку');
+      return redirect()->route('index');
+      // return view('mail.orderCreated');
     } else {
       session()->flash('warning', 'Случилась ошибка');
     }
@@ -87,7 +87,7 @@ class BasketController extends Controller
     );
     if ($success) {
       session()->flash('success', 'Ваш заказ принят в обработку');
-      return view('contacts');
+      return redirect()->route('index');
     } else {
       session()->flash('warning', 'Случилась ошибка');
     }

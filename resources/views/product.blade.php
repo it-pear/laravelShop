@@ -142,7 +142,7 @@
           </div><!-- .product__end -->
           <div class="product__footer">
             <div class="product__tags tags">
-              <div class="tags__list"><a href="">Mounts</a> <a href="">Electrodes</a> <a href="">Chainsaws</a></div>
+              <!-- <div class="tags__list"><a href="">Mounts</a> <a href="">Electrodes</a> <a href="">Chainsaws</a></div> -->
             </div>
             <!-- <div class="product__share-links share-links">
               <ul class="share-links__list">
