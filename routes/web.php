@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
-use App\Models\Order;
 
 Auth::routes([
   'reset' => true,
@@ -71,15 +70,6 @@ Route::get('/catalog', 'App\Http\Controllers\MainController@catalog')->name('cat
 Route::get('/{category}', 'App\Http\Controllers\MainController@category')->name('category');
 Route::get('/{category}/{product?}', 'App\Http\Controllers\MainController@product')->name('product');
 
-
-View::composer(['/layout/master'], function() {
-  $orderId = session('orderId');
-  if (!is_null($orderId)) 
-  {
-    $order = Order::find($orderId);
-    View::share('order', $order);
-  }
-});
 Auth::routes();
 
 

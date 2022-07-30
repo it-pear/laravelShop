@@ -38,7 +38,7 @@ class MainController extends Controller
       $request->product,
       $request->adres
     ];
-    Mail::to('yurecblinovgelarm@gmail.com')->send(new SubscriptionMail($data));
+    Mail::to('zamkoved@bk.ru')->send(new SubscriptionMail($data));
     return redirect()->route('contacts');
   }
   public function contacts() {
