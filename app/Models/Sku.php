@@ -1,13 +1,11 @@
 <?php
 
 namespace App\Models;
-
-use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
 
 class Sku extends Model
 {
-    use SoftDeletes;
+
     protected $fillable = ['product_id', 'count', 'price'];
 
     public function product()

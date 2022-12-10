@@ -65,6 +65,24 @@
       @include('layout.error', ['fieldName' => 'description'])
     </div>
     <div class="form-group">
+      <label>Выберите бренд товара</label>
+      <select name="property_option_id" class="custom-select" required>
+        @foreach($property_option as $property)
+          <option 
+            value="{{ $property->id }}"
+            @isset($product)
+              @if($product->PropertyOption->contains($property->id))
+                selected
+              @endif
+            @endisset
+          >
+            {{ $property->name }}
+          </option>
+          
+        @endforeach
+      </select>
+    </div>
+    <div class="form-group">
       <label>Цена</label>
       <input type="text" name="price" pattern="[0-9]{1,}" class="form-control" required value="{{ old('price', isset($product) ? $product->price : null) }}">
       @include('layout.error', ['fieldName' => 'price'])
@@ -90,8 +108,8 @@
           @endforeach
         </div>
       </div>
-      
     </div>
+    
     <div class="form-group">
       <label for="exampleFormControlFile1">Главная картинка</label>
       <input type="file" class="form-control-file" name="image" id="exampleFormControlFile1" style="color: white;">

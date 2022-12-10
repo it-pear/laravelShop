@@ -116,6 +116,46 @@
                     </div>
 
                     <div class="widget-filters__item">
+                      <div class="filter filter--opened" data-collapse-item="">
+                        <button type="button" class="filter__title" data-collapse-trigger="">Бренд
+                          <svg version="1.1" id="Layer_1" class="filter__arrow" width="16px" height="9px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                              viewBox="0 0 330 330" style="enable-background:new 0 0 330 330;" xml:space="preserve">
+                            <path id="XMLID_225_" d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393
+                              c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393
+                              s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"/>
+                            <g>
+                            </g>
+                          </svg>
+                        </button>
+                                                
+                        <div class="filter__body" data-collapse-content="">
+                          <div class="filter__container">
+                            <div class="filter-list">
+                              <div class="filter-list__list filter-list__list__price">
+                                @foreach ($propertyOptions as $property)
+                                  <label class="filter-list__item">
+                                    <span class="filter-list__input input-radio">
+                                      <span class="input-radio__body">
+                                        <input class="input-radio__input" name="property" type="radio"
+                                          value="{{ $property->id }}"
+                                          @if( $property->id == request()->property)
+                                            checked="checked"
+                                          @endif
+                                        >
+                                        <span class="input-radio__circle"></span>
+                                      </span>
+                                    </span>
+                                    <span class="filter-list__title">{{ $property->name }}</span>
+                                  </label>
+                                @endforeach
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="widget-filters__item">
                       <div class="filter filter--opened" data-collapse-item>
                         <button type="button" class="filter__title" data-collapse-trigger>Цена 
                           <svg version="1.1" id="Layer_1" class="filter__arrow" width="16px" height="9px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"

@@ -48,7 +48,7 @@
                   <input type="text" class="form-control" name="phone" required id="checkout-phone">
                 </div>
                 <div class="form-group">
-                  <label for="checkout-state">Субъект страны</label>
+                  <label for="checkout-state">Регион страны</label>
                   <input type="text" class="form-control" name="country" required id="checkout-state">
                 </div>
                 <div class="form-group">

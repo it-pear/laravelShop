@@ -16,13 +16,13 @@
                     height="9px">
                     <use xlink:href="images/sprite.svg#arrow-rounded-right-6x9"></use>
                   </svg></li>
-                <li class="breadcrumb-item active" aria-current="page">Профиль</li>
+                <!-- <li class="breadcrumb-item active" aria-current="page">Профиль</li> -->
               </ol>
             </nav>
           </div>
-          <div class="page-header__title">
+          <!-- <div class="page-header__title">
             <h1>Профиль</h1>
-          </div>
+          </div> -->
         </div>
       </div>
       <div class="block">

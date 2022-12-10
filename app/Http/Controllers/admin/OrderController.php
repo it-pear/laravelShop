@@ -7,8 +7,13 @@ use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
-    public function index() {
-        $orders = Order::where('status', '>=', 1)->paginate(10);
+    public function index(Request $request) {
+        $ordersQuery = Order::query();
+        if ($request->filled('search')) {
+          $ordersQuery->where('phone', 'LIKE', '%' . $request->search . '%');
+        }
+        $orders = $ordersQuery->orderBy('created_at','DESC')->where('status', '>=', 1)->paginate(10)->withPath("?" . $request->getQueryString());
+        // $orders = Order::where('status', '>=', 1)->paginate(10);
         return view('auth.admin.orders.index', compact('orders'));
     }
     public function show(Order $order)

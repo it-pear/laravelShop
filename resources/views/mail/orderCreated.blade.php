@@ -15,7 +15,7 @@
     <p style="margin: 3px 0;">Номер: {{ $data[1] }}</p>
   </div>
   <div style="display: flex;">
-    <p style="margin: 3px 0;">Субъект страны: {{ $data[2] }}</p>
+    <p style="margin: 3px 0;">Регион страны: {{ $data[2] }}</p>
   </div>
   <div style="display: flex;">
     <p style="margin: 3px 0;">Город: {{ $data[3] }}</p>

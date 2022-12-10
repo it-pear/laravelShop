@@ -1,21 +1,20 @@
 @extends('/layout/admin')
-@section('title', 'Категория' . $category->name)
+
+@section('title', 'Свойство' . $property->name)
+
 
 @section('content')
 
 <div class="form-admin">
-  <h2>Категория - {{ $category->name }}</h2>
+
+  <h2>Свойство - {{ $property->name }}</h2>
   <br>
   <div class="form-admin-section">
     <div class="admin-section">
-      <h6>#Id - <small>{{ $category->id }}</small></h6>
-      <h6>Code - <small>{{ $category->code }}</small></h6>
-      <h6>Название - <small>{{ $category->name }}</small></h6>
-      <h6>Описание - <small>{{ $category->description }}</small></h6>
-      <h6>Количество товаров - <small>{{ $category->products->count() }}</small></h6>
-    </div>
-    <div class="admin-section-image">
-      <img src="{{ Storage::url($category->image) }}" alt="">
+      <h6>#Id - <small>{{ $property->id }}</small></h6>
+      <h6>Название - <small>{{ $property->name }}</small></h6>
+      <!-- <h6>Количество товаров - <small>{ $property->products->count() }</small></h6> -->
+
     </div>
   </div>
   

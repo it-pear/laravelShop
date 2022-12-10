@@ -340,7 +340,7 @@
                         </a>
                         <div class="account-menu__divider"></div>
                         <ul class="account-menu__links">
-                          <li><a href="">Мой профиль</a></li>
+                          <!-- <li><a href="">Мой профиль</a></li> -->
                           <li><a href="{{ route('person.orders.index') }}">История заказов</a></li>
                         </ul>
                         <div class="account-menu__divider"></div>

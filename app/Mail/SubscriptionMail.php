@@ -27,6 +27,6 @@ class SubscriptionMail extends Mailable
   public function build()
   {
     // return $this->view('mail.orderCreated');
-    return $this->from('yurecblinovgelarm@gmail.com')->view('mail.subscriptionCreated', ['data' => $this->data]);
+    return $this->from('zamkoved@bk.ru')->view('mail.subscriptionCreated', ['data' => $this->data]);
   }
 }

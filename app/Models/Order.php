@@ -66,7 +66,7 @@ class Order extends Model
         $checkout_payment_method
       ];
       session()->forget('orderId');
-      Mail::to('yurecblinovgelarm@gmail.com')->send(new OrderCreated($data));
+      Mail::to('zamkoved@bk.ru')->send(new OrderCreated($data));
       return true;  
     } else {
       return false;

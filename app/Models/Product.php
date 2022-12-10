@@ -7,20 +7,22 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    protected $fillable = ['code', 'name', 'category_id', 'description', 'price', 'image', 'hit', 'new', 'recommend'];
+    protected $fillable = ['product_id', 'code', 'name', 'category_id', 'description', 'price', 'image', 'hit', 'new', 'recommend'];
+    
     public function category()
     {
         return $this->belongsTo(Category::class);
     }
 
-    public function skus()
-    {
-        return $this->hasMany(Sku::class);
-    }
-
     public function properties()
     {
-        return $this->belongsToMany(Property::class);
+        return $this->belongsToMany(Property::class, 'property_product')->withTimestamps();
+    }
+
+    public function PropertyOption()
+    {
+        return $this->belongsToMany(PropertyOption::class, 'propuct_property_option')->withTimestamps();
+
     }
 
     public function getPriceFoCount() {

@@ -62,7 +62,7 @@
     </div>
   </div><!-- .block-slideshow / end -->
   <!-- .block-features -->
-  <div class="block block-features block-features--layout--classic">
+  <!-- <div class="block block-features block-features--layout--classic">
     <div class="container">
       <div class="block-features__list">
         <div class="block-features__item">
@@ -108,7 +108,8 @@
         </div>
       </div>
     </div>
-  </div><!-- .block-features / end -->
+  </div> -->
+  <!-- .block-features / end -->
   <!-- .block-products-carousel -->
   <div class="block block-products-carousel" data-layout="grid-4" data-mobile-grid-columns="2">
     <div class="container">

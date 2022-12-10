@@ -33,7 +33,7 @@
       </h6>   
       <h6>Фотографии:</h6>
     </div>
-    
+
     <div class="admin-section-image">
       <img src="{{ Storage::url($product->image) }}" alt="">
     </div>
@@ -41,7 +41,18 @@
   <div class="imageCollection"> 
     @foreach($images as $image)
       <div class="imageCollectionSection">
+        
         <img class="imageCollection__img" src="{{ Storage::url($image->filename) }}" alt="">
+          
+        <form action="{{ route('products.updateImage', $product) }}" method="POST">
+          @csrf
+          @method('POST')
+          <input type="hidden" name="image" value="{{ $image->filename }}">
+          <button type="submit" class="btn btn-success">
+            главная
+          </button>
+          
+        </form>
         
         <form action="{{ route('images.destroy', $image) }}" method="POST">
           @csrf

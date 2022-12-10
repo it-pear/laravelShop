@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+
+use App\Http\Requests\PropertyRequest;
+
 use App\Models\Property;
 use Illuminate\Http\Request;
 
@@ -26,7 +29,7 @@ class PropertyController extends Controller
      */
     public function create()
     {
-        //
+        return view('auth.admin.properties.form');
     }
 
     /**
@@ -35,9 +38,11 @@ class PropertyController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+
+    public function store(PropertyRequest $request)
     {
-        //
+        Property::create($request->all());
+        return redirect()->route('properties.index');
     }
 
     /**
@@ -48,7 +53,7 @@ class PropertyController extends Controller
      */
     public function show(Property $property)
     {
-        //
+        return view('auth.admin.properties.show', compact('property'));
     }
 
     /**
@@ -59,7 +64,7 @@ class PropertyController extends Controller
      */
     public function edit(Property $property)
     {
-        //
+        return view('auth.admin.properties.form', compact('property'));
     }
 
     /**
@@ -69,9 +74,12 @@ class PropertyController extends Controller
      * @param  \App\Models\Property  $property
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Property $property)
+
+    public function update(PropertyRequest $request, Property $property)
     {
-        //
+        $property->update($request->all());
+        return redirect()->route('properties.index');
+
     }
 
     /**
@@ -82,6 +90,9 @@ class PropertyController extends Controller
      */
     public function destroy(Property $property)
     {
-        //
+
+        $property->delete();
+        return redirect()->route('properties.index');
+
     }
 }

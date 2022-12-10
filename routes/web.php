@@ -3,10 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
-use App\Models\Order;
 
 Auth::routes([
-  'reset' => false,
+  'reset' => true,
   'confirm' => false,
   'verify' => false,
 ]);
@@ -20,12 +19,12 @@ Route::middleware(['auth'])->group(function() {
   ], function () {
     Route::get('/orders', 'App\Http\Controllers\Person\OrderController@index')->name('orders.index');
     Route::get('/orders/{order}', 'App\Http\Controllers\Person\OrderController@show')->name('orders.show');
-    Route::get('/profile', 'App\Http\Controllers\Person\OrderController@profile')->name('profile');
+    // Route::get('/profile', 'App\Http\Controllers\Person\OrderController@profile')->name('profile');
   });
 
   Route::group([
     'prefix' => 'admin'
-  ], function(){
+  ], function () {
     Route::group(['middleware' => 'is_admin' ], function() {
       Route::get('/home', 'App\Http\Controllers\admin\HomeController@index')->name('home');
       Route::resource('/orders', 'App\Http\Controllers\admin\OrderController');
@@ -34,12 +33,17 @@ Route::middleware(['auth'])->group(function() {
 
       Route::resource('categories', 'App\Http\Controllers\admin\CategoryController');
       Route::get('upload', 'App\Http\Controllers\admin\ProductController@upload')->name('upload');
+
+      Route::post('products/{product}/updateImage', 'App\Http\Controllers\admin\ProductController@updateImage')->name('products.updateImage');
       Route::resource('products', 'App\Http\Controllers\admin\ProductController');
+
       Route::resource('images', 'App\Http\Controllers\admin\ImagesController');
       Route::resource('services', 'App\Http\Controllers\admin\ServicesController');
       Route::resource('properties', 'App\Http\Controllers\admin\PropertyController');
+
+      Route::resource('properties/{property}/property-options', 'App\Http\Controllers\admin\PropertyOptionController');
+
     });
-    
   });
 });
 
@@ -68,15 +72,6 @@ Route::get('/catalog', 'App\Http\Controllers\MainController@catalog')->name('cat
 Route::get('/{category}', 'App\Http\Controllers\MainController@category')->name('category');
 Route::get('/{category}/{product?}', 'App\Http\Controllers\MainController@product')->name('product');
 
-
-View::composer(['/layout/master'], function() {
-  $orderId = session('orderId');
-  if (!is_null($orderId)) 
-  {
-    $order = Order::find($orderId);
-    View::share('order', $order);
-  }
-});
 Auth::routes();
 
 

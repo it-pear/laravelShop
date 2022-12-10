@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\Property;
+use App\Models\PropertyOption;
 use App\Models\Product;
 use App\Models\ImagesCollection;
 use App\Models\Services;
@@ -15,7 +17,7 @@ class MainController extends Controller
 {
   
   public function index() {
-    $response = Cache::remember('index_page', 60*60, function() {
+    // $response = Cache::remember('index_page', 60*60, function() {
       $products = Product::get();
       $categories = Category::get();
       $recommends = Product::where('recommend', 1)->limit(8)->get();
@@ -24,10 +26,10 @@ class MainController extends Controller
       $news = Product::where('new', 1)->limit(6)->get();
       $categories = Category::limit(6)->get();
       $services = Services::get();
-      return compact('products', 'categories', 'recommends', 'hits', 'hit', 'news', 'categories', 'services');
-    });
+      // return compact('products', 'categories', 'recommends', 'hits', 'hit', 'news', 'categories', 'services');
+    // });
     
-    return view('index', $response);
+    return view('index', compact('products', 'categories', 'recommends', 'hits', 'hit', 'news', 'categories', 'services'));
   }
   public function sendmail(Request $request) {
     $data = [
@@ -36,7 +38,7 @@ class MainController extends Controller
       $request->product,
       $request->adres
     ];
-    Mail::to('yurecblinovgelarm@gmail.com')->send(new SubscriptionMail($data));
+    Mail::to('zamkoved@bk.ru')->send(new SubscriptionMail($data));
     return redirect()->route('contacts');
   }
   public function contacts() {
@@ -62,6 +64,7 @@ class MainController extends Controller
   }
   public function catalog(Request $request) {
     $categories = Category::get();
+    $propertyOptions = PropertyOption::get();
     $productsQuery = Product::query();
 
     if ($request->filled('toprice')) {
@@ -79,10 +82,14 @@ class MainController extends Controller
     if ($request->filled('sortprice')) {
       $productsQuery->orderBy('price', $request->sortprice);
     }
-    // dd($request->sortprice);
-    // ->orderBy('price', 'asc')
+    if ($request->filled('property')) {
+      $productsQuery->whereHas('PropertyOption', function($query) use ($request) {
+        $query->where('property_option_id', '=', $request->property);
+      })->get();
+    }
+
     $products = $productsQuery->paginate(18)->withPath("?" . $request->getQueryString());
-    return view('catalog', compact('products', 'categories'));
+    return view('catalog', compact('products', 'categories', 'propertyOptions'));
   }
   public function product($category, $product) {
     $product = Product::where('code', $product)->first();
