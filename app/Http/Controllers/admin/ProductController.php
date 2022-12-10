@@ -80,7 +80,7 @@ class ProductController extends Controller
         if (!is_null($request->property_option_id)) {
             $product->PropertyOption()->sync($request->property_option_id);
         }
-        return redirect()->route('products.index');
+        return redirect()->back();
     }
 
     /**
