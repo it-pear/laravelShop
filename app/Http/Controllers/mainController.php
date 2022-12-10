@@ -54,10 +54,7 @@ class MainController extends Controller
     $categories = Category::paginate(9);
     return view('categories', compact('categories'));
   }
-  public function services() {
-    $services = Services::get();
-    return view('services', compact('services'));
-  }
+  
   public function category($code) {
     $category = Category::where('code', $code)->first();
     return view('category', compact('category'));
@@ -96,6 +93,16 @@ class MainController extends Controller
     $products = Product::where('category_id', $product->category_id)->limit(10)->get();
     $images = ImagesCollection::where('product_code', $product->code)->get();
     return view('product', compact('product', 'products', 'images'));
+  }
+
+  public function services() {
+    $services = Services::get();
+    return view('services', compact('services'));
+  }
+
+  public function service($service) {
+    $service = Services::where('code', $service)->first();
+    return view('service', compact('service'));
   }
 
 }

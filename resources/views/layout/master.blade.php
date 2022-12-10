@@ -374,7 +374,13 @@
                     Наш магазин открыт для вас в будние дни с 8:30-19:00, в Субботу с 8:30-18:00, в Воскресенье с 8:30-17:00
                   </div>
                   <ul class="footer-contacts__contacts">
-                    <li><i class="footer-contacts__icon fas fa-globe-americas"></i> г. Ульяновск ул. Ульяновский проспект д.24, ТЦ "СтройГрад" бутик-33
+                    <li>
+                      <i class="footer-contacts__icon fas fa-globe-americas"></i> 
+                      г. Ульяновск ул. Ульяновский проспект д.24, ТЦ "СтройГрад" бутик-33
+                    </li>
+                    <li>
+                      <i class="footer-contacts__icon fas fa-globe-americas"></i> 
+                      г. Москва, поселение Воскресенское, Чечёрский проезд, 51
                     </li>
                     <!-- <li><i class="footer-contacts__icon far fa-envelope"></i> stroyka@example.com</li> -->
                     <li><i class="footer-contacts__icon fas fa-mobile-alt"></i> +7 (909) 357-32-12</li>

@@ -68,9 +68,14 @@ Route::post('/subscription', 'App\Http\Controllers\MainController@sendmail')->na
 Route::post('/basket/add/{id}', 'App\Http\Controllers\BasketController@basketAdd')->name('basket-add');
 Route::post('/basket/remove/{id}', 'App\Http\Controllers\BasketController@basketRemove')->name('basket-remove');
 Route::post('/basket/delte/{id}', 'App\Http\Controllers\BasketController@basketDelte')->name('basket-delte');
+
+Route::get('/services', 'App\Http\Controllers\MainController@services')->name('services');
+Route::get('/services/{service?}', 'App\Http\Controllers\MainController@service')->name('service');
+
 Route::get('/catalog', 'App\Http\Controllers\MainController@catalog')->name('catalog');
 Route::get('/{category}', 'App\Http\Controllers\MainController@category')->name('category');
 Route::get('/{category}/{product?}', 'App\Http\Controllers\MainController@product')->name('product');
+
 
 Auth::routes();
 

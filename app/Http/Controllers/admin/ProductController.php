@@ -147,7 +147,7 @@ class ProductController extends Controller
  
         $product->PropertyOption()->sync($request->property_option_id);
         $product->update($params);
-        return redirect()->route('products.index');
+        return redirect()->back();
     }
 
     /**
