@@ -82,7 +82,6 @@ class ImagesController extends Controller
      */
     public function destroy(ImagesCollection $image)
     {   
-        dd($image);
         $image->delete();
         Storage::delete($image->filename);
         return back();
